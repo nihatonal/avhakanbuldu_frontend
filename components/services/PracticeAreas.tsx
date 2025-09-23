@@ -1,7 +1,9 @@
-import React from 'react'
-import { Badge } from '../ui/badge'
-import { Button } from '../ui/button'
-import { Card } from '../ui/card'
+'use client';
+
+import React from 'react';
+import { Badge } from '../ui/badge';
+import { Button } from '../ui/button';
+import { Card } from '../ui/card';
 import {
     Gavel,
     FileText,
@@ -13,6 +15,9 @@ import {
     ArrowRight
 } from 'lucide-react';
 import Container from '../Container';
+import { motion } from 'framer-motion';
+import { fadeUp, containerStagger } from '@/lib/animations';
+
 const PracticeAreas = () => {
     const practiceAreas = [
         {
@@ -100,61 +105,78 @@ const PracticeAreas = () => {
             experience: '9+ yıl deneyim, 90+ başarılı dava'
         }
     ];
+
     return (
         <section className="section-padding">
             <Container>
-                <div className="container-max">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <motion.div
+                    className="container-max"
+                    variants={containerStagger}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+                    <div
+                        className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         {practiceAreas.map((area, index) => (
-                            <Card key={index} className="card-elegant hover:shadow-accent/20 animate-fade-in">
-                                <div className="flex items-start space-x-6">
-                                    <div className="p-4 bg-accent/10 rounded-xl flex-shrink-0">
-                                        <area.icon className="h-8 w-8 text-accent" />
-                                    </div>
-
-                                    <div className="flex-1">
-                                        <h3 className="font-display text-2xl font-bold text-primary mb-3">
-                                            {area.title}
-                                        </h3>
-                                        <p className="text-muted-foreground mb-4">
-                                            {area.description}
-                                        </p>
-
-                                        <div className="mb-4">
-                                            <h4 className="font-semibold text-primary mb-2">Hizmet Alanları:</h4>
-                                            <ul className="space-y-1">
-                                                {area.services.slice(0, 4).map((service, serviceIndex) => (
-                                                    <li key={serviceIndex} className="flex items-center text-sm text-muted-foreground">
-                                                        <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
-                                                        {service}
-                                                    </li>
-                                                ))}
-                                                {area.services.length > 4 && (
-                                                    <li className="text-sm text-accent font-medium">
-                                                        +{area.services.length - 4} diğer hizmet
-                                                    </li>
-                                                )}
-                                            </ul>
+                            <motion.div key={index} variants={fadeUp}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true, amount: 0.2 }}
+                            >
+                                <Card className="card-elegant hover:shadow-accent/20">
+                                    <div className="flex items-start space-x-6">
+                                        <div className="p-4 bg-accent/10 rounded-xl flex-shrink-0">
+                                            <area.icon className="h-8 w-8 text-accent" />
                                         </div>
 
-                                        <div className="flex items-center justify-between">
-                                            <Badge variant="secondary" className="text-xs">
-                                                {area.experience}
-                                            </Badge>
-                                            <Button variant="ghost" className="text-accent hover:text-accent-dark">
-                                                Detaylar
-                                                <ArrowRight className="ml-2 h-4 w-4" />
-                                            </Button>
+                                        <div className="flex-1">
+                                            <h3 className="font-display text-2xl font-bold text-primary mb-3">
+                                                {area.title}
+                                            </h3>
+                                            <p className="text-muted-foreground mb-4">
+                                                {area.description}
+                                            </p>
+
+                                            <div className="mb-4">
+                                                <h4 className="font-semibold text-primary mb-2">Hizmet Alanları:</h4>
+                                                <ul className="space-y-1">
+                                                    {area.services.slice(0, 4).map((service, i) => (
+                                                        <li
+                                                            key={i}
+                                                            className="flex items-center text-sm text-muted-foreground"
+                                                        >
+                                                            <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
+                                                            {service}
+                                                        </li>
+                                                    ))}
+                                                    {area.services.length > 4 && (
+                                                        <li className="text-sm text-accent font-medium">
+                                                            +{area.services.length - 4} diğer hizmet
+                                                        </li>
+                                                    )}
+                                                </ul>
+                                            </div>
+
+                                            <div className="flex items-center justify-between">
+                                                <Badge variant="secondary" className="text-xs">
+                                                    {area.experience}
+                                                </Badge>
+                                                <Button variant="ghost" className="text-accent hover:text-accent-dark">
+                                                    Detaylar
+                                                    <ArrowRight className="ml-2 h-4 w-4" />
+                                                </Button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </Card>
+                                </Card>
+                            </motion.div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
             </Container>
         </section>
-    )
-}
+    );
+};
 
-export default PracticeAreas
+export default PracticeAreas;

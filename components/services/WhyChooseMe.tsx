@@ -1,10 +1,12 @@
-import React from 'react'
-import { Card } from '../ui/card'
+'use client';
 
-import {
-    Shield
-} from 'lucide-react';
+import React from 'react';
+import { Card } from '../ui/card';
 import Container from '../Container';
+import { Shield } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { fadeUp, containerStagger } from '@/lib/animations';
+
 const WhyChooseMe = () => {
     const whyChooseUs = [
         {
@@ -28,33 +30,43 @@ const WhyChooseMe = () => {
     return (
         <section className="section-padding bg-secondary/30">
             <Container>
-                <div className="container-max">
-                    <div className="text-center mb-16 animate-slide-up">
+                <motion.div
+                    className="container-max"
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={containerStagger}
+                >
+                    {/* Başlık */}
+                    <motion.div className="text-center mb-16" variants={fadeUp}>
                         <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-4">
                             Neden Beni Seçmelisiniz?
                         </h2>
                         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                             Müvekkillerimin memnuniyeti ve başarılı sonuçlar için çalıştığım temel değerler.
                         </p>
-                    </div>
+                    </motion.div>
 
+                    {/* Kartlar */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {whyChooseUs.map((reason, index) => (
-                            <Card key={index} className="card-elegant text-center animate-scale-in">
-                                <div className="p-4 bg-accent/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                    <Shield className="h-8 w-8 text-accent" />
-                                </div>
-                                <h3 className="font-display text-xl font-semibold text-primary mb-2">
-                                    {reason.title}
-                                </h3>
-                                <p className="text-muted-foreground text-sm">{reason.description}</p>
-                            </Card>
+                            <motion.div key={index} variants={fadeUp}>
+                                <Card className="card-elegant text-center">
+                                    <div className="p-4 bg-accent/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                        <Shield className="h-8 w-8 text-accent" />
+                                    </div>
+                                    <h3 className="font-display text-xl font-semibold text-primary mb-2">
+                                        {reason.title}
+                                    </h3>
+                                    <p className="text-muted-foreground text-sm">{reason.description}</p>
+                                </Card>
+                            </motion.div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
             </Container>
         </section>
-    )
-}
+    );
+};
 
-export default WhyChooseMe
+export default WhyChooseMe;
