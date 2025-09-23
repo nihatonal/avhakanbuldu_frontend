@@ -30,8 +30,6 @@ const getCategories = async (quantity?: number) => {
   }
 };
 
-
-
 const getLatestBlogs = async () => {
   try {
     const { data } = await sanityFetch({ query: LATEST_BLOG_QUERY });
@@ -41,7 +39,6 @@ const getLatestBlogs = async () => {
     return [];
   }
 };
-
 
 const getAllBlogsByQuantity = async (quantity: number) => {
   try {
@@ -67,7 +64,6 @@ const getAllBlogs = async () => {
   }
 };
 
-
 const getSingleBlog = async (slug: string) => {
   try {
     const { data } = await sanityFetch({
@@ -85,7 +81,22 @@ const getBlogCategories = async () => {
     const { data } = await sanityFetch({
       query: BLOG_CATEGORIES,
     });
-    return data ?? [];
+    const map = new Map<string, { title: string; count: number }>();
+
+    data.forEach((blog) => {
+      blog.blogcategories?.forEach((cat) => {
+        if (!cat?.title) return;
+
+        const existing = map.get(cat.title);
+        if (existing) {
+          existing.count += 1;
+        } else {
+          map.set(cat.title, { title: cat.title, count: 1 });
+        }
+      });
+    });
+
+    return Array.from(map.values());
   } catch (error) {
     console.log("Error fetching all brands:", error);
     return [];

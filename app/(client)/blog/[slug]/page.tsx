@@ -14,7 +14,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
-
+import NotReadyBlog from '../../../../assets/images/not-ready-blog-main-image.webp'
 const SingleBlogPage = async ({
     params,
 }: {
@@ -23,7 +23,7 @@ const SingleBlogPage = async ({
     const { slug } = await params;
     const blog: SINGLE_BLOG_QUERYResult = await getSingleBlog(slug);
     if (!blog) return notFound();
-
+    
     return (
         <div className="py-10 bg-gray-100">
             <Container className="grid grid-cols-1 lg:grid-cols-4 gap-5">
@@ -37,20 +37,30 @@ const SingleBlogPage = async ({
                             className="w-full max-h-[350px] object-cover rounded-lg"
                         />
                     )}
+                    {!blog?.mainImage && (
+                        <Image
+                            src={NotReadyBlog}
+                            alt={blog.title || "Blog Image"}
+                            width={600}
+                            height={600}
+                            className="w-full max-h-[350px] object-cover rounded-lg"
+                        />
+                    )}
                     <div>
                         <div className="text-xs flex items-center gap-5 my-7">
-                            <div className="flex items-center relative group cursor-pointer">
+                            <div className="flex items-center gap-2 group cursor-pointer">
                                 {blog?.blogcategories?.map(
                                     (item: { title: string }, index: number) => (
                                         <p
                                             key={index}
-                                            className="font-semibold text-muted-foreground tracking-wider"
+                                            className="relative font-semibold text-muted-foreground tracking-wider"
                                         >
                                             {item?.title}
+                                            <span className="absolute left-0 -bottom-1.5 bg-muted-foreground/30 inline-block w-full h-[2px] hover:bg-shop_dark_green hover:cursor-pointer hoverEffect" />
                                         </p>
                                     )
                                 )}
-                                <span className="absolute left-0 -bottom-1.5 bg-muted-foreground/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hover:cursor-pointer hoverEffect" />
+
                             </div>
                             <p className="flex items-center gap-1 text-muted-foreground relative group hover:cursor-pointer hover:text-shop_dark_green hoverEffect">
                                 <Calendar size={15} />{" "}
@@ -187,13 +197,13 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
             <div className="border border-primary-light p-5 rounded-md">
                 <Title className="text-base">Blog Categories</Title>
                 <div className="space-y-2 mt-2">
-                    {categories?.map(({ blogcategories }, index) => (
+                    {categories?.map((blogcategories, index) => (
                         <div
                             key={index}
                             className="text-primary flex items-center justify-between text-sm font-medium"
                         >
-                            <p>{blogcategories[0]?.title}</p>
-                            <p className="text-darkColor font-semibold">{`(1)`}</p>
+                            <p>{blogcategories?.title}</p>
+                            <p className="text-darkColor font-semibold">{blogcategories?.count}</p>
                         </div>
                     ))}
                 </div>
@@ -210,6 +220,15 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
                             {blog?.mainImage && (
                                 <Image
                                     src={urlFor(blog?.mainImage).url()}
+                                    alt="blogImage"
+                                    width={100}
+                                    height={100}
+                                    className="w-16 h-16 rounded-full object-cover border-[1px] border-shop_dark_green/10 group-hover:border-shop_dark_green hoverEffect"
+                                />
+                            )}
+                            {!blog?.mainImage && (
+                                <Image
+                                    src={NotReadyBlog}
                                     alt="blogImage"
                                     width={100}
                                     height={100}

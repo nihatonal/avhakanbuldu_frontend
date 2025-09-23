@@ -39,12 +39,12 @@ const SINGLE_BLOG_QUERY =
     "slug": slug.current,
   },
 }`);
-
 const BLOG_CATEGORIES = defineQuery(
   `*[_type == "blog"]{
      blogcategories[]->{
-    ...
-    }
+       _id,
+       title,
+     }
   }`
 );
 

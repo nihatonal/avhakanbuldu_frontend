@@ -7,7 +7,7 @@ import { Calendar } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
+import NotReadyBlog from '../../../assets/images/not-ready-blog-main-image.webp'
 const BlogPage = async () => {
   const blogs = await getAllBlogs();
 
@@ -21,6 +21,15 @@ const BlogPage = async () => {
               {blog?.mainImage && (
                 <Image
                   src={urlFor(blog?.mainImage).url()}
+                  alt="blogImage"
+                  width={500}
+                  height={500}
+                  className="w-full max-h-80 object-cover"
+                />
+              )}
+              {!blog?.mainImage && (
+                <Image
+                  src={NotReadyBlog}
                   alt="blogImage"
                   width={500}
                   height={500}
