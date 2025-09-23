@@ -18,14 +18,22 @@ const GET_ALL_BLOG = defineQuery(
     }
   `
 );
+const GET_ALL_BLOGS = defineQuery(
+  `*[_type == 'blog'] | order(publishedAt desc){
+    ...,
+    blogcategories[]->{
+      title
+    }
+  }`
+);
 
 const SINGLE_BLOG_QUERY =
   defineQuery(`*[_type == "blog" && slug.current == $slug][0]{
-  ..., 
-    author->{
-    name,
-    image,
-  },
+  ...,
+  title,
+  publishedAt,
+  body,
+  mainImage, 
   blogcategories[]->{
     title,
     "slug": slug.current,
@@ -62,6 +70,7 @@ const OTHERS_BLOG_QUERY = defineQuery(`*[
 export {
   LATEST_BLOG_QUERY,
   GET_ALL_BLOG,
+  GET_ALL_BLOGS,
   SINGLE_BLOG_QUERY,
   BLOG_CATEGORIES,
   OTHERS_BLOG_QUERY,

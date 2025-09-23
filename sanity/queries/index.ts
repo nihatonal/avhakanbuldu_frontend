@@ -2,6 +2,7 @@ import { sanityFetch } from "../lib/live";
 import {
   BLOG_CATEGORIES,
   GET_ALL_BLOG,
+  GET_ALL_BLOGS,
   LATEST_BLOG_QUERY,
   OTHERS_BLOG_QUERY,
   SINGLE_BLOG_QUERY,
@@ -42,7 +43,7 @@ const getLatestBlogs = async () => {
 };
 
 
-const getAllBlogs = async (quantity: number) => {
+const getAllBlogsByQuantity = async (quantity: number) => {
   try {
     const { data } = await sanityFetch({
       query: GET_ALL_BLOG,
@@ -54,6 +55,18 @@ const getAllBlogs = async (quantity: number) => {
     return [];
   }
 };
+const getAllBlogs = async () => {
+  try {
+    const { data } = await sanityFetch({
+      query: GET_ALL_BLOGS, // ✅ yeni versiyonda $quantity parametresi yok
+    });
+    return data ?? [];
+  } catch (error) {
+    console.log("Error fetching all blogs:", error);
+    return [];
+  }
+};
+
 
 const getSingleBlog = async (slug: string) => {
   try {
@@ -94,6 +107,7 @@ const getOthersBlog = async (slug: string, quantity: number) => {
 export {
   getCategories,
   getLatestBlogs,
+  getAllBlogsByQuantity,
   getAllBlogs,
   getSingleBlog,
   getBlogCategories,

@@ -1,13 +1,18 @@
 // sanity/sanity.types.ts
 export type Blog = {
-    _id: string;
-    title: string;
-    slug: { current: string };
-    content: any[];
-    category: string;
+  _id: string;
+  title: string;
+  mainImage?: {
+    asset: {
+      url: string;
+    };
+    alt?: string;
   };
-  
-  export type SINGLE_BLOG_QUERYResult = {
-    blog: Blog;
-  };
-  
+  slug: { current: string };
+  body: any[];
+  category: { title: string }[];
+};
+
+export type SINGLE_BLOG_QUERYResult = {
+  blog: Blog;
+};

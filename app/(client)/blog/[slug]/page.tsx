@@ -150,12 +150,20 @@ const SingleBlogPage = async ({
                                         />
 
                                     )}
+                                    {!blog.body && (
+                                        <div className="mt-8 rounded-lg bg-yellow-50 border border-yellow-300 text-yellow-800 px-6 py-4 text-center shadow-sm">
+                                            <h3 className="text-lg font-semibold mb-1">Makale Hazırlanıyor</h3>
+                                            <p className="text-sm">
+                                                Bu içerik henüz yayına hazır değil. Kısa süre içinde güncellenecektir.
+                                            </p>
+                                        </div>
+                                    )}
 
                                     <div className="mt-10">
                                         <Link href="/blog" className="flex items-center gap-1">
                                             <ChevronLeftIcon className="size-5" />
                                             <span className="text-sm font-semibold">
-                                                Back to blog
+                                                Blog
                                             </span>
                                         </Link>
                                     </div>

@@ -9,7 +9,7 @@ import Link from "next/link";
 import React from "react";
 
 const BlogPage = async () => {
-  const blogs = await getAllBlogs(6);
+  const blogs = await getAllBlogs();
 
   return (
     <div className="bg-[#FCF9F3] py-10">

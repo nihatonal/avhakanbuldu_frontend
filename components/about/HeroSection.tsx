@@ -18,7 +18,7 @@ const HeroSection = () => {
                     <div className="flex flex-col justify-center items-start md:min-h-screen md:py-20 py-12">
                         <Badge className="mb-4 bg-accent text-accent-foreground">Profesyonel Avukat</Badge>
                         <h1 className="font-display text-4xl md:text-6xl font-bold mb-6">
-                            Av. Mehmet Özkan
+                            Av. Hakan Buldu
                         </h1>
                         <p className="text-xl mb-8 text-white/90">
                             15 yılı aşkın deneyimimle, müvekkillerimin haklarını korumak ve adaletin tecellisi için çalışıyorum.
