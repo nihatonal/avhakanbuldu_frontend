@@ -58,7 +58,7 @@ const ProcessSteps = () => {
             </div>
 
             <Card className="card-accent mt-8">
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-4 p-2">
                     <CheckCircle className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
                     <div>
                         <h3 className="font-display text-lg font-semibold text-primary mb-2">
