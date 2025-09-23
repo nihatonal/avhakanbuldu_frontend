@@ -59,6 +59,7 @@ export default function MobileMenu() {
                                 <Link
                                     key={item.path}
                                     href={item.path}
+                                    onClick={toggleMenu}
                                     className={`font-medium transition-colors duration-200 ${pathname === item?.path
                                         ? 'text-accent font-semibold'
                                         : 'text-foreground hover:text-accent'
