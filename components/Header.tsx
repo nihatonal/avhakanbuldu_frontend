@@ -14,7 +14,7 @@ const Header = () => {
         <HeaderMenu />
         <div className="flex items-center gap-4">
           <Button asChild className="btn-hero hidden sm:flex">
-            <Link href="/about">Ücretsiz Danışmanlık</Link>
+            <Link href="/iletisim">Ücretsiz Danışmanlık</Link>
           </Button>
           <MobileMenu />
         </div>

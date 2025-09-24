@@ -9,6 +9,21 @@ const LATEST_BLOG_QUERY = defineQuery(`
     }
   }
 `);
+const OTHERS_BLOG_QUERY = defineQuery(`
+  *[_type == "blog" && defined(slug.current) && slug.current != $slug]
+  | order(publishedAt desc)[0...$quantity]{
+    ...,
+    readingTime,
+    publishedAt,
+    title,
+    mainImage,
+    slug,
+    blogcategories[]->{
+      title,
+      "slug": slug.current
+    }
+  }
+`);
 
 const GET_ALL_BLOG = defineQuery(`
   *[_type == 'blog'] | order(publishedAt desc)[0...$quantity]{
@@ -54,21 +69,7 @@ const BLOG_CATEGORIES = defineQuery(`
   }
 `);
 
-const OTHERS_BLOG_QUERY = defineQuery(`
-  *[_type == "blog" && defined(slug.current) && slug.current != $slug]
-  | order(publishedAt desc)[0...$quantity]{
-    ...,
-    readingTime,
-    publishedAt,
-    title,
-    mainImage,
-    slug,
-    blogcategories[]->{
-      title,
-      "slug": slug.current
-    }
-  }
-`);
+
 
 export {
   LATEST_BLOG_QUERY,

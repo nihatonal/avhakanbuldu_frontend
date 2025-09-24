@@ -78,6 +78,10 @@ const SingleBlogPage = async ({
                                 {dayjs(blog.publishedAt).format("MMMM D, YYYY")}
                                 <span className="absolute left-0 -bottom-1.5 bg-muted-foreground/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
                             </p>
+                            <p className="flex items-center gap-1 text-muted-foreground relative group hover:cursor-pointer hover:text-shop_dark_green hoverEffect">
+                                ⏱ {blog.readingTime} min read
+                                <span className="absolute left-0 -bottom-1.5 bg-muted-foreground/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
+                            </p>
                         </div>
                         <h2 className="text-2xl font-bold my-5 text-primary">{blog?.title}</h2>
                         <div className="flex flex-col">
@@ -202,11 +206,11 @@ const SingleBlogPage = async ({
 const BlogLeft = async ({ slug }: { slug: string }) => {
     const categories = await getBlogCategories();
     const blogs = await getLatestBlogs();
-
+    const result = blogs.filter((blog) => blog.slug.current !== slug)
     return (
         <div>
             <div className="md:sticky top-18 border border-primary-light p-5 rounded-md">
-                <Title className="text-base">Blog Categories</Title>
+                <Title className="text-base">Kategoriler</Title>
                 <div className="space-y-2 mt-2">
                     {categories?.map((cat: BlogCategory, index: number) => (
                         <Link
@@ -221,9 +225,9 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
                 </div>
             </div>
             <div className="md:sticky top-56 border border-primary-light p-5 rounded-md mt-10">
-                <Title className="text-base">Latest Blogs</Title>
+                <Title className="text-base">Son Yazılar</Title>
                 <div className="space-y-4 mt-4">
-                    {blogs?.slice(0, 5).map((blog: Blog, index: number) => (
+                    {result?.slice(0, 5).map((blog: Blog, index: number) => (
                         <Link
                             href={`/blog/${blog?.slug?.current}`}
                             key={index}

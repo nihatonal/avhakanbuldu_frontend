@@ -1,5 +1,6 @@
 // app/blog/page.tsx
 import { getAllBlogs } from "@/sanity/queries";
+import { getLatestBlogs } from "@/sanity/queries/index";
 import BlogPageClient from "./BlogPageClient";
 
 interface BlogPageProps {
@@ -12,11 +13,12 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
   const selectedCategory = params?.category || "";
 
   const blogs = await getAllBlogs();
+  const latestBlogs = await getLatestBlogs();
 
   return (
     <BlogPageClient
       blogs={blogs}
-      popularBlogs={blogs}
+      popularBlogs={latestBlogs}
       initialCategory={selectedCategory} // client component'e gönder
     />
   );

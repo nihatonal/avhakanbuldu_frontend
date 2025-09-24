@@ -72,7 +72,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], ini
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-0 md:gap-8 mt-8 text-primary">
                     {/* Main content */}
 
-                    <div className="mt-5 md:mt-0 order-2 md:order-1 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className={`mt-5 md:mt-0 order-2 md:order-1 grid grid-cols-1 md:grid-cols-2 gap-6 ${filteredBlogs.length === 2 || filteredBlogs.length === 1 ? "md:max-h-[320px]" : ""}`}>
                         {filteredBlogs.map((blog) => (
                             <Link
                                 key={blog._id}
@@ -122,6 +122,39 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], ini
                         ))}
                     </div>
 
+                    {/* Popular blogs with thumbnails */}
+                    {popularBlogs.length > 0 && (
+                        <div className="md:hidden bg-white p-4 rounded-xl shadow-sm order-3 mt-10">
+                            <h4 className="font-semibold text-lg mb-4 text-primary/90">Popüler Yazılar</h4>
+                            <ul className="space-y-3">
+                                {popularBlogs.map((blog) => (
+                                    <li key={blog._id}>
+                                        <Link
+                                            href={`/blog/${blog.slug.current}`}
+                                            className="flex items-center gap-3 p-2 rounded-md transition-all duration-300 group hover:bg-primary/5"
+                                        >
+                                            {/* Thumbnail */}
+                                            <div className="w-12 h-12 flex-shrink-0 overflow-hidden rounded-md bg-gray-200">
+                                                <Image
+                                                    src={blog.mainImage ? urlFor(blog.mainImage).url() : NotReadyBlog}
+                                                    alt={blog.title}
+                                                    width={48}
+                                                    height={48}
+                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                />
+                                            </div>
+
+                                            {/* Title + Hover border */}
+                                            <span className="flex-1 relative text-primary/90 line-clamp-2 group-hover:text-accent transition-colors duration-300">
+                                                {blog.title}
+                                                <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                                            </span>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
 
 
 
@@ -182,14 +215,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], ini
                                 </ul>
                             </div>
                         )}
-
-
-
                     </aside>
-
-
-
-
                 </div>
             </Container>
         </div>
