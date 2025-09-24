@@ -33,10 +33,11 @@ interface Blog {
 interface BlogPageProps {
     blogs: Blog[];
     popularBlogs?: Blog[];
+    initialCategory?: string;
 }
 
-const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [] }) => {
-    const [selectedCategory, setSelectedCategory] = useState("");
+const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], initialCategory = "" }) => {
+    const [selectedCategory, setSelectedCategory] = useState(initialCategory);
     const [searchQuery, setSearchQuery] = useState("");
 
     const categories = useMemo(() => {
@@ -69,7 +70,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [] }) =
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-0 md:gap-8 mt-8 text-primary">
                     {/* Main content */}
 
-                    <div className="space-y-4 mt-5 md:mt-0">
+                    <div className="space-y-4 mt-5 md:mt-0 order-2 md:order-1">
                         {filteredBlogs.map((blog) => (
                             <Link
                                 key={blog._id}
@@ -91,7 +92,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [] }) =
                                 <div className="flex-1 w-full">
                                     <div className="hidden md:flex flex-wrap items-center gap-2 text-xs mb-1">
                                         {blog.blogcategories?.map((cat, index) => (
-                                            <span key={index} className="bg-primary/20 text-primary px-2 py-0.5 rounded">
+                                            <span key={index} className={`bg-primary/20 text-primary px-2 py-0.5 rounded`}>
                                                 {cat.title}
                                             </span>
                                         ))}
@@ -99,7 +100,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [] }) =
                                             <Calendar size={14} /> {dayjs(blog.publishedAt).format("MMM D, YYYY")}
                                         </span>
                                     </div>
-                                    <h3 className="grid grid-cols-1 font-bold text-base text-primary line-clamp-2 group-hover:text-accent">
+                                    <h3 className="grid grid-cols-1 font-bold text-base text-primary/90 line-clamp-2 group-hover:text-accent">
                                         {blog.title}
                                         <span className="md:hidden flex items-center gap-1 ml-auto text-xs text-muted-foreground ml-auto">
                                             <Calendar size={14} /> {dayjs(blog.publishedAt).format("MMM D, YYYY")}
@@ -111,7 +112,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [] }) =
                     </div>
 
                     {/* Sidebar */}
-                    <aside className="bg-[#fefdfb] md:bg-transparent p-4 md:p-0 sticky top-16 md:top-24 md:space-y-6 z-10">
+                    <aside className="order-1 md:order-2 bg-background shadow-md md:shadow-none md:bg-transparent p-4 md:p-0 sticky top-16 md:top-24 md:space-y-6 z-10">
                         {/* Search */}
                         <div>
                             <input
@@ -141,7 +142,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [] }) =
                                     {popularBlogs.map((blog) => (
                                         <li key={blog._id}>
                                             <Link href={`/blog/${blog.slug.current}`} className="text-primary hover:text-accent hover:underline line-clamp-2">
-                                                    {blog.title}
+                                                {blog.title}
                                             </Link>
                                         </li>
                                     ))}

@@ -3,7 +3,7 @@
 import React from 'react';
 import Container from '../Container';
 import { motion } from 'framer-motion';
-import { fadeUp, containerStagger } from '@/lib/animations';
+import { fadeUp, containerStagger, growWidth } from '@/lib/animations';
 
 const Process = () => {
   const steps = [
@@ -42,9 +42,6 @@ const Process = () => {
                   <div className="w-16 h-16 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto">
                     {process.step}
                   </div>
-                  {index < 3 && (
-                    <div className="hidden md:block absolute top-1/2 left-full w-[calc(100%+2rem)] h-0.5 bg-accent/30 -translate-y-1/2 -z-10" />
-                  )}
                 </div>
 
                 {/* METİN */}

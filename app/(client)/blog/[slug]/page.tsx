@@ -25,17 +25,28 @@ const SingleBlogPage = async ({
     if (!blog) return notFound();
 
     return (
-        <div className="py-10 bg-gray-100">
-            <Container className="grid grid-cols-1 lg:grid-cols-4 gap-5">
+        <div className="py-4 md:py-10 bg-gray-100">
+            <Container className="relative grid grid-cols-1 lg:grid-cols-4 gap-5">
                 <div className="md:col-span-3">
                     {blog?.mainImage && (
-                        <Image
-                            src={urlFor(blog?.mainImage).url()}
-                            alt={blog.title || "Blog Image"}
-                            width={600}
-                            height={600}
-                            className="w-full max-h-[350px] object-cover rounded-lg"
-                        />
+                        <div className="flex flex-col gap-2">
+                            <div className="md:hidden text-primary/50">
+                                <Link href="/blog" className="flex items-center gap-1">
+                                    <ChevronLeftIcon className="size-5" />
+                                    <span className="text-sm font-semibold">
+                                        Blog
+                                    </span>
+                                </Link>
+                            </div>
+                            <Image
+                                src={urlFor(blog?.mainImage).url()}
+                                alt={blog.title || "Blog Image"}
+                                width={600}
+                                height={600}
+                                className="w-full max-h-[350px] object-cover rounded-lg"
+                            />
+                        </div>
+
                     )}
                     {!blog?.mainImage && (
                         <Image
@@ -194,24 +205,25 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
 
     return (
         <div>
-            <div className="border border-primary-light p-5 rounded-md">
+            <div className="md:sticky top-18 border border-primary-light p-5 rounded-md">
                 <Title className="text-base">Blog Categories</Title>
                 <div className="space-y-2 mt-2">
-                    {categories?.map((blogcategories, index) => (
-                        <div
+                    {categories?.map((cat: BlogCategory, index: number) => (
+                        <Link
                             key={index}
-                            className="text-primary flex items-center justify-between text-sm font-medium"
+                            href={`/blog?category=${encodeURIComponent(cat.title)}`}
+                            className="text-primary flex items-center justify-between text-sm font-medium hover:text-accent"
                         >
-                            <p>{blogcategories?.title}</p>
-                            <p className="text-darkColor font-semibold">{blogcategories?.count}</p>
-                        </div>
+                            <p>{cat.title}</p>
+                            <p className="text-darkColor font-semibold">{cat.count}</p>
+                        </Link>
                     ))}
                 </div>
             </div>
-            <div className="border border-primary-light p-5 rounded-md mt-10">
+            <div className="md:sticky top-56 border border-primary-light p-5 rounded-md mt-10">
                 <Title className="text-base">Latest Blogs</Title>
                 <div className="space-y-4 mt-4">
-                    {blogs?.slice(0,5).map((blog: Blog, index: number) => (
+                    {blogs?.slice(0, 5).map((blog: Blog, index: number) => (
                         <Link
                             href={`/blog/${blog?.slug?.current}`}
                             key={index}

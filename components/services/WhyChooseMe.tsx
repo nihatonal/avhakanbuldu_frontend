@@ -3,7 +3,12 @@
 import React from 'react';
 import { Card } from '../ui/card';
 import Container from '../Container';
-import { Shield } from 'lucide-react';
+import {
+    GraduationCap,
+    UserCog,
+    MessageCircle,
+    CheckCheck
+} from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeUp, containerStagger } from '@/lib/animations';
 
@@ -11,19 +16,23 @@ const WhyChooseMe = () => {
     const whyChooseUs = [
         {
             title: 'Deneyimli Uzmanlık',
-            description: 'Her alanda yıllar içinde kazandığım derinlemesine uzmanlık'
+            description: 'Her alanda yıllar içinde kazandığım derinlemesine uzmanlık',
+            icon: GraduationCap
         },
         {
             title: 'Kişiselleştirilmiş Hizmet',
-            description: 'Her müvekkilimin özel durumuna uygun çözümler'
+            description: 'Her müvekkilimin özel durumuna uygun çözümler',
+            icon: UserCog
         },
         {
             title: 'Şeffaf İletişim',
-            description: 'Süreç boyunca açık ve anlaşılır iletişim'
+            description: 'Süreç boyunca açık ve anlaşılır iletişim',
+            icon: MessageCircle
         },
         {
             title: 'Güvenilir Sonuçlar',
-            description: '%95 başarı oranıyla kanıtlanmış güvenilirlik'
+            description: '%95 başarı oranıyla kanıtlanmış güvenilirlik',
+            icon: CheckCheck
         }
     ];
 
@@ -49,19 +58,22 @@ const WhyChooseMe = () => {
 
                     {/* Kartlar */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {whyChooseUs.map((reason, index) => (
-                            <motion.div key={index} variants={fadeUp}>
-                                <Card className="card-elegant text-center">
-                                    <div className="p-4 bg-accent/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                                        <Shield className="h-8 w-8 text-accent" />
-                                    </div>
-                                    <h3 className="font-display text-xl font-semibold text-primary mb-2">
-                                        {reason.title}
-                                    </h3>
-                                    <p className="text-muted-foreground text-sm">{reason.description}</p>
-                                </Card>
-                            </motion.div>
-                        ))}
+                        {whyChooseUs.map((reason, index) => {
+                            const Icon = reason.icon;
+                            return (
+                                <motion.div key={index} variants={fadeUp}>
+                                    <Card className="card-elegant text-center">
+                                        <div className="p-4 bg-accent/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                            <Icon className="h-8 w-8 text-accent" />
+                                        </div>
+                                        <h3 className="font-display text-xl font-semibold text-primary mb-2">
+                                            {reason.title}
+                                        </h3>
+                                        <p className="text-muted-foreground text-sm">{reason.description}</p>
+                                    </Card>
+                                </motion.div>
+                            );
+                        })}
                     </div>
                 </motion.div>
             </Container>

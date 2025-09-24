@@ -12,7 +12,7 @@ import {
     Home,
     Users,
     CheckCircle,
-    ArrowRight
+    // ArrowRight
 } from 'lucide-react';
 import Container from '../Container';
 import { motion } from 'framer-motion';
@@ -23,88 +23,90 @@ const PracticeAreas = () => {
         {
             icon: Gavel,
             title: 'Ceza Hukuku',
-            description: 'Suç mağdurları ve sanıklar için kapsamlı savunma hizmetleri sunuyorum. Deneyimli ceza avukatı olarak, müvekkillerimin haklarını en iyi şekilde koruyorum.',
+            description: 'Ceza yargılamasında sanık ve mağdur haklarını korumak için kapsamlı hukuki destek sunuyorum. Her aşamada etkin savunma hizmeti veriyorum.',
             services: [
-                'Ağır ceza davalarında savunma',
-                'Sulh ceza davalarında temsil',
-                'Soruşturma aşamasında müdafaa',
-                'Temyiz ve istinaf başvuruları',
-                'Tutuklama itirazları',
-                'Mağdur hakları danışmanlığı'
+                'Ağır ceza mahkemesi davaları',
+                'Sulh ve asliye ceza davaları',
+                'Soruşturma aşamasında müdafilik',
+                'Tutuklamaya itiraz ve tahliye',
+                'İstinaf ve temyiz başvuruları',
+                'Mağdur vekilliği ve şikayet süreçleri'
             ],
-            experience: '10+ yıl deneyim, 200+ başarılı dava'
-        },
-        {
-            icon: FileText,
-            title: 'Medeni Hukuk',
-            description: 'Kişisel haklar, borçlar hukuku ve genel hukuki meseleler konusunda uzman hizmet veriyorum. Müvekkillerimin medeni haklarını korumak önceliğimdir.',
-            services: [
-                'Sözleşme hukuku danışmanlığı',
-                'Kişilik haklarının korunması',
-                'Borç-alacak davaları',
-                'Tapu iptali ve tescil davaları',
-                'Zilyetlik davaları',
-                'Haksız fiil tazminatları'
-            ],
-            experience: '12+ yıl deneyim, 150+ başarılı dava'
-        },
-        {
-            icon: Heart,
-            title: 'Tazminat Hukuku',
-            description: 'Maddi ve manevi zararların tazmininde uzmanlaşmış olarak, müvekkillerimin haklarını en üst düzeyde koruyorum.',
-            services: [
-                'Trafik kazası tazminatları',
-                'İş kazası tazminatları',
-                'Malpraktis davaları',
-                'Manevi tazminat davaları',
-                'Kamulaştırma bedeli davaları',
-                'Sigorta tazminat davaları'
-            ],
-            experience: '8+ yıl deneyim, 100+ başarılı dava'
-        },
-        {
-            icon: Building2,
-            title: 'İş Hukuku',
-            description: 'Çalışan ve işveren haklarının korunması konusunda profesyonel hizmet sunuyorum. İş hukuku alanındaki deneyimimle adaletli çözümler üretiyorum.',
-            services: [
-                'İşçi hakları danışmanlığı',
-                'İşveren hukuki danışmanlığı',
-                'İş akdi fesih davaları',
-                'Kıdem-ihbar tazminatı davaları',
-                'Mobbing davaları',
-                'İş güvenliği danışmanlığı'
-            ],
-            experience: '7+ yıl deneyim, 80+ başarılı dava'
+            experience: '10+ yıl deneyim, 200+ dava tecrübesi'
         },
         {
             icon: Home,
             title: 'Aile Hukuku',
-            description: 'Aile içi hukuki meseleler konusunda hassas ve çözüm odaklı yaklaşımla hizmet veriyorum. Ailelerin huzuru için çalışıyorum.',
+            description: 'Boşanma, velayet, nafaka gibi hassas aile hukuku meselelerinde müvekkillerime çözüm odaklı ve duyarlı hukuki danışmanlık sunuyorum.',
             services: [
-                'Boşanma davaları',
-                'Velayet davaları',
-                'Nafaka davaları',
-                'Mal rejimi davaları',
-                'Evlilik öncesi danışmanlık',
-                'Aile içi şiddet korunma'
+                'Anlaşmalı ve çekişmeli boşanma',
+                'Velayet ve nafaka davaları',
+                'Mal rejimi tasfiye işlemleri',
+                'Aile içi şiddet koruma tedbirleri',
+                'Evlilik öncesi sözleşmeler',
+                'Soybağı ve evlat edinme davaları'
             ],
-            experience: '10+ yıl deneyim, 120+ başarılı dava'
+            experience: '10+ yıl deneyim, 120+ dava tecrübesi'
         },
         {
             icon: Users,
-            title: 'Miras Hukuku',
-            description: 'Miras hukukundaki karmaşık süreçlerde uzman danışmanlık sunuyorum. Miras haklarının korunması ve dağılımında adil çözümler üretiyorum.',
+            title: 'Kamu Hukuku',
+            description: 'İdarenin işlem ve eylemlerine karşı birey haklarını savunuyorum. İdari davalar ve anayasal başvurular alanında deneyimliyim.',
             services: [
-                'Miras taksim davaları',
-                'Vasiyet danışmanlığı',
-                'Saklı pay davaları',
-                'Mirastan feragat sözleşmeleri',
-                'Veraset ilamlı',
-                'Miras reddi işlemleri'
+                'İptal ve tam yargı davaları',
+                'Memur disiplin işlemleri',
+                'İdari para cezalarına itiraz',
+                'Kamulaştırma ve imar uyuşmazlıkları',
+                'Vergi ceza ve uzlaşma süreçleri',
+                'Anayasa Mahkemesi başvuruları'
             ],
-            experience: '9+ yıl deneyim, 90+ başarılı dava'
+            experience: '9+ yıl deneyim, 100+ dava ve başvuru'
+        },
+        {
+            icon: FileText,
+            title: 'Medeni Hukuk',
+            description: 'Kişiler hukuku, borçlar ve eşya hukuku alanlarında bireysel ve kurumsal müvekkillere hukuki destek sağlıyorum.',
+            services: [
+                'Sözleşme hazırlama ve yorumu',
+                'Tapu iptali ve tescil davaları',
+                'Kişilik haklarının korunması',
+                'Borç-alacak tahsil işlemleri',
+                'Zilyetlik ve ecrimisil davaları',
+                'Haksız fiil kaynaklı tazminatlar'
+            ],
+            experience: '12+ yıl deneyim, 150+ dosya'
+        },
+        {
+            icon: Heart,
+            title: 'Tazminat Hukuku',
+            description: 'Müvekkillerimin uğradığı maddi ve manevi zararların tazmini için güçlü ve sonuç odaklı dava süreçleri yürütüyorum.',
+            services: [
+                'Trafik kazası tazminatları',
+                'İş kazası ve meslek hastalığı',
+                'Malpraktis (doktor hatası) davaları',
+                'Manevi tazminat talepleri',
+                'Sigorta şirketi uyuşmazlıkları',
+                'Kamulaştırmasız el atma davaları'
+            ],
+            experience: '8+ yıl deneyim, 100+ dosya başarıyla sonuçlandı'
+        },
+        {
+            icon: Building2,
+            title: 'İş Hukuku',
+            description: 'İşçi ve işveren haklarının korunması için dava takibi ve danışmanlık hizmeti sunuyorum. İş uyuşmazlıklarında güçlü temsil sağlıyorum.',
+            services: [
+                'İşe iade ve fesih davaları',
+                'Kıdem ve ihbar tazminatları',
+                'Fazla mesai ve ücret alacakları',
+                'Mobbing ve psikolojik taciz davaları',
+                'İş kazası kaynaklı tazminatlar',
+                'İş sözleşmesi ve SGK uyuşmazlıkları'
+            ],
+            experience: '7+ yıl deneyim, 80+ başarılı çözüm'
         }
     ];
+
+
 
     return (
         <section className="section-padding">
@@ -124,52 +126,46 @@ const PracticeAreas = () => {
                                 whileInView="show"
                                 viewport={{ once: true, amount: 0.2 }}
                             >
-                                <Card className="card-elegant hover:shadow-accent/20">
-                                    <div className="flex items-start space-x-6">
-                                        <div className="p-4 bg-accent/10 rounded-xl flex-shrink-0">
-                                            <area.icon className="h-8 w-8 text-accent" />
+                                <Card className="card-elegant relative hover:shadow-accent/20 h-full">
+                                    {/* İKON - SOL ÜST KÖŞEDE */}
+                                    <div className="absolute top-4 right-4 p-2.5 bg-accent/10 rounded-md z-10">
+                                        <area.icon className="h-8 w-8 text-accent" />
+                                    </div>
+
+                                    {/* ANA İÇERİK */}
+                                    <div className="p-4 flex flex-col h-full">
+                                        <h3 className="font-display text-xl sm:text-2xl font-bold text-primary mb-3">
+                                            {area.title}
+                                        </h3>
+
+                                        <p className="text-muted-foreground text-sm sm:text-base mb-4">
+                                            {area.description}
+                                        </p>
+
+                                        <div className="mb-4">
+                                            <h4 className="font-semibold text-primary text-sm sm:text-base mb-2">Hizmet Alanları:</h4>
+                                            <ul className="space-y-1">
+                                                {area.services.map((service, i) => (
+                                                    <li
+                                                        key={i}
+                                                        className="flex items-start text-sm text-muted-foreground"
+                                                    >
+                                                        <CheckCircle className="h-4 w-4 text-accent mt-0.5 mr-2 flex-shrink-0" />
+                                                        {service}
+                                                    </li>
+                                                ))}
+                                            </ul>
                                         </div>
 
-                                        <div className="flex-1">
-                                            <h3 className="font-display text-2xl font-bold text-primary mb-3">
-                                                {area.title}
-                                            </h3>
-                                            <p className="text-muted-foreground mb-4">
-                                                {area.description}
-                                            </p>
-
-                                            <div className="mb-4">
-                                                <h4 className="font-semibold text-primary mb-2">Hizmet Alanları:</h4>
-                                                <ul className="space-y-1">
-                                                    {area.services.slice(0, 4).map((service, i) => (
-                                                        <li
-                                                            key={i}
-                                                            className="flex items-center text-sm text-muted-foreground"
-                                                        >
-                                                            <CheckCircle className="h-4 w-4 text-accent mr-2 flex-shrink-0" />
-                                                            {service}
-                                                        </li>
-                                                    ))}
-                                                    {area.services.length > 4 && (
-                                                        <li className="text-sm text-accent font-medium">
-                                                            +{area.services.length - 4} diğer hizmet
-                                                        </li>
-                                                    )}
-                                                </ul>
-                                            </div>
-
-                                            <div className="flex items-center justify-between">
-                                                <Badge variant="secondary" className="text-xs">
-                                                    {area.experience}
-                                                </Badge>
-                                                <Button variant="ghost" className="text-accent hover:text-accent-dark">
-                                                    Detaylar
-                                                    <ArrowRight className="ml-2 h-4 w-4" />
-                                                </Button>
-                                            </div>
+                                        <div className="mt-auto pt-2">
+                                            <Badge variant="secondary" className="text-xs">
+                                                {area.experience}
+                                            </Badge>
                                         </div>
                                     </div>
                                 </Card>
+
+
                             </motion.div>
                         ))}
                     </div>
