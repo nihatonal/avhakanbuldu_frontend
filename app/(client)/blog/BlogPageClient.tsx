@@ -63,50 +63,10 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [] }) =
     }, [blogs, selectedCategory, searchQuery]);
 
     return (
-        <div className="bg-[#FCF9F3] py-10">
+        <div className="bg-background py-10">
             <Container>
                 <Title>Blog</Title>
-                <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-0 md:gap-8 mt-8 text-primary">
-                    {/* Sidebar */}
-                    <aside className="bg-[#fefdfb] md:bg-transparent p-4 md:p-0 sticky top-16 md:top-24 md:space-y-6 z-10">
-                        {/* Search */}
-                        <div>
-                            <input
-                                type="text"
-                                placeholder="Ara..."
-                                className="w-full px-4 py-2 mb-4 md:mb-0 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                            />
-                        </div>
-
-                        {/* Categories */}
-                        <div>
-                            <h4 className="font-semibold text-lg md:mb-2">Kategoriler</h4>
-                            <CategorySelect
-                                categories={categories}
-                                selectedCategory={selectedCategory}
-                                setSelectedCategory={setSelectedCategory}
-                            />
-                        </div>
-
-                        {/* Popular blogs */}
-                        {popularBlogs.length > 0 && (
-                            <div className="hidden md:block">
-                                <h4 className="font-semibold text-lg mb-2">Popüler Yazılar</h4>
-                                <ul className="space-y-3">
-                                    {popularBlogs.map((blog) => (
-                                        <li key={blog._id}>
-                                            <Link href={`/blog/${blog.slug.current}`} className="text-primary hover:text-accent hover:underline line-clamp-2">
-                                                {blog.title}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                    </aside>
-
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-0 md:gap-8 mt-8 text-primary">
                     {/* Main content */}
 
                     <div className="space-y-4 mt-5 md:mt-0">
@@ -135,7 +95,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [] }) =
                                                 {cat.title}
                                             </span>
                                         ))}
-                                        <span className="flex items-center gap-1 text-primary ml-auto">
+                                        <span className="flex items-center gap-1 ml-auto text-muted-foreground">
                                             <Calendar size={14} /> {dayjs(blog.publishedAt).format("MMM D, YYYY")}
                                         </span>
                                     </div>
@@ -149,6 +109,48 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [] }) =
                             </Link>
                         ))}
                     </div>
+
+                    {/* Sidebar */}
+                    <aside className="bg-[#fefdfb] md:bg-transparent p-4 md:p-0 sticky top-16 md:top-24 md:space-y-6 z-10">
+                        {/* Search */}
+                        <div>
+                            <input
+                                type="text"
+                                placeholder="Ara..."
+                                className="w-full px-4 py-2 mb-4 md:mb-0 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                        </div>
+
+                        {/* Categories */}
+                        <div>
+                            <h4 className="font-semibold text-lg md:mb-2 ">Kategoriler</h4>
+                            <CategorySelect
+                                categories={categories}
+                                selectedCategory={selectedCategory}
+                                setSelectedCategory={setSelectedCategory}
+                            />
+                        </div>
+
+                        {/* Popular blogs */}
+                        {popularBlogs.length > 0 && (
+                            <div className="hidden md:block bg-muted p-4 rounded-md">
+                                <h4 className="font-semibold text-lg mb-2">Popüler Yazılar</h4>
+                                <ul className="space-y-3">
+                                    {popularBlogs.map((blog) => (
+                                        <li key={blog._id}>
+                                            <Link href={`/blog/${blog.slug.current}`} className="text-primary hover:text-accent hover:underline line-clamp-2">
+                                                    {blog.title}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </aside>
+
+
 
 
                 </div>
