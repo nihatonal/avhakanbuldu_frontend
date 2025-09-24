@@ -10,7 +10,6 @@
     "typegen": "npx sanity@latest schema extract && npx sanity@latest typegen generate"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.19",
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-slot": "^1.2.3",
     "@sanity/image-url": "^1.2.0",
@@ -27,6 +26,7 @@
     "react-dom": "19.1.0",
     "react-intersection-observer": "^9.16.0",
     "react-label": "^0.0.6",
+    "react-select": "^5.10.2",
     "sanity": "^4.9.0",
     "sanity-plugin-iframe-pane": "^4.0.0",
     "styled-components": "^6.1.19",
