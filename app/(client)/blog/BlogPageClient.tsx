@@ -11,6 +11,7 @@ import dayjs from "dayjs";
 import NotReadyBlog from '../../../assets/images/not-ready-blog-main-image.webp';
 import CategorySelect from "@/components/CategorySelect ";
 import { blockContentToText } from "@/lib/blockContentToText";
+
 interface Blog {
     _id: string;
     title: string;
@@ -19,6 +20,7 @@ interface Blog {
         _type: string;
         children: Array<{ _key: string; text: string; marks: string[] }>;
     }>;
+    readingTime: number,
     mainImage?: {
         asset: {
             url: string;
@@ -70,46 +72,58 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], ini
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-0 md:gap-8 mt-8 text-primary">
                     {/* Main content */}
 
-                    <div className="space-y-4 mt-5 md:mt-0 order-2 md:order-1">
+                    <div className="mt-5 md:mt-0 order-2 md:order-1 grid grid-cols-1 md:grid-cols-2 gap-6">
                         {filteredBlogs.map((blog) => (
                             <Link
                                 key={blog._id}
                                 href={`/blog/${blog.slug.current}`}
-                                className="flex items-center gap-4 p-2 md:p-0 md:pr-4 bg-gray-50 group rounded-md shadow-sm hover:shadow-md transition"
+                                className="relative flex flex-col items-start gap-3 p-0 bg-white rounded-xl shadow-sm overflow-hidden group hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                             >
-                                {/* Thumbnail - gizli mobilde */}
-                                <div className="hidden sm:flex flex-shrink-0 w-32 h-18 overflow-hidden rounded-md bg-gray-200">
+                                {/* Thumbnail + Categories overlay */}
+                                <div className="w-full aspect-[12/6] relative overflow-hidden rounded-t-xl">
                                     <Image
                                         src={blog.mainImage ? urlFor(blog.mainImage).url() : NotReadyBlog}
                                         alt={blog.title}
-                                        width={96}
-                                        height={96}
-                                        className="w-full h-full object-cover"
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
-                                </div>
 
-                                {/* Blog Bilgileri */}
-                                <div className="flex-1 w-full">
-                                    <div className="hidden md:flex flex-wrap items-center gap-2 text-xs mb-1">
+                                    {/* Categories overlay */}
+                                    <div className="absolute bottom-3 right-3 flex flex-wrap gap-1 z-10">
                                         {blog.blogcategories?.map((cat, index) => (
-                                            <span key={index} className={`bg-primary/20 text-primary px-2 py-0.5 rounded`}>
+                                            <span
+                                                key={index}
+                                                className="bg-primary/70 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm"
+                                            >
                                                 {cat.title}
                                             </span>
                                         ))}
-                                        <span className="flex items-center gap-1 ml-auto text-muted-foreground">
+                                    </div>
+                                </div>
+
+                                {/* Blog Bilgileri */}
+                                <div className="flex-1 flex flex-col w-full p-4 z-10">
+                                    {/* Tarih & Okuma Süresi */}
+                                    <div className="flex items-center gap-3 text-xs mb-2 text-muted-foreground">
+                                        <span className="flex items-center gap-1">
                                             <Calendar size={14} /> {dayjs(blog.publishedAt).format("MMM D, YYYY")}
+                                        </span>
+                                        <span className="flex items-center gap-1">
+                                            ⏱ {blog.readingTime} min read
                                         </span>
                                     </div>
-                                    <h3 className="grid grid-cols-1 font-bold text-base text-primary/90 line-clamp-2 group-hover:text-accent">
+
+                                    {/* Başlık */}
+                                    <h3 className="text-primary/90 font-semibold text-lg line-clamp-2 transition-colors duration-300 group-hover:text-accent">
                                         {blog.title}
-                                        <span className="md:hidden flex items-center gap-1 ml-auto text-xs text-muted-foreground ml-auto">
-                                            <Calendar size={14} /> {dayjs(blog.publishedAt).format("MMM D, YYYY")}
-                                        </span>
                                     </h3>
                                 </div>
                             </Link>
                         ))}
                     </div>
+
+
+
 
                     {/* Sidebar */}
                     <aside className="order-1 md:order-2 bg-background shadow-md md:shadow-none md:bg-transparent p-4 md:p-0 sticky top-16 md:top-24 md:space-y-6 z-10">
@@ -134,21 +148,43 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], ini
                             />
                         </div>
 
-                        {/* Popular blogs */}
+
+                        {/* Popular blogs with thumbnails */}
                         {popularBlogs.length > 0 && (
-                            <div className="hidden md:block bg-muted p-4 rounded-md">
-                                <h4 className="font-semibold text-lg mb-2">Popüler Yazılar</h4>
+                            <div className="hidden md:block bg-white p-4 rounded-xl shadow-sm">
+                                <h4 className="font-semibold text-lg mb-4 text-primary/90">Popüler Yazılar</h4>
                                 <ul className="space-y-3">
                                     {popularBlogs.map((blog) => (
                                         <li key={blog._id}>
-                                            <Link href={`/blog/${blog.slug.current}`} className="text-primary hover:text-accent hover:underline line-clamp-2">
-                                                {blog.title}
+                                            <Link
+                                                href={`/blog/${blog.slug.current}`}
+                                                className="flex items-center gap-3 p-2 rounded-md transition-all duration-300 group hover:bg-primary/5"
+                                            >
+                                                {/* Thumbnail */}
+                                                <div className="w-12 h-12 flex-shrink-0 overflow-hidden rounded-md bg-gray-200">
+                                                    <Image
+                                                        src={blog.mainImage ? urlFor(blog.mainImage).url() : NotReadyBlog}
+                                                        alt={blog.title}
+                                                        width={48}
+                                                        height={48}
+                                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                    />
+                                                </div>
+
+                                                {/* Title + Hover border */}
+                                                <span className="flex-1 relative text-primary/90 line-clamp-2 group-hover:text-accent transition-colors duration-300">
+                                                    {blog.title}
+                                                    <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                                                </span>
                                             </Link>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                         )}
+
+
+
                     </aside>
 
 

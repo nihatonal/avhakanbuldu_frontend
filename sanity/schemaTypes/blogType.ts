@@ -7,16 +7,22 @@ export const blogType = defineType({
   type: "document",
   icon: DocumentTextIcon,
   fields: [
-    defineField({ name: "title", type: "string" }),
+    defineField({
+      name: "title",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    }),
     defineField({
       name: "slug",
       type: "slug",
       options: { source: "title" },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "mainImage",
       type: "image",
       options: { hotspot: true },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "blogcategories",
@@ -24,16 +30,34 @@ export const blogType = defineType({
       of: [
         defineArrayMember({ type: "reference", to: { type: "blogcategory" } }),
       ],
+      validation: (Rule) =>
+        Rule.required().min(1).error("At least one category is required"),
     }),
-    defineField({ name: "publishedAt", type: "datetime" }),
+    defineField({
+      name: "publishedAt",
+      type: "datetime",
+      validation: (Rule) => Rule.required(),
+    }),
     defineField({
       name: "isLatest",
       title: "Latest Blog",
       type: "boolean",
       description: "Toggle to Latest on or off",
       initialValue: true,
+      validation: (Rule) => Rule.required(),
     }),
-    defineField({ name: "body", type: "blockContent" }),
+    defineField({
+      name: "readingTime",
+      title: "Reading Time (minutes)",
+      type: "number",
+      description: "Estimated reading time in minutes",
+      validation: (Rule) => Rule.required().min(1),
+    }),
+    defineField({
+      name: "body",
+      type: "blockContent",
+      validation: (Rule) => Rule.required(),
+    }),
   ],
   preview: {
     select: {
@@ -42,17 +66,17 @@ export const blogType = defineType({
       isLatest: "isLatest",
       category0: "blogcategories.0.title",
       category1: "blogcategories.1.title",
+      readingTime: "readingTime",
       body: "body",
     },
-    prepare({ title, media, isLatest, category0, category1 }) {
+    prepare({ title, media, isLatest, category0, category1, readingTime }) {
       const categoryNames =
         [category0, category1].filter(Boolean).join(", ") || "No category";
-
 
       return {
         title,
         media,
-        subtitle: `${isLatest ? "Latest | " : ""}${categoryNames}`,
+        subtitle: `${isLatest ? "Latest | " : ""}${categoryNames} | ${readingTime} min read`,
       };
     },
   },

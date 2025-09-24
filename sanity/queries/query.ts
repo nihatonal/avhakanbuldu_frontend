@@ -1,68 +1,75 @@
 import { defineQuery } from "next-sanity";
 
-const LATEST_BLOG_QUERY = defineQuery(
-  ` *[_type == 'blog' && isLatest == true]|order(name asc){
-      ...,
-      blogcategories[]->{
-      title
-    }
-    }`
-);
-
-const GET_ALL_BLOG = defineQuery(
-  `*[_type == 'blog'] | order(publishedAt desc)[0...$quantity]{
-  ...,  
-     blogcategories[]->{
-    title
-}
-    }
-  `
-);
-const GET_ALL_BLOGS = defineQuery(
-  `*[_type == 'blog'] | order(publishedAt desc){
+const LATEST_BLOG_QUERY = defineQuery(`
+  *[_type == 'blog' && isLatest == true] | order(publishedAt desc){
     ...,
+    readingTime,
     blogcategories[]->{
       title
     }
-  }`
-);
-
-const SINGLE_BLOG_QUERY =
-  defineQuery(`*[_type == "blog" && slug.current == $slug][0]{
-  ...,
-  title,
-  publishedAt,
-  body,
-  mainImage, 
-  blogcategories[]->{
-    title,
-    "slug": slug.current,
-  },
-}`);
-const BLOG_CATEGORIES = defineQuery(
-  `*[_type == "blog"]{
-     blogcategories[]->{
-       _id,
-       title,
-     }
-  }`
-);
-
-const OTHERS_BLOG_QUERY = defineQuery(`*[
-  _type == "blog"
-  && defined(slug.current)
-  && slug.current != $slug
-]|order(publishedAt desc)[0...$quantity]{
-...
-  publishedAt,
-  title,
-  mainImage,
-  slug,
-  categories[]->{
-    title,
-    "slug": slug.current,
   }
-}`);
+`);
+
+const GET_ALL_BLOG = defineQuery(`
+  *[_type == 'blog'] | order(publishedAt desc)[0...$quantity]{
+    ...,
+    readingTime,
+    blogcategories[]->{
+      title
+    }
+  }
+`);
+
+const GET_ALL_BLOGS = defineQuery(`
+  *[_type == 'blog'] | order(publishedAt desc){
+    ...,
+    readingTime,
+    blogcategories[]->{
+      title
+    }
+  }
+`);
+
+const SINGLE_BLOG_QUERY = defineQuery(`
+  *[_type == "blog" && slug.current == $slug][0]{
+    ...,
+    title,
+    publishedAt,
+    readingTime,
+    body,
+    mainImage, 
+    blogcategories[]->{
+      title,
+      "slug": slug.current,
+    },
+  }
+`);
+
+const BLOG_CATEGORIES = defineQuery(`
+  *[_type == "blog"]{
+    blogcategories[]->{
+      _id,
+      title,
+    }
+  }
+`);
+
+const OTHERS_BLOG_QUERY = defineQuery(`
+  *[_type == "blog" && defined(slug.current) && slug.current != $slug]
+  | order(publishedAt desc)[0...$quantity]{
+    ...,
+    readingTime,
+    publishedAt,
+    title,
+    mainImage,
+    slug,
+    blogcategories[]->{
+      title,
+      "slug": slug.current
+    }
+  }
+`);
+
 export {
   LATEST_BLOG_QUERY,
   GET_ALL_BLOG,
