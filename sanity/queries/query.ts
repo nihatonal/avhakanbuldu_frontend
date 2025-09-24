@@ -58,10 +58,6 @@ const OTHERS_BLOG_QUERY = defineQuery(`*[
   title,
   mainImage,
   slug,
-  author->{
-    name,
-    image,
-  },
   categories[]->{
     title,
     "slug": slug.current,

@@ -4,7 +4,7 @@ import { SINGLE_BLOG_QUERYResult } from "@/sanity/sanity.types";
 import { urlFor } from "@/sanity/lib/image";
 import {
     getBlogCategories,
-    getOthersBlog,
+    getLatestBlogs,
     getSingleBlog,
 } from "@/sanity/queries";
 import dayjs from "dayjs";
@@ -23,7 +23,7 @@ const SingleBlogPage = async ({
     const { slug } = await params;
     const blog: SINGLE_BLOG_QUERYResult = await getSingleBlog(slug);
     if (!blog) return notFound();
-    
+
     return (
         <div className="py-10 bg-gray-100">
             <Container className="grid grid-cols-1 lg:grid-cols-4 gap-5">
@@ -190,7 +190,7 @@ const SingleBlogPage = async ({
 
 const BlogLeft = async ({ slug }: { slug: string }) => {
     const categories = await getBlogCategories();
-    const blogs = await getOthersBlog(slug, 5);
+    const blogs = await getLatestBlogs();
 
     return (
         <div>
@@ -211,11 +211,11 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
             <div className="border border-primary-light p-5 rounded-md mt-10">
                 <Title className="text-base">Latest Blogs</Title>
                 <div className="space-y-4 mt-4">
-                    {blogs?.map((blog: Blog, index: number) => (
+                    {blogs?.slice(0,5).map((blog: Blog, index: number) => (
                         <Link
                             href={`/blog/${blog?.slug?.current}`}
                             key={index}
-                            className="flex items-center gap-2 group"
+                            className="flex items-center gap-2 group "
                         >
                             {blog?.mainImage && (
                                 <Image
@@ -235,7 +235,7 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
                                     className="w-16 h-16 rounded-full object-cover border-[1px] border-shop_dark_green/10 group-hover:border-shop_dark_green hoverEffect"
                                 />
                             )}
-                            <p className="line-clamp-2 text-sm text-primary group-hover:text-shop_dark_green hoverEffect">
+                            <p className="line-clamp-2 text-sm text-primary group-hover:text-accent hoverEffect">
                                 {blog?.title}
                             </p>
                         </Link>

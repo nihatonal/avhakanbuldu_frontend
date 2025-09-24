@@ -1,4 +1,5 @@
-// sanity/sanity.types.ts
+import { PortableTextBlock } from "@portabletext/types";
+
 export type Blog = {
   _id: string;
   title: string;
@@ -9,10 +10,8 @@ export type Blog = {
     alt?: string;
   };
   slug: { current: string };
-  body: any[];
-  category: { title: string }[];
+  body: PortableTextBlock[]; // ✔️ doğru tür bu!
+  category: { title: string }[]; // Not: blogcategories yerine category diyorsan diğer dosyaları da buna göre güncelle
 };
 
-export type SINGLE_BLOG_QUERYResult = {
-  blog: Blog;
-};
+export type SINGLE_BLOG_QUERYResult = Blog;

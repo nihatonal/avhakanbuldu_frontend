@@ -114,10 +114,10 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [] }) =
                             <Link
                                 key={blog._id}
                                 href={`/blog/${blog.slug.current}`}
-                                className="flex items-start gap-4 p-4 md:p-0 md:pr-4 bg-gray-50 group rounded-md shadow-sm hover:shadow-md transition"
+                                className="flex items-center gap-4 p-2 md:p-0 md:pr-4 bg-gray-50 group rounded-md shadow-sm hover:shadow-md transition"
                             >
                                 {/* Thumbnail - gizli mobilde */}
-                                <div className="hidden sm:flex flex-shrink-0 w-24 h-20 overflow-hidden rounded-md bg-gray-200">
+                                <div className="hidden sm:flex flex-shrink-0 w-32 h-18 overflow-hidden rounded-md bg-gray-200">
                                     <Image
                                         src={blog.mainImage ? urlFor(blog.mainImage).url() : NotReadyBlog}
                                         alt={blog.title}
