@@ -93,26 +93,38 @@ const SingleBlogPage = async ({
         <div className="py-4 md:py-10 bg-gray-100">
             <Container className="relative grid grid-cols-1 lg:grid-cols-4 gap-5">
                 <div className="md:col-span-3">
-                    {blog?.mainImage && (
-                        <div className="flex flex-col gap-2">
-                            <div className="md:hidden text-primary/50">
-                                <Link href="/blog" className="flex items-center gap-1">
-                                    <ChevronLeftIcon className="size-5" />
-                                    <span className="text-sm font-semibold">
-                                        Blog
-                                    </span>
-                                </Link>
+                    <div className="w-full aspect-[12/6] md:aspect-auto relative rounded-t-xl">
+                        {blog?.mainImage && (
+                            <div className="flex flex-col gap-2">
+                                <div className="md:hidden text-primary/50">
+                                    <Link href="/blog" className="flex items-center gap-1">
+                                        <ChevronLeftIcon className="size-5" />
+                                        <span className="text-sm font-semibold">
+                                            Blog
+                                        </span>
+                                    </Link>
+                                </div>
+                                <Image
+                                    src={urlFor(blog?.mainImage).url()}
+                                    alt={blog.title || "Blog Image"}
+                                    width={600}
+                                    height={600}
+                                    className="w-full max-h-[350px] object-cover rounded-lg"
+                                />
                             </div>
-                            <Image
-                                src={urlFor(blog?.mainImage).url()}
-                                alt={blog.title || "Blog Image"}
-                                width={600}
-                                height={600}
-                                className="w-full max-h-[350px] object-cover rounded-lg"
-                            />
-                        </div>
 
-                    )}
+                        )}
+                        <div className="absolute md:hidden bottom-3 right-3 flex flex-wrap gap-1 z-10">
+                            {blog.blogcategories?.map((cat, index) => (
+                                <span
+                                    key={index}
+                                    className="bg-primary/70 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm"
+                                >
+                                    {cat.title}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
                     {!blog?.mainImage && (
                         <Image
                             src={NotReadyBlog}
@@ -122,9 +134,10 @@ const SingleBlogPage = async ({
                             className="w-full max-h-[350px] object-cover rounded-lg"
                         />
                     )}
+
                     <div>
                         <div className="text-xs flex items-center gap-5 my-7">
-                            <div className="flex items-center gap-2 group cursor-pointer">
+                            <div className="hidden md:flex items-center gap-2 group cursor-pointer">
                                 {blog?.blogcategories?.map(
                                     (item: { title: string }, index: number) => (
                                         <p
