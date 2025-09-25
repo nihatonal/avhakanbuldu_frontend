@@ -21,6 +21,10 @@ const nextConfig: NextConfig = {
         source: "/faaliyet-alanlari",
         destination: "/services",
       },
+      {
+        source: "/faaliyet-alanlari/:slug",
+        destination: "/services/:slug",
+      },
     ];
   },
 };

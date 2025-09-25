@@ -19,6 +19,14 @@ export const blogType = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "description",
+      title: "Short Description",
+      type: "text",
+      description: "Meta description for SEO, max 170 characters",
+      validation: (Rule) =>
+        Rule.max(170).warning("Description should be under 170 characters"),
+    }),
+    defineField({
       name: "mainImage",
       type: "image",
       options: { hotspot: true },

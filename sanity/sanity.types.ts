@@ -3,7 +3,8 @@ import { PortableTextBlock } from "@portabletext/types";
 export type Blog = {
   _id: string;
   title: string;
-  readingTime:number,
+  readingTime: number;
+  description: string;
   mainImage?: {
     asset: {
       url: string;

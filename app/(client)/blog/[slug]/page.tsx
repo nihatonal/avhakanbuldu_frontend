@@ -1,20 +1,85 @@
 import Container from "@/components/Container";
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import Title from "@/components/Title";
 import { SINGLE_BLOG_QUERYResult } from "@/sanity/sanity.types";
 import { urlFor } from "@/sanity/lib/image";
 import {
     getBlogCategories,
     getLatestBlogs,
-    getSingleBlog,
+    getSingleBlog
 } from "@/sanity/queries";
 import dayjs from "dayjs";
 import { Calendar, ChevronLeftIcon } from "lucide-react";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import React from "react";
 import NotReadyBlog from '../../../../assets/images/not-ready-blog-main-image.webp'
+import { client } from "@/sanity/lib/client";
+
+type Props = {
+    params: Promise<{ slug: string; }>;
+};
+
+interface Blog {
+    _id: string;
+    title: string;
+    body: Array<{
+        _key: string;
+        _type: string;
+        children: Array<{ _key: string; text: string; marks: string[] }>;
+    }>;
+    readingTime: number,
+    mainImage?: {
+        asset: {
+            url: string;
+        };
+        alt?: string;
+    };
+    slug: { current: string };
+    publishedAt: string;
+    blogcategories?: { title: string }[];
+}
+const siteUrl = 'https://www.hakanbuldu.com';
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { slug } = await params;
+    const blog: SINGLE_BLOG_QUERYResult = await getSingleBlog(slug);
+
+    if (!blog) {
+        return {
+            title: 'Hukuk Hizmeti',
+            description: 'Uzmanlık alanları hakkında bilgi alın.',
+            alternates: {
+                canonical: `${siteUrl}/blog`,
+            },
+        };
+    }
+    const canonical = `${siteUrl}/blog/${blog.slug}`;
+
+    return {
+        title: `${blog.title} | Avukat Hakan Buldu`,
+        description: blog.description,
+        alternates: {
+            canonical,
+        },
+        openGraph: {
+            title: blog.title,
+            description: blog.description,
+            url: canonical,
+            type: 'website',
+            images: [
+                {
+                    url: `${siteUrl}/${blog.mainImage}`,
+                    width: 1200,
+                    height: 630,
+                    alt: blog.title,
+                },
+            ],
+        },
+    };
+}
+
 const SingleBlogPage = async ({
     params,
 }: {
@@ -263,3 +328,13 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
 };
 
 export default SingleBlogPage;
+
+export async function generateStaticParams() {
+    const blogs = await client.fetch(`
+      *[_type == "blog" && !(_id in path("drafts.**"))]{ slug }
+    `);
+
+    return blogs.map((blog: Blog) => ({
+        slug: blog.slug.current,
+    }));
+}

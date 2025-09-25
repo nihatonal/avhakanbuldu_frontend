@@ -1,4 +1,5 @@
 import { sanityFetch } from "../lib/live";
+
 import {
   BLOG_CATEGORIES,
   GET_ALL_BLOG,
@@ -6,6 +7,7 @@ import {
   LATEST_BLOG_QUERY,
   OTHERS_BLOG_QUERY,
   SINGLE_BLOG_QUERY,
+  GET_ALL_PUBLISHED_BLOGS,
 } from "./query";
 
 const getCategories = async (quantity?: number) => {
@@ -39,7 +41,15 @@ const getLatestBlogs = async () => {
     return [];
   }
 };
-
+const getPublishedBlogs = async () => {
+  try {
+    const blogs = await sanityFetch({ GET_ALL_PUBLISHED_BLOGS });
+    return blogs ?? [];
+  } catch (error) {
+    console.log("Error fetching latest Blogs:", error);
+    return [];
+  }
+};
 const getAllBlogsByQuantity = async (quantity: number) => {
   try {
     const { data } = await sanityFetch({
@@ -123,4 +133,5 @@ export {
   getSingleBlog,
   getBlogCategories,
   getOthersBlog,
+  getPublishedBlogs,
 };

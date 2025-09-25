@@ -3,7 +3,7 @@
 import React from 'react';
 import Container from '../Container';
 import { motion } from 'framer-motion';
-import { fadeUp, containerStagger, growWidth } from '@/lib/animations';
+import { fadeUp, containerStagger } from '@/lib/animations';
 
 const Process = () => {
   const steps = [

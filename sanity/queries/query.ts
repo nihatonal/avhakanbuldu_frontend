@@ -14,6 +14,7 @@ const OTHERS_BLOG_QUERY = defineQuery(`
   | order(publishedAt desc)[0...$quantity]{
     ...,
     readingTime,
+    description,
     publishedAt,
     title,
     mainImage,
@@ -51,6 +52,7 @@ const SINGLE_BLOG_QUERY = defineQuery(`
     title,
     publishedAt,
     readingTime,
+    description,
     body,
     mainImage, 
     blogcategories[]->{
@@ -69,7 +71,9 @@ const BLOG_CATEGORIES = defineQuery(`
   }
 `);
 
-
+const GET_ALL_PUBLISHED_BLOGS = defineQuery(`
+*[_type == "blog" && !(_id in path("drafts.**"))]{slug}
+`);
 
 export {
   LATEST_BLOG_QUERY,
@@ -78,4 +82,5 @@ export {
   SINGLE_BLOG_QUERY,
   BLOG_CATEGORIES,
   OTHERS_BLOG_QUERY,
+  GET_ALL_PUBLISHED_BLOGS,
 };
