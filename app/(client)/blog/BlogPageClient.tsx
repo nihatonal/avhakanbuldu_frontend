@@ -4,10 +4,11 @@ import React, { useState, useMemo } from "react";
 import Container from "@/components/Container";
 import Title from "@/components/Title";
 import { urlFor } from "@/sanity/lib/image";
-import { Calendar } from "lucide-react";
+import { Calendar, Eye } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import dayjs from "dayjs";
+import "dayjs/locale/tr";
 import NotReadyBlog from '../../../assets/images/not-ready-blog-main-image.webp';
 import CategorySelectWrapper from "@/components/CategorySelectWrapper ";
 import { blockContentToText } from "@/lib/blockContentToText";
@@ -27,6 +28,7 @@ interface Blog {
         };
         alt?: string;
     };
+    viewCount: number;
     slug: { current: string };
     publishedAt: string;
     blogcategories?: { title: string }[];
@@ -34,11 +36,12 @@ interface Blog {
 
 interface BlogPageProps {
     blogs: Blog[];
-    popularBlogs?: Blog[];
+    latestBlogs?: Blog[];
+    mostViewed?: Blog[];
     initialCategory?: string;
 }
 
-const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], initialCategory = "" }) => {
+const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, latestBlogs = [], mostViewed = [], initialCategory = "" }) => {
     const [selectedCategory, setSelectedCategory] = useState(initialCategory);
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -77,7 +80,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], ini
                             <Link
                                 key={blog._id}
                                 href={`/blog/${blog.slug.current}`}
-                                className="relative flex flex-col items-start gap-3 p-0 bg-white rounded-xl shadow-sm overflow-hidden group hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                                className="relative flex flex-col items-start p-0 bg-white rounded-xl shadow-sm overflow-hidden group hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                             >
                                 {/* Thumbnail + Categories overlay */}
                                 <div className="w-full aspect-[12/6] relative overflow-hidden rounded-t-xl">
@@ -104,11 +107,20 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], ini
 
                                 {/* Blog Bilgileri */}
                                 <div className="flex-1 flex flex-col w-full p-4 z-10">
-                                    {/* Tarih & Okuma Süresi */}
-                                    <div className="flex items-center gap-3 text-xs mb-2 text-muted-foreground">
+                                    {/* Tarih, Görüntülenme ve Okuma Süresi */}
+                                    <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-2">
                                         <span className="flex items-center gap-1">
-                                            <Calendar size={14} /> {dayjs(blog.publishedAt).format("MMM D, YYYY")}
+                                            <Calendar size={14} />
+                                            {dayjs(blog.publishedAt).locale("tr").format("D MMM YYYY")}
                                         </span>
+                                        <span className="mx-1">•</span>
+                                        <span className="flex items-center gap-1">
+                                            <Eye size={14} />
+                                            {blog.viewCount} okundu
+                                        </span>
+
+                                        <span className="mx-1">•</span>
+
                                         <span className="flex items-center gap-1">
                                             ⏱ {blog.readingTime} min read
                                         </span>
@@ -123,12 +135,46 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], ini
                         ))}
                     </div>
 
+                    {/* Last blogs with thumbnails */}
+                    {latestBlogs.length > 0 && (
+                        <div className="md:hidden bg-white p-4 rounded-xl shadow-sm order-3 mt-10">
+                            <h4 className="font-semibold text-lg mb-4 text-primary/90">Son Yazılar</h4>
+                            <ul className="space-y-3">
+                                {latestBlogs.map((blog) => (
+                                    <li key={blog._id}>
+                                        <Link
+                                            href={`/blog/${blog.slug.current}`}
+                                            className="flex items-center gap-3 p-2 rounded-md transition-all duration-300 group hover:bg-primary/5"
+                                        >
+                                            {/* Thumbnail */}
+                                            <div className="w-12 h-12 flex-shrink-0 overflow-hidden rounded-md bg-gray-200">
+                                                <Image
+                                                    src={blog.mainImage ? urlFor(blog.mainImage).url() : NotReadyBlog}
+                                                    alt={blog.title}
+                                                    width={48}
+                                                    height={48}
+                                                    priority
+                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                />
+                                            </div>
+
+                                            {/* Title + Hover border */}
+                                            <span className="flex-1 relative text-primary/90 line-clamp-2 group-hover:text-accent transition-colors duration-300">
+                                                {blog.title}
+                                                <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                                            </span>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
                     {/* Popular blogs with thumbnails */}
-                    {popularBlogs.length > 0 && (
+                    {mostViewed.length > 0 && (
                         <div className="md:hidden bg-white p-4 rounded-xl shadow-sm order-3 mt-10">
                             <h4 className="font-semibold text-lg mb-4 text-primary/90">Popüler Yazılar</h4>
                             <ul className="space-y-3">
-                                {popularBlogs.map((blog) => (
+                                {mostViewed.map((blog) => (
                                     <li key={blog._id}>
                                         <Link
                                             href={`/blog/${blog.slug.current}`}
@@ -158,8 +204,6 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], ini
                         </div>
                     )}
 
-
-
                     {/* Sidebar */}
                     <aside className="order-1 md:order-2 bg-background shadow-md md:shadow-none md:bg-transparent p-4 md:p-0 sticky top-16 md:top-24 md:space-y-6 z-10">
                         {/* Search */}
@@ -184,12 +228,45 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], ini
                         </div>
 
 
+                        {/* Last blogs with thumbnails */}
+                        {latestBlogs.length > 0 && (
+                            <div className="hidden md:block bg-white p-4 rounded-xl shadow-sm">
+                                <h4 className="font-semibold text-lg mb-4 text-primary/90">Son Yazılar</h4>
+                                <ul className="space-y-3">
+                                    {latestBlogs.map((blog) => (
+                                        <li key={blog._id}>
+                                            <Link
+                                                href={`/blog/${blog.slug.current}`}
+                                                className="flex items-center gap-3 p-2 rounded-md transition-all duration-300 group hover:bg-primary/5"
+                                            >
+                                                {/* Thumbnail */}
+                                                <div className="w-12 h-12 flex-shrink-0 overflow-hidden rounded-md bg-gray-200">
+                                                    <Image
+                                                        src={blog.mainImage ? urlFor(blog.mainImage).url() : NotReadyBlog}
+                                                        alt={blog.title}
+                                                        width={48}
+                                                        height={48}
+                                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                    />
+                                                </div>
+
+                                                {/* Title + Hover border */}
+                                                <span className="flex-1 relative text-primary/90 line-clamp-2 group-hover:text-accent transition-colors duration-300">
+                                                    {blog.title}
+                                                    <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                                                </span>
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
                         {/* Popular blogs with thumbnails */}
-                        {popularBlogs.length > 0 && (
+                        {mostViewed.length > 0 && (
                             <div className="hidden md:block bg-white p-4 rounded-xl shadow-sm">
                                 <h4 className="font-semibold text-lg mb-4 text-primary/90">Popüler Yazılar</h4>
                                 <ul className="space-y-3">
-                                    {popularBlogs.map((blog) => (
+                                    {mostViewed.map((blog) => (
                                         <li key={blog._id}>
                                             <Link
                                                 href={`/blog/${blog.slug.current}`}

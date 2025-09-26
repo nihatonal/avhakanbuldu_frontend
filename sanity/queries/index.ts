@@ -8,6 +8,7 @@ import {
   OTHERS_BLOG_QUERY,
   SINGLE_BLOG_QUERY,
   GET_ALL_PUBLISHED_BLOGS,
+  MOST_VIEWED_BLOGS_QUERY,
 } from "./query";
 
 const getCategories = async (quantity?: number) => {
@@ -32,15 +33,50 @@ const getCategories = async (quantity?: number) => {
   }
 };
 
-const getLatestBlogs = async () => {
+const getLatestBlogs = async (slugToExclude?: string) => {
   try {
-    const { data } = await sanityFetch({ query: LATEST_BLOG_QUERY });
+    const query = slugToExclude
+      ? `
+        *[_type == 'blog' && slug.current != $slug]
+        | order(publishedAt desc)[0...3] {
+          _id,
+          title,
+          slug,
+          publishedAt,
+          mainImage,
+          readingTime,
+          blogcategories[]->{
+            title
+          }
+        }
+      `
+      : `
+        *[_type == 'blog']
+        | order(publishedAt desc)[0...3] {
+          _id,
+          title,
+          slug,
+          publishedAt,
+          mainImage,
+          readingTime,
+          blogcategories[]->{
+            title
+          }
+        }
+      `;
+
+    const { data } = await sanityFetch({
+      query,
+      params: slugToExclude ? { slug: slugToExclude } : {},
+    });
+
     return data ?? [];
   } catch (error) {
-    console.log("Error fetching latest Blogs:", error);
+    console.error("Error fetching latest blogs:", error);
     return [];
   }
 };
+
 const getPublishedBlogs = async () => {
   try {
     const blogs = await sanityFetch({ GET_ALL_PUBLISHED_BLOGS });
@@ -125,6 +161,18 @@ const getOthersBlog = async (slug: string, quantity: number) => {
     return [];
   }
 };
+
+const getMostViewedBlogs = async () => {
+  try {
+    const { data } = await sanityFetch({
+      query: MOST_VIEWED_BLOGS_QUERY,
+    });
+    return data ?? [];
+  } catch (error) {
+    console.error("Error fetching most viewed blogs:", error);
+    return [];
+  }
+};
 export {
   getCategories,
   getLatestBlogs,
@@ -134,4 +182,5 @@ export {
   getBlogCategories,
   getOthersBlog,
   getPublishedBlogs,
+  getMostViewedBlogs
 };

@@ -285,8 +285,7 @@ const SingleBlogPage = async ({
 
 const BlogLeft = async ({ slug }: { slug: string }) => {
     const categories = await getBlogCategories();
-    const blogs = await getLatestBlogs();
-    const result = blogs.filter((blog) => blog.slug.current !== slug)
+    const latestBlogs = await getLatestBlogs(slug);
     return (
         <div>
             <div className="md:sticky top-18 border border-primary-light p-5 rounded-md">
@@ -307,7 +306,7 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
             <div className="md:sticky top-56 border border-primary-light p-5 rounded-md mt-10">
                 <Title className="text-base">Son Yazılar</Title>
                 <div className="space-y-4 mt-4">
-                    {result?.slice(0, 5).map((blog: Blog, index: number) => (
+                    {latestBlogs?.map((blog: Blog, index: number) => (
                         <Link
                             href={`/blog/${blog?.slug?.current}`}
                             key={index}
