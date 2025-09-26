@@ -17,7 +17,6 @@ const HeroSection = () => {
                     </h1>
                     <p className="text-xl mb-8 max-w-3xl mx-auto text-white/90">
                         Hukuki danışmanlık ihtiyacınız için benimle iletişime geçin. İlk danışmanlık görüşmesi ücretsizdir.
-                        Uzman avukat desteği için hemen arayın veya form doldurun.
                     </p>
                 </motion.div>
 

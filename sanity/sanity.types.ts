@@ -12,6 +12,7 @@ export type Blog = {
     alt?: string;
   };
   slug: { current: string };
+  viewCount: number;
   body: PortableTextBlock[]; // ✔️ doğru tür bu!
   category: { title: string }[]; // Not: blogcategories yerine category diyorsan diğer dosyaları da buna göre güncelle
 };

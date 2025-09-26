@@ -62,6 +62,12 @@ export const blogType = defineType({
       validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
+      name: "viewCount",
+      title: "Görüntülenme Sayısı",
+      type: "number",
+      initialValue: 0,
+    }),
+    defineField({
       name: "body",
       type: "blockContent",
       validation: (Rule) => Rule.required(),

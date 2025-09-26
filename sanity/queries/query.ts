@@ -39,7 +39,6 @@ const GET_ALL_BLOG = defineQuery(`
 const GET_ALL_BLOGS = defineQuery(`
   *[_type == 'blog'] | order(publishedAt desc){
     ...,
-    readingTime,
     blogcategories[]->{
       title
     }
@@ -54,7 +53,8 @@ const SINGLE_BLOG_QUERY = defineQuery(`
     readingTime,
     description,
     body,
-    mainImage, 
+    mainImage,
+    viewCount, 
     blogcategories[]->{
       title,
       "slug": slug.current,

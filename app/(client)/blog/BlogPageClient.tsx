@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import dayjs from "dayjs";
 import NotReadyBlog from '../../../assets/images/not-ready-blog-main-image.webp';
-import CategorySelect from "@/components/CategorySelect ";
+import CategorySelectWrapper from "@/components/CategorySelectWrapper ";
 import { blockContentToText } from "@/lib/blockContentToText";
 
 interface Blog {
@@ -85,6 +85,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], ini
                                         src={blog.mainImage ? urlFor(blog.mainImage).url() : NotReadyBlog}
                                         alt={blog.title}
                                         fill
+                                        priority
                                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
 
@@ -140,6 +141,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], ini
                                                     alt={blog.title}
                                                     width={48}
                                                     height={48}
+                                                    priority
                                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                                 />
                                             </div>
@@ -174,7 +176,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, popularBlogs = [], ini
                         {/* Categories */}
                         <div>
                             <h4 className="font-semibold text-lg md:mb-2 ">Kategoriler</h4>
-                            <CategorySelect
+                            <CategorySelectWrapper
                                 categories={categories}
                                 selectedCategory={selectedCategory}
                                 setSelectedCategory={setSelectedCategory}

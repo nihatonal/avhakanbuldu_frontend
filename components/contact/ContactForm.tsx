@@ -1,7 +1,7 @@
 'use client'
 
 import { useToast } from '@/hooks/use-toast'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card } from '../ui/card'
 import { Input } from '../ui/input'
 import { Label } from '../ui/label'
@@ -10,6 +10,7 @@ import { Send, Shield } from 'lucide-react'
 import { Button } from '../ui/button'
 import { motion } from 'framer-motion'
 import { fadeUp, containerStagger } from '@/lib/animations'
+import CategorySelectWrapper from '../CategorySelectWrapper '
 
 interface ContactFormProps {
   legalAreas: string[]
@@ -25,6 +26,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
     message: '',
     legalArea: ''
   })
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -60,6 +62,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
       [e.target.name]: e.target.value
     })
   }
+  useEffect(() => {
+    setFormData({
+      ...formData,
+      ["legalArea"]: selectedCategory
+    })
+  }, [selectedCategory]);
+
+
 
   return (
     <motion.div
@@ -122,7 +132,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
               </div>
               <div>
                 <Label htmlFor="legalArea">Hukuki Alan</Label>
-                <select
+                <CategorySelectWrapper
+                  categories={legalAreas}
+                  selectedCategory={selectedCategory}
+                  setSelectedCategory={setSelectedCategory}
+                  defaultOptionLabel="Diğer"
+                  defaultOptionPosition="bottom"
+                />
+                {/* <select
                   id="legalArea"
                   name="legalArea"
                   value={formData.legalArea}
@@ -136,7 +153,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
                     </option>
                   ))}
                   <option value="Diğer">Diğer</option>
-                </select>
+                </select> */}
               </div>
             </div>
 

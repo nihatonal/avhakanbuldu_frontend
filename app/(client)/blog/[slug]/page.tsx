@@ -17,6 +17,7 @@ import Link from "next/link";
 import React from "react";
 import NotReadyBlog from '../../../../assets/images/not-ready-blog-main-image.webp'
 import { client } from "@/sanity/lib/client";
+import SingleBlogContent from './SingleBlogContent';
 
 type Props = {
     params: Promise<{ slug: string; }>;
@@ -92,6 +93,7 @@ const SingleBlogPage = async ({
     return (
         <div className="py-4 md:py-10 bg-gray-100">
             <Container className="relative grid grid-cols-1 lg:grid-cols-4 gap-5">
+                <SingleBlogContent slug={slug} />
                 <div className="md:col-span-3">
                     <div className="w-full aspect-[12/6] md:aspect-auto relative rounded-t-xl">
                         {blog?.mainImage && (
