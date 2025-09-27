@@ -8,28 +8,10 @@ import { Button } from '@/components/ui/button'
 import Container from './Container'
 import { motion } from 'framer-motion'
 import { containerStagger, fadeUp } from '@/lib/animations'
+import { practicesData } from '@/constants/practiceAreas'
 
 const HomeServices = () => {
-    const practiceAreas = [
-        {
-            icon: Gavel,
-            title: 'Ceza Hukuku',
-            description: 'Suç mağdurları ve sanıklar için kapsamlı savunma hizmetleri',
-            link: '/faaliyet-alanlari'
-        },
-        {
-            icon: FileText,
-            title: 'Medeni Hukuk',
-            description: 'Kişisel haklar, miras ve aile hukuku konularında uzman destek',
-            link: '/faaliyet-alanlari'
-        },
-        {
-            icon: Heart,
-            title: 'Tazminat Hukuku',
-            description: 'Maddi ve manevi zararların tazmininde profesyonel temsil',
-            link: '/faaliyet-alanlari'
-        }
-    ]
+
 
 
     return (
@@ -59,10 +41,10 @@ const HomeServices = () => {
                     whileInView="show"
                     viewport={{ once: true }}
                 >
-                    {practiceAreas.map((area, index) => (
+                    {practicesData.slice(0,3).map((area, index) => (
                         <motion.div key={index} variants={fadeUp}>
                             <Card className="card-elegant group hover:shadow-accent/20 cursor-pointer">
-                                <Link href={area.link} className="block">
+                                <Link href={`/faaliyet-alanlari/${area.slug}`} className="block">
                                     <div className="flex items-center mb-4">
                                         <div className="p-3 bg-accent/10 rounded-lg mr-4 group-hover:bg-accent/20 transition-colors">
                                             <area.icon className="h-6 w-6 text-accent" />
@@ -71,7 +53,7 @@ const HomeServices = () => {
                                             {area.title}
                                         </h3>
                                     </div>
-                                    <p className="text-muted-foreground mb-4">{area.description}</p>
+                                    <p className="text-muted-foreground mb-4 line-clamp-3">{area.description}</p>
                                     <div className="flex items-center text-accent font-medium group-hover:text-accent-dark transition-colors">
                                         Detayları Görüntüle
                                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

@@ -20,6 +20,7 @@ import React from "react";
 import NotReadyBlog from '../../../../assets/images/not-ready-blog-main-image.webp'
 import { client } from "@/sanity/lib/client";
 import SingleBlogContent from './SingleBlogContent';
+import { getMostViewedBlogs } from "@/sanity/queries/index";
 
 type Props = {
     params: Promise<{ slug: string; }>;
@@ -321,10 +322,11 @@ const SingleBlogPage = async ({
 
 const BlogLeft = async ({ slug }: { slug: string }) => {
     const categories = await getBlogCategories();
-    const latestBlogs = await getLatestBlogs(slug);
+    const latestBlogs = await getLatestBlogs();
+    const mostViewed = await getMostViewedBlogs();
     return (
         <div>
-            <div className="md:sticky top-18 border border-primary-light p-5 rounded-md">
+            <div className="bg-background border border-primary-light/30 p-5 rounded-md">
                 <Title className="text-base">Kategoriler</Title>
                 <div className="space-y-2 mt-2">
                     {categories?.map((cat: BlogCategory, index: number) => (
@@ -339,10 +341,44 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
                     ))}
                 </div>
             </div>
-            <div className="md:sticky top-56 border border-primary-light p-5 rounded-md mt-10">
+            <div className="bg-background md:sticky top-18 border border-primary-light/30 p-5 rounded-md mt-10">
                 <Title className="text-base">Son Yazılar</Title>
                 <div className="space-y-4 mt-4">
                     {latestBlogs?.map((blog: Blog, index: number) => (
+                        <Link
+                            href={`/blog/${blog?.slug?.current}`}
+                            key={index}
+                            className="flex items-center gap-2 group "
+                        >
+                            {blog?.mainImage && (
+                                <Image
+                                    src={urlFor(blog?.mainImage).url()}
+                                    alt="blogImage"
+                                    width={100}
+                                    height={100}
+                                    className="w-16 h-16 rounded-full object-cover border-[1px] border-shop_dark_green/10 group-hover:border-shop_dark_green hoverEffect"
+                                />
+                            )}
+                            {!blog?.mainImage && (
+                                <Image
+                                    src={NotReadyBlog}
+                                    alt="blogImage"
+                                    width={100}
+                                    height={100}
+                                    className="w-16 h-16 rounded-full object-cover border-[1px] border-shop_dark_green/10 group-hover:border-shop_dark_green hoverEffect"
+                                />
+                            )}
+                            <p className="line-clamp-2 text-sm text-primary group-hover:text-accent hoverEffect">
+                                {blog?.title}
+                            </p>
+                        </Link>
+                    ))}
+                </div>
+            </div>
+            <div className="bg-background md:sticky top-96 border border-primary-light/30 p-5 rounded-md mt-10">
+                <Title className="text-base">Popüler Yazılar</Title>
+                <div className="space-y-4 mt-4">
+                    {mostViewed?.map((blog: Blog, index: number) => (
                         <Link
                             href={`/blog/${blog?.slug?.current}`}
                             key={index}
