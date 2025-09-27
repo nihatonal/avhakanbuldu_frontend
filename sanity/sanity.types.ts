@@ -5,7 +5,8 @@ export type Blog = {
   title: string;
   readingTime: number;
   description: string;
-  mainImage?: {
+  publishedAt:string;
+  mainImage: {
     asset: {
       url: string;
     };

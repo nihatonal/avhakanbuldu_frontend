@@ -67,7 +67,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
       ...formData,
       ["legalArea"]: selectedCategory
     })
-  }, [selectedCategory]);
+  }, [selectedCategory, formData]);
 
 
 

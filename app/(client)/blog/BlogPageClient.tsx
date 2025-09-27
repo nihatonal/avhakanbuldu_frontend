@@ -122,7 +122,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, latestBlogs = [], most
                                         <span className="mx-1">•</span>
 
                                         <span className="flex items-center gap-1">
-                                            ⏱ {blog.readingTime} min read
+                                            ⏱ {blog.readingTime} dk.
                                         </span>
                                     </div>
 
