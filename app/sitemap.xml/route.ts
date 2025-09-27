@@ -50,6 +50,12 @@ export async function GET() {
       changefreq: "monthly",
       priority: 0.8,
     },
+    {
+      loc: "/blog",
+      lastmod: new Date().toISOString(),
+      changefreq: "monthly",
+      priority: 0.8,
+    },
   ];
 
   // Blog URL'leri
