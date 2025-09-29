@@ -56,6 +56,30 @@ export async function GET() {
       changefreq: "monthly",
       priority: 0.8,
     },
+    {
+      loc: "/gizlilik-politikasi",
+      lastmod: new Date().toISOString(),
+      changefreq: "monthly",
+      priority: 0.8,
+    },
+    {
+      loc: "/kullanim-sartlari",
+      lastmod: new Date().toISOString(),
+      changefreq: "monthly",
+      priority: 0.8,
+    },
+    {
+      loc: "/cerez-politikasi",
+      lastmod: new Date().toISOString(),
+      changefreq: "monthly",
+      priority: 0.8,
+    },
+    {
+      loc: "/telif-ve-marka-haklari",
+      lastmod: new Date().toISOString(),
+      changefreq: "monthly",
+      priority: 0.8,
+    },
   ];
 
   // Blog URL'leri

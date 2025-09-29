@@ -12,7 +12,7 @@ const Footer = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* Logo and Description */}
                         <div className="lg:col-span-2">
-                            <div className="flex items-center space-x-2 mb-4">
+                            <div className="flex space-x-2 mb-4">
                                 <Scale className="h-6 w-6 text-accent" />
                                 <span className="font-display font-semibold text-xl">Av. Hakan Buldu</span>
                             </div>
@@ -75,12 +75,18 @@ const Footer = () => {
                         <p className="text-primary-foreground/60 text-sm">
                             © 2024 Av. Hakan Buldu. Tüm hakları saklıdır.
                         </p>
-                        <div className="flex space-x-6 mt-4 md:mt-0">
-                            <a href="#" className="text-primary-foreground/60 hover:text-accent text-sm transition-colors">
+                        <div className="grid grid-cols-2 lg:grid-cols-4 items-center space-y-2 lg:space-y-0 space-x-6 mt-4 md:mt-0">
+                            <a href="/gizlilik-politikasi" className="text-primary-foreground/60 hover:text-accent text-sm transition-colors">
                                 Gizlilik Politikası
                             </a>
-                            <a href="#" className="text-primary-foreground/60 hover:text-accent text-sm transition-colors">
+                            <a href="/kullanim-sartlari" className="text-primary-foreground/60 hover:text-accent text-sm transition-colors">
                                 Kullanım Şartları
+                            </a>
+                            <a href="/cerez-politikasi" className="text-primary-foreground/60 hover:text-accent text-sm transition-colors">
+                                Çerez Politikası
+                            </a>
+                            <a href="/telif-ve-marka-haklari" className="text-primary-foreground/60 hover:text-accent text-sm transition-colors">
+                                Telif &amp; Marka Hakları
                             </a>
                         </div>
                     </div>

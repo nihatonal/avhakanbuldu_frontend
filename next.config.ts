@@ -25,6 +25,22 @@ const nextConfig: NextConfig = {
         source: "/faaliyet-alanlari/:slug",
         destination: "/services/:slug",
       },
+      {
+        source: "/gizlilik-politikasi",
+        destination: "/privacy",
+      },
+      {
+        source: "/kullanim-sartlari",
+        destination: "/termsOfUse",
+      },
+      {
+        source: "/cerez-politikasi",
+        destination: "/cookies",
+      },
+      {
+        source: "/telif-ve-marka-haklari",
+        destination: "/rightsOfContent",
+      },
     ];
   },
 };

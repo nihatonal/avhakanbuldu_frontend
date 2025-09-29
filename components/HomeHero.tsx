@@ -35,7 +35,7 @@ const HomeHero = () => {
             >
                 <motion.div variants={fadeUp}>
                     <Badge className="mb-4 p-2 px-4 bg-accent text-accent-foreground hover:bg-accent">
-                        Türkiye Barolar Birliği Üyesi
+                        Profesyonel &amp; Güvenilir Hukuki Çözüm
                     </Badge>
                 </motion.div>
 
