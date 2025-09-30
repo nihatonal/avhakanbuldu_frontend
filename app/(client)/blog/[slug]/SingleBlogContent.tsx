@@ -1,9 +1,13 @@
 'use client';
-
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const SingleBlogContent = ({ slug }: { slug: string }) => {
+    const hasRun = useRef(false);
+
     useEffect(() => {
+        if (hasRun.current) return; // Daha önce çalıştıysa çık
+        hasRun.current = true;
+
         const updateView = async () => {
             try {
                 await fetch(`/api/increment-view?slug=${slug}`);
@@ -14,8 +18,7 @@ const SingleBlogContent = ({ slug }: { slug: string }) => {
         updateView();
     }, [slug]);
 
-
-    return null; // sadece view artırmak için kullanılacak
+    return null;
 };
 
 export default SingleBlogContent;

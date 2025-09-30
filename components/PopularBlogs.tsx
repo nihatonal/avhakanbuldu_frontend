@@ -56,13 +56,13 @@ const PopularBlogs: React.FC<BlogPageProps> = ({ mostViewed = [] }) => {
                         variants={fadeUp}
                         className="font-display text-4xl md:text-5xl font-bold text-primary mb-4"
                     >
-                        Popüler Bloglar
+                        Popüler Yazılar
                     </motion.h2>
                     <motion.p
                         variants={fadeUp}
                         className="text-lg text-muted-foreground max-w-2xl mx-auto"
                     >
-                        En güncel ve ilgi çekici blog yazılarımı burada bulabilirsiniz.
+                        En güncel ve ilgi çekici yazılarımı burada bulabilirsiniz.
                     </motion.p>
                 </motion.div>
 

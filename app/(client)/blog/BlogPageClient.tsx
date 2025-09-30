@@ -75,12 +75,14 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, latestBlogs = [], most
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-0 md:gap-8 mt-8 text-primary">
                     {/* Main content */}
 
-                    <div className={`mt-5 md:mt-0 order-2 md:order-1 grid grid-cols-1 md:grid-cols-2 gap-6 ${filteredBlogs.length === 2 || filteredBlogs.length === 1 ? "md:max-h-[320px]" : ""}`}>
+                    <div className={`mt-5 md:mt-0 order-2 md:order-1 grid grid-cols-1 md:grid-cols-2 gap-6 
+                    `}>
                         {filteredBlogs.map((blog) => (
                             <Link
                                 key={blog._id}
                                 href={`/blog/${blog.slug.current}`}
-                                className="relative flex flex-col items-start p-0 bg-white rounded-xl shadow-sm overflow-hidden group hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                                className={`relative flex flex-col items-start p-0 bg-white rounded-xl shadow-sm overflow-hidden group hover:shadow-lg transition-all duration-300 hover:-translate-y-1
+                                md:max-h-[300px]`}
                             >
                                 {/* Thumbnail + Categories overlay */}
                                 <div className="w-full aspect-[12/6] relative overflow-hidden rounded-t-xl">
