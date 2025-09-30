@@ -15,7 +15,7 @@ export type Blog = {
   slug: { current: string };
   viewCount: number;
   body: PortableTextBlock[]; // ✔️ doğru tür bu!
-  category: { title: string }[]; // Not: blogcategories yerine category diyorsan diğer dosyaları da buna göre güncelle
+  blogcategories: { title: string }[]; // Not: blogcategories yerine category diyorsan diğer dosyaları da buna göre güncelle
 };
 
 export type SINGLE_BLOG_QUERYResult = Blog;

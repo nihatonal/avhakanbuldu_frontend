@@ -43,7 +43,7 @@ interface Blog {
     };
     slug: { current: string };
     publishedAt: string;
-    blogcategories?: { title: string }[];
+    blogcategories: { title: string }[];
 }
 const siteUrl = 'https://www.hakanbuldu.com';
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -122,7 +122,7 @@ const SingleBlogPage = async ({
 
             <div className="py-4 md:py-10 bg-gray-100">
                 <Container className="relative grid grid-cols-1 lg:grid-cols-4 gap-5">
-                    <SingleBlogContent slug={slug} />
+                    {/* <SingleBlogContent slug={slug} /> */}
                     <div className="md:col-span-3">
                         <div className="w-full aspect-[12/6] md:aspect-auto relative rounded-t-xl">
                             {blog?.mainImage && (
@@ -146,7 +146,7 @@ const SingleBlogPage = async ({
 
                             )}
                             <div className="absolute md:hidden bottom-3 right-3 flex flex-wrap gap-1 z-10">
-                                {blog.blogcategories?.map((cat, index) => (
+                                {blog.blogcategories.map((cat, index) => (
                                     <span
                                         key={index}
                                         className="bg-primary/70 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm"
@@ -191,10 +191,7 @@ const SingleBlogPage = async ({
                                     ⏱ {blog.readingTime} min read
                                     <span className="absolute left-0 -bottom-1.5 bg-muted-foreground/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
                                 </p>
-                                <p className="flex items-center gap-1 text-muted-foreground relative group hover:cursor-pointer hover:text-shop_dark_green hoverEffect">
-                                    <Eye size={14} />  {blog.viewCount} okundu
-                                    <span className="absolute left-0 -bottom-1.5 bg-muted-foreground/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
-                                </p>
+                                <SingleBlogContent slug={slug} />
 
 
 
