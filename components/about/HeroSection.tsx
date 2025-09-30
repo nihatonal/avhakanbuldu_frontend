@@ -28,7 +28,7 @@ const HeroSection = () => {
                     >
                         <motion.div variants={fadeUp}>
                             <Badge className="mb-4 bg-accent text-accent-foreground">
-                                Profesyonel Avukat
+                                Güvenilir & Sonuç Odaklı
                             </Badge>
                         </motion.div>
 
@@ -43,8 +43,7 @@ const HeroSection = () => {
                             variants={fadeUp}
                             className="text-xl mb-8 text-white/90"
                         >
-                            15 yılı aşkın deneyimimle, müvekkillerimin haklarını korumak ve adaletin tecellisi için çalışıyorum.
-                            Güvenilir, deneyimli ve sonuç odaklı hukuki hizmet anlayışımla yanınızdayım.
+                            15 yılı aşkın hukuk tecrübemle ceza ve idare hukuku alanında müvekkillerime güven temelli, sonuç odaklı hukuki destek sunuyorum. Arabuluculuk ve bilirkişilik eğitimleriyle hızlı ve etkili çözümler sağlıyorum.
                         </motion.p>
 
                         <motion.div
@@ -71,7 +70,7 @@ const HeroSection = () => {
                         <div className="md:sticky md:top-24 self-start w-full max-w-[400px] rounded-2xl shadow-elegant overflow-hidden aspect-[3/4]">
                             <Image
                                 src={lawyerPortrait}
-                                alt="Av. Mehmet Özkan"
+                                alt="Av. Hakan Buldu"
                                 fill
                                 className="object-cover rounded-2xl"
                                 priority

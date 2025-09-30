@@ -10,40 +10,34 @@ import { fadeUp, containerStagger } from '@/lib/animations';
 const Education = () => {
   const education = [
     {
-      year: '1998-2003',
+      year: '2017',
       title: 'Hukuk Lisans Eğitimi',
-      institution: 'Ankara Üniversitesi Hukuk Fakültesi',
-      description: 'Hukuk Fakültesi\'nden onur derecesiyle mezun oldum.'
+      institution: 'Dokuz Eylül Üniversitesi Hukuk Fakültesi',
+      description: 'Hukuk fakültesinden mezun oldum.'
     },
     {
-      year: '2004-2006',
-      title: 'Yüksek Lisans',
-      institution: 'Ankara Üniversitesi Sosyal Bilimler Enstitüsü',
-      description: 'Ceza Hukuku alanında yüksek lisans derecesi aldım.'
-    },
-    {
-      year: '2005',
-      title: 'Avukatlık Ruhsatı',
+      year: '2022',
+      title: 'Avukatlık Kariyeri Başlangıcı',
       institution: 'Ankara Barosu',
-      description: 'Ankara Barosu\'na kayıt olarak avukatlık mesleğine başladım.'
+      description: 'Hukuk işleri şube müdürlüğü görevine başlayarak dava takibi, mevzuat geliştirme, disiplin hukuku ve işçi-işveren uyuşmazlıkları alanlarında çalıştım.'
     }
   ];
 
   const experience = [
     {
-      period: '2005-2010',
-      title: 'Başlangıç Dönemi',
-      description: 'Çeşitli hukuki alanlarda deneyim kazandım ve müvekkil portföyümü genişlettim.'
+      period: '2022 - Günümüz',
+      title: 'Hukuk İşleri Şube Müdürlüğü',
+      description: 'Dava takibi, mevzuat geliştirme, disiplin hukuku ve işçi-işveren uyuşmazlıkları alanlarında çalışıyorum.'
     },
     {
-      period: '2010-2015',
-      title: 'Uzmanlaşma',
-      description: 'Ceza hukuku, medeni hukuk ve tazminat hukuku alanlarında uzmanlaştım.'
-    },
-    {
-      period: '2015-2024',
-      title: 'Olgunluk Dönemi',
-      description: 'Kompleks davaları başarıyla sonuçlandırdım ve sektörde tanınan bir isim oldum.'
+      period: 'Sertifikalar ve Eğitimler',
+      title: 'Profesyonel Gelişim',
+      certificates: [
+        "Ticaret Hukuku Arabuluculuk Sertifikası",
+        "Tüketici Hukuku Arabuluculuk Sertifikası",
+        "İş Hukuku Arabuluculuk Sertifikası",
+        "Bilirkişilik Temel Eğitimi (Adalet Bakanlığı yetkili kurum)"
+      ]
     }
   ];
 
@@ -106,7 +100,16 @@ const Education = () => {
                         </div>
                         <div>
                           <h3 className="font-semibold text-primary mb-2">{exp.title}</h3>
-                          <p className="text-muted-foreground text-sm">{exp.description}</p>
+                          {exp.description && <p className="text-muted-foreground text-sm">{exp.description}</p>}
+
+                          {/* Eğer certificates varsa liste olarak render et */}
+                          {exp.certificates && (
+                            <ul className="list-disc list-inside text-sm text-muted-foreground mt-2 space-y-1">
+                              {exp.certificates.map((cert, idx) => (
+                                <li key={idx}>{cert}</li>
+                              ))}
+                            </ul>
+                          )}
                         </div>
                       </div>
                     </Card>

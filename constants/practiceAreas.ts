@@ -206,69 +206,69 @@ export const practicesData = [
   },
   {
     icon: Home,
-    title: "Aile Hukuku",
-    slug: "aile-hukuku",
+    title: "Medeni Hukuk",
+    slug: "medeni-hukuk",
     description:
-      "Boşanma, velayet, nafaka gibi hassas aile hukuku meselelerinde müvekkillerime çözüm odaklı ve duyarlı hukuki danışmanlık sunuyorum.",
+      "Miras, sözleşmeler, taşınmaz ve aile dışı medeni hukuki meselelerde müvekkillerime çözüm odaklı danışmanlık sunuyorum.",
     services: [
-      "Anlaşmalı ve çekişmeli boşanma",
-      "Velayet ve nafaka davaları",
-      "Mal rejimi tasfiye işlemleri",
-      "Aile içi şiddet koruma tedbirleri",
-      "Evlilik öncesi sözleşmeler",
-      "Soybağı ve evlat edinme davaları",
+      "Miras ve veraset davaları",
+      "Sözleşmelerin hazırlanması ve ihtilafların çözümü",
+      "Taşınmaz mülkiyeti ve tapu işlemleri",
+      "Mirasçılar arası uyuşmazlıklar",
+      "Vasiyet ve vasiyetin uygulanması",
+      "Kişisel haklar ve tazminat davaları",
     ],
-    experience: "10+ yıl deneyim, 120+ dava tecrübesi",
-    detailTitle: "Aile Hukukunda Hassas Yaklaşım",
+    experience: "10+ yıl deneyim, 150+ dava tecrübesi",
+    detailTitle: "Medeni Hukukta Güçlü ve Etkin Temsil",
     detailDescription:
-      "Aile içi uyuşmazlıklar duygusal olarak yıpratıcı olabilir. Bu süreçte hem hukuki hem de insani olarak müvekkillerimin yanında oluyorum. Boşanma, velayet ve nafaka gibi konularda uzmanlaşmış bulunmaktayım.",
+      "Medeni hukuk alanında müvekkillerimi hukuki haklarını koruma ve ihtilafları çözme konusunda destekliyorum. Miras, taşınmaz, sözleşme ve tazminat davalarında uzmanlaşmış bulunmaktayım.",
     detailedServices: [
       {
-        title: "Boşanma Davaları",
+        title: "Miras ve Veraset Davaları",
         description:
-          "Anlaşmalı ve çekişmeli boşanma süreçlerinde tarafları adil şekilde temsil ediyorum.",
+          "Miras paylaşımı ve veraset uyuşmazlıklarında tarafları adil şekilde temsil ediyorum.",
       },
       {
-        title: "Velayet ve Nafaka",
+        title: "Sözleşme ve Hukuki İşlemler",
         description:
-          "Çocukların üstün yararını gözeterek velayet ve nafaka taleplerini yürütüyorum.",
+          "Taraflar arasında yapılan sözleşmelerin hazırlanması, denetlenmesi ve ihtilafların çözümünü sağlıyorum.",
       },
       {
-        title: "Mal Rejimi Tasfiyesi",
+        title: "Taşınmaz Mülkiyeti",
         description:
-          "Evlilik sonrası edinilen malların adil şekilde paylaşımını sağlıyorum.",
+          "Tapu ve taşınmaz davalarında müvekkillerin haklarını koruyarak çözüm üretiyorum.",
       },
       {
-        title: "Aile İçi Şiddet Davaları",
+        title: "Mirasçılar Arası Uyuşmazlıklar",
         description:
-          "Koruma tedbirleri alınması, uzaklaştırma kararları ve ceza davalarında mağduru temsil ediyorum.",
+          "Mirasçılar arasında ortaya çıkan anlaşmazlıkların mahkeme ve müzakere yoluyla çözümünü sağlıyorum.",
       },
       {
-        title: "Evlilik Sözleşmeleri",
+        title: "Vasiyet ve Uygulama",
         description:
-          "Evlenmeden önce yapılacak mal ayrılığı sözleşmeleriyle tarafların haklarını güvence altına alıyorum.",
+          "Vasiyetlerin hazırlanması, geçerliliği ve uygulanması süreçlerinde hukuki destek sunuyorum.",
       },
       {
-        title: "Evlat Edinme ve Soybağı",
+        title: "Kişisel Haklar ve Tazminat",
         description:
-          "Soybağının reddi veya evlat edinme süreçlerinde hukuki destek sağlıyorum.",
+          "Haksız fiil, maddi ve manevi tazminat davalarında müvekkillerimi temsil ediyorum.",
       },
     ],
     faq: [
       {
-        question: "Boşanma süreci ne kadar sürer?",
+        question: "Miras paylaşımı süreci ne kadar sürer?",
         answer:
-          "Anlaşmalı boşanmalarda 1-2 ay içinde sonuç alınabilir. Çekişmeli boşanmalarda süreç delillere ve anlaşmazlık boyutuna göre değişir.",
+          "Miras davaları mirasın büyüklüğüne ve tarafların anlaşma durumuna göre değişir; genellikle birkaç aydan bir yıla kadar sürebilir.",
       },
       {
-        question: "Velayet sadece anneye mi verilir?",
+        question: "Taşınmaz davaları her zaman mahkemeye mi taşınır?",
         answer:
-          "Hayır. Mahkeme, çocuğun üstün yararını gözeterek anne ya da babaya velayeti verebilir.",
+          "Bazı taşınmaz ihtilafları uzlaşma veya arabuluculuk ile çözülebilir; aksi takdirde mahkeme süreci başlatılır.",
       },
     ],
     examples: [
       {
-        case: "Şiddet mağduru bir anne ve çocuğu için hem boşanma kararı hem de tam velayet hakkı kazanıldı.",
+        case: "Mirasçılar arası anlaşmazlıkta müvekkil lehine adil paylaşım sağlandı ve dava kısa sürede sonuçlandı.",
       },
     ],
   },

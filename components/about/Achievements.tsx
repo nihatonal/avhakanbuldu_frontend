@@ -2,12 +2,7 @@
 
 import React from 'react';
 import { Card } from '../ui/card';
-import {
-  Award,
-  Scale,
-  Users,
-  Trophy,
-} from 'lucide-react';
+import { Award, Scale, Users, Trophy } from 'lucide-react';
 import Container from '../Container';
 import { motion } from 'framer-motion';
 import { fadeUp, containerStagger } from '@/lib/animations';
@@ -23,29 +18,27 @@ const Achievements = () => {
   return (
     <section className="section-padding bg-secondary/30">
       <Container>
-        <div className="container-max">
-          <motion.div
-            variants={containerStagger}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            {achievements.map((achievement, index) => (
-              <motion.div key={index} variants={fadeUp}>
-                <Card className="card-elegant text-center">
-                  <div className="p-4 bg-accent/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <achievement.icon className="h-8 w-8 text-accent" />
-                  </div>
-                  <h3 className="font-display text-xl font-semibold text-primary mb-2">
-                    {achievement.title}
-                  </h3>
-                  <p className="text-muted-foreground">{achievement.description}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+        <motion.div
+          variants={containerStagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
+          {achievements.map((achievement, index) => (
+            <motion.div key={index} variants={fadeUp}>
+              <Card className="card-elegant text-center">
+                <div className="p-4 bg-accent/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <achievement.icon className="h-8 w-8 text-accent" />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-primary mb-2">
+                  {achievement.title}
+                </h3>
+                <p className="text-muted-foreground">{achievement.description}</p>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
       </Container>
     </section>
   );

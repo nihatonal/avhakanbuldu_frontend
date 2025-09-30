@@ -21,16 +21,25 @@ const AboutPage = () => {
         name: "Av. Hakan Buldu",
         jobTitle: "Avukat",
         url: siteUrl,
-        description: "15+ yıllık tecrübesiyle %95 başarı oranına sahip, güvenilir ve sonuç odaklı avukat.",
-        alumniOf: "İlgili Üniversite", // eğer varsa
+        description: "15+ yıllık tecrübesiyle ceza hukuku ve idare hukuku alanlarında güvenilir, sonuç odaklı avukat. Arabuluculuk ve bilirkişilik eğitimleri ile etkin çözümler sunar.",
+        alumniOf: {
+            "@type": "CollegeOrUniversity",
+            name: "Dokuz Eylül Üniversitesi Hukuk Fakültesi",
+            sameAs: "https://www.deu.edu.tr/"
+        },
         worksFor: {
             "@type": "Organization",
             name: "Hakan Buldu Hukuk Bürosu",
             url: siteUrl
         },
+        memberOf: {
+            "@type": "Organization",
+            name: "Ankara Barosu",
+            url: "https://www.ankarabarosu.org.tr/"
+        },
         sameAs: [
-            "https://www.linkedin.com/in/...", // sosyal medya linkleri
-            "https://www.avukatlar.org/..."
+            "https://www.linkedin.com/in/hakan-buldu", // LinkedIn linkini gerçek URL ile değiştir
+            "https://www.avukatlar.org/hakan-buldu"      // Avukatlar.org linkini gerçek URL ile değiştir
         ]
     };
 
