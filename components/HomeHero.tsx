@@ -12,18 +12,21 @@ import { containerStagger, fadeUp } from '@/lib/animations'
 
 const HomeHero = () => {
     return (
-        <section className="relative h-screen flex pt-24 md:items-center justify-center text-white px-2 md:px-0">
+        <section className="relative h-screen flex items-center justify-center text-white px-2 md:px-0">
             {/* Arka Plan */}
-            <div className="fixed top-0 left-0 w-full h-screen -z-10">
+            <div className="fixed top-0 left-0 w-full h-screen -z-10 overflow-hidden">
                 <Image
                     src={heroImage}
-                    fill
-                    className="object-cover"
-                    priority
                     alt="avukat burosu hero image"
+                    className="object-cover w-full h-full"
+                    priority
+                    sizes="100vw"
+                    width={1920}
+                    height={1080}
                 />
                 <div className="absolute inset-0 bg-black/50 backdrop-blur-xs" />
             </div>
+
 
             {/* İçerik */}
             <motion.div
