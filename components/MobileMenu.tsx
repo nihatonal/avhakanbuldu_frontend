@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Button } from './ui/button';
 import { headerData } from '@/constants/data';
 import { usePathname } from '@/node_modules/next/navigation';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default function MobileMenu() {
     const pathname = usePathname();
@@ -48,30 +49,69 @@ export default function MobileMenu() {
                         />
 
                         {/* Sidebar */}
-                        <motion.nav
+                        <motion.div
                             initial={{ x: '-100%' }}
                             animate={{ x: 0 }}
                             exit={{ x: '-100%' }}
                             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                            className="fixed top-16 left-0 h-auto w-64 bg-background shadow-lg z-50 flex flex-col p-6 gap-4"
+                            className="fixed top-16 left-0 h-screen w-full shadow-lg z-50 flex flex-col "
                         >
-                            {headerData.map((item) => (
-                                <Link
-                                    key={item.path}
-                                    href={item.path}
-                                    onClick={toggleMenu}
-                                    className={`font-medium transition-colors duration-200 ${pathname === item?.path
-                                        ? 'text-accent font-semibold'
-                                        : 'text-foreground hover:text-accent'
-                                        }`}
-                                >
-                                    {item.label}
-                                </Link>
-                            ))}
-                            <Button asChild className="btn-hero">
-                                <Link href="/iletisim">Ücretsiz Danışmanlık</Link>
-                            </Button>
-                        </motion.nav>
+
+                            <div className='absolute h-screen w-full top-0 right-0 bg-black/70 z-60'></div>
+                            <div className='relative z-70 w-64 h-screen bg-background p-6 gap-4'>
+                                <nav className='flex flex-col p-6 gap-4'>
+                                    {headerData.map((item) => (
+                                        <Link
+                                            key={item.path}
+                                            href={item.path}
+                                            onClick={toggleMenu}
+                                            className={`font-medium transition-colors duration-200 ${pathname === item?.path
+                                                ? 'text-accent font-semibold'
+                                                : 'text-foreground hover:text-accent'
+                                                }`}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    ))}
+                                </nav>
+                                <Button asChild className="btn-hero">
+                                    <Link href="/iletisim">Ücretsiz Danışmanlık</Link>
+                                </Button>
+                                {/* Alt İletişim Bilgileri */}
+                                <div className="border-t border-border pt-6 mt-6">
+                                    <p className="text-base font-bold text-foreground mb-4 tracking-wide">
+                                        Av. Hakan Buldu
+                                    </p>
+                                    <div className="space-y-3 text-sm text-muted-foreground">
+                                        <div className="flex items-center gap-3">
+                                            <Phone className="w-4 h-4 text-accent" />
+                                            <a
+                                                href="tel:05551234567"
+                                                className="hover:text-accent transition-colors"
+                                            >
+                                                0555 123 45 67
+                                            </a>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <Mail className="w-4 h-4 text-accent" />
+                                            <a
+                                                href="mailto:ahmet@example.com"
+                                                className="hover:text-accent transition-colors"
+                                            >
+                                                ahmet@example.com
+                                            </a>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <MapPin className="w-4 h-4 text-accent" />
+                                            <span>İstanbul, Türkiye</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </motion.div>
                     </>
                 )}
             </AnimatePresence>

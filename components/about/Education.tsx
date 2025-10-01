@@ -94,11 +94,11 @@ const Education = () => {
                 {experience.map((exp, index) => (
                   <motion.div key={index} variants={fadeUp}>
                     <Card className="card-elegant">
-                      <div className="flex items-start space-x-4">
+                      <div className="flex flex-col md:flex-row gap-4 md:gap-0 items-start space-x-4">
                         <div className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium flex-shrink-0">
                           {exp.period}
                         </div>
-                        <div>
+                        <div className='pl-2 md:pl-0'>
                           <h3 className="font-semibold text-primary mb-2">{exp.title}</h3>
                           {exp.description && <p className="text-muted-foreground text-sm">{exp.description}</p>}
 

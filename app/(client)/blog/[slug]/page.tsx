@@ -43,6 +43,7 @@ interface Blog {
     };
     slug: { current: string };
     publishedAt: string;
+    viewCount: number;
     blogcategories: { title: string }[];
 }
 const siteUrl = 'https://www.hakanbuldu.com';
@@ -191,7 +192,11 @@ const SingleBlogPage = async ({
                                     ⏱ {blog.readingTime} min read
                                     <span className="absolute left-0 -bottom-1.5 bg-muted-foreground/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
                                 </p>
-                                <SingleBlogContent slug={slug} />
+                                <p className="flex items-center gap-1 text-muted-foreground relative group hover:cursor-pointer hover:text-shop_dark_green hoverEffect">
+                                    <Eye size={14} /> <SingleBlogContent count={blog.viewCount} slug={slug} /> okundu
+                                    <span className="absolute left-0 -bottom-1.5 bg-muted-foreground/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
+                                </p>
+
 
 
 

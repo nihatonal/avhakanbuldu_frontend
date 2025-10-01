@@ -1,6 +1,7 @@
 "use client";
-
-import React, { useState, useMemo } from "react";
+import useSWR from 'swr';
+import { client } from '@/sanity/lib/client';
+import React, { useState, useEffect, useMemo } from "react";
 import Container from "@/components/Container";
 import Title from "@/components/Title";
 import { urlFor } from "@/sanity/lib/image";
@@ -12,6 +13,43 @@ import "dayjs/locale/tr";
 import NotReadyBlog from '../../../assets/images/not-ready-blog-main-image.webp';
 import CategorySelectWrapper from "@/components/CategorySelectWrapper ";
 import { blockContentToText } from "@/lib/blockContentToText";
+
+const BLOG_QUERY = `*[_type=="blog"] | order(publishedAt desc){
+    _id,
+    title,
+    body,
+    readingTime,
+    mainImage,
+    slug,
+    publishedAt,
+    viewCount,
+    blogcategories[]->{ title }
+  }`;
+const LATEST_BLOGS_QUERY = `[_type == 'blog' && (!defined($slug) || slug.current != $slug)] 
+| order(publishedAt desc)[0...5] {
+  _id,
+  title,
+  slug,
+  publishedAt,
+  mainImage,
+  readingTime,
+  blogcategories[]->{
+    title
+  }
+  }`;
+const MOST_VIEWED_QUERY = `*[_type == "blog" && defined(viewCount)]
+| order(viewCount desc)[0...3] {
+  _id,
+  title,
+  slug,
+  viewCount,
+  publishedAt,
+  mainImage,
+  readingTime,
+  blogcategories[]->{
+    title
+  }
+}`;
 
 interface Blog {
     _id: string;
@@ -41,9 +79,45 @@ interface BlogPageProps {
     initialCategory?: string;
 }
 
-const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, latestBlogs = [], mostViewed = [], initialCategory = "" }) => {
+const fetcher = (query: string) => client.fetch(query);
+
+const BlogPageClient: React.FC<BlogPageProps> = ({
+    blogs: initialBlogs,
+    latestBlogs: initialLatest,
+    mostViewed: initialMostViewed,
+    initialCategory = ""
+}) => {
     const [selectedCategory, setSelectedCategory] = useState(initialCategory);
     const [searchQuery, setSearchQuery] = useState("");
+
+    // 🔁 Ana blog listesi
+    const { data: blogs, mutate: mutateBlogs } = useSWR(BLOG_QUERY, fetcher, {
+        fallbackData: initialBlogs,
+    });
+
+    // 🔁 Son yazılar
+    const { data: latestBlogs, mutate: mutateLatest } = useSWR(LATEST_BLOGS_QUERY, fetcher, {
+        fallbackData: initialLatest,
+    });
+
+    // 🔁 En çok okunanlar
+    const { data: mostViewed, mutate: mutateMostViewed } = useSWR(MOST_VIEWED_QUERY, fetcher, {
+        fallbackData: initialMostViewed,
+    });
+
+    // 🔁 Real-time güncellemeler
+    useEffect(() => {
+        const sub1 = client.listen(BLOG_QUERY).subscribe(() => mutateBlogs());
+        const sub2 = client.listen(LATEST_BLOGS_QUERY).subscribe(() => mutateLatest());
+        const sub3 = client.listen(MOST_VIEWED_QUERY).subscribe(() => mutateMostViewed());
+
+        return () => {
+            sub1.unsubscribe();
+            sub2.unsubscribe();
+            sub3.unsubscribe();
+        };
+    }, [mutateBlogs, mutateLatest, mutateMostViewed]);
+
 
     const categories = useMemo(() => {
         return Array.from(
@@ -68,6 +142,8 @@ const BlogPageClient: React.FC<BlogPageProps> = ({ blogs, latestBlogs = [], most
         });
     }, [blogs, selectedCategory, searchQuery]);
 
+
+    if (!blogs || !latestBlogs || !mostViewed) return <p>Loading...</p>;
     return (
         <div className="bg-background py-10">
             <Container>
