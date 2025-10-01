@@ -1,5 +1,7 @@
 "use client";
-import React from "react";
+import useSWR from 'swr';
+import { client } from '@/sanity/lib/client';
+import React, { useEffect } from "react";
 import Container from "@/components/Container";
 
 import { urlFor } from "@/sanity/lib/image";
@@ -10,7 +12,21 @@ import dayjs from "dayjs";
 import "dayjs/locale/tr";
 import NotReadyBlog from '../assets/images/not-ready-blog-main-image.webp';
 import { motion } from 'framer-motion'
-import { containerStagger, fadeUp } from '@/lib/animations'
+import { fadeUp } from '@/lib/animations'
+
+const MOST_VIEWED_QUERY = `*[_type == "blog" && defined(viewCount)]
+| order(viewCount desc)[0...3] {
+  _id,
+  title,
+  slug,
+  viewCount,
+  publishedAt,
+  mainImage,
+  readingTime,
+  blogcategories[]->{
+    title
+  }
+}`;
 
 interface Blog {
     _id: string;
@@ -34,13 +50,28 @@ interface Blog {
 }
 
 interface BlogPageProps {
-    blogs: Blog[];
-    latestBlogs?: Blog[];
     mostViewed?: Blog[];
-    initialCategory?: string;
 }
+const fetcher = (query: string) => client.fetch(query);
 
-const PopularBlogs: React.FC<BlogPageProps> = ({ mostViewed = [] }) => {
+const PopularBlogs: React.FC<BlogPageProps> = ({ mostViewed: initialMostViewed }) => {
+
+    // 🔁 En çok okunanlar
+    const { data: mostViewed, mutate: mutateMostViewed } = useSWR(MOST_VIEWED_QUERY, fetcher, {
+        fallbackData: initialMostViewed,
+    });
+
+    // 🔁 Real-time güncellemeler
+    useEffect(() => {
+
+        const sub3 = client.listen(MOST_VIEWED_QUERY).subscribe(() => mutateMostViewed());
+
+        return () => {
+            sub3.unsubscribe();
+        };
+    }, [mutateMostViewed]);
+
+    if (!mostViewed) return <p>Loading...</p>;
 
     return (
         <div className="bg-background section-padding ">
