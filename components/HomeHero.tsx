@@ -12,7 +12,7 @@ import { containerStagger, fadeUp } from '@/lib/animations'
 
 const HomeHero = () => {
     return (
-        <section className="relative h-screen flex items-center justify-center text-white px-2 md:px-0">
+        <section className="relative h-screen flex pt-24 md:items-center justify-center text-white px-2 md:px-0">
             {/* Arka Plan */}
             <div className="fixed top-0 left-0 w-full h-screen -z-10">
                 <Image

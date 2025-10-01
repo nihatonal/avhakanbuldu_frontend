@@ -62,11 +62,11 @@ const Education = () => {
                 {education.map((edu, index) => (
                   <motion.div key={index} variants={fadeUp}>
                     <Card className="card-elegant">
-                      <div className="flex items-start space-x-4">
+                      <div className="flex flex-col md:flex-row gap-4 md:gap-0  items-start space-x-4">
                         <div className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium flex-shrink-0">
                           {edu.year}
                         </div>
-                        <div>
+                        <div className='pl-2 md:pl-0'>
                           <h3 className="font-semibold text-primary mb-1">{edu.title}</h3>
                           <p className="text-accent font-medium mb-2">{edu.institution}</p>
                           <p className="text-muted-foreground text-sm">{edu.description}</p>
