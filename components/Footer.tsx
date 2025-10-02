@@ -61,7 +61,7 @@ const Footer = () => {
                                 </div>
                                 <div className="flex items-center space-x-3">
                                     <Phone className="h-5 w-5 text-accent flex-shrink-0" />
-                                    <span className="text-primary-foreground/80 text-sm">+90 312 123 45 67</span>
+                                    <span className="text-primary-foreground/80 text-sm">+90 530 561 00 34</span>
                                 </div>
                                 <div className="flex items-center space-x-3">
                                     <Mail className="h-5 w-5 text-accent flex-shrink-0" />
@@ -73,7 +73,7 @@ const Footer = () => {
 
                     <div className="border-t border-primary-light mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
                         <p className="text-primary-foreground/60 text-sm">
-                            © 2024 Av. Hakan Buldu. Tüm hakları saklıdır.
+                            © 2025 Av. Hakan Buldu. Tüm hakları saklıdır.
                         </p>
                         <div className="grid grid-cols-2 lg:grid-cols-4 items-center space-y-2 lg:space-y-0 space-x-6 mt-4 md:mt-0">
                             <a href="/gizlilik-politikasi" className="text-primary-foreground/60 hover:text-accent text-sm transition-colors">

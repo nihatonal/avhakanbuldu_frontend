@@ -72,7 +72,7 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
   };
 
   return (
-    <div className="mt-2">
+    <div>
       <Select
         value={selectedOption}
         onChange={handleChange}

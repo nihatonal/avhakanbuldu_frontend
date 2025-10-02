@@ -63,11 +63,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
     })
   }
   useEffect(() => {
-    setFormData({
-      ...formData,
-      ["legalArea"]: selectedCategory
-    })
-  }, [selectedCategory, formData]);
+    setFormData(prev => ({
+      ...prev,
+      legalArea: selectedCategory
+    }))
+  }, [selectedCategory])
 
 
 

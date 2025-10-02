@@ -30,7 +30,7 @@ const Map = () => {
                                 <div className="text-center">
                                     <MapPin className="h-16 w-16 text-accent mx-auto mb-4" />
                                     <h3 className="font-display text-xl font-semibold text-primary mb-2">
-                                        Atatürk Bulvarı No:123
+                                    Yildizevler mahallesi Rabindranath Tagore Caddesi 29/10
                                     </h3>
                                     <p className="text-muted-foreground">Çankaya/Ankara</p>
                                     <Button variant="outline" className="mt-4">

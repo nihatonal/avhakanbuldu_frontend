@@ -10,20 +10,20 @@ const Info = () => {
         {
             icon: Phone,
             title: 'Telefon',
-            details: ['+90 312 123 45 67', '+90 532 123 45 67'],
+            details: ['+90 530 561 00 34'],
             description: 'Acil durumlar için 7/24 ulaşabilirsiniz'
         },
         {
             icon: Mail,
             title: 'E-posta',
-            details: ['info@avhakanbuldu.com', 'avhakanbuldu@hukuk.com'],
+            details: ['info@avhakanbuldu.com'],
             description: 'E-posta ile 24 saat içinde yanıt veririm'
         },
         {
             icon: MapPin,
             title: 'Adres',
-            details: ['Atatürk Bulvarı No:123', 'Çankaya/Ankara 06420'],
-            description: 'Metro ve otobüs ile kolay ulaşım'
+            details: ['Yıldızevler mah. Rabindranath Tagore Cad. 29/10', 'Çankaya/Ankara'],
+            description: ''
         },
         {
             icon: Clock,
@@ -70,10 +70,10 @@ const Info = () => {
                                             <p key={detailIndex} className="text-foreground font-medium">
                                                 {(isPhone || isEmail) ? (
                                                     <a
-                                                      href={isPhone ? `tel:${detail.replace(/\s+/g,'')}` : `mailto:${detail}`}
-                                                      className="hover:underline"
+                                                        href={isPhone ? `tel:${detail.replace(/\s+/g, '')}` : `mailto:${detail}`}
+                                                        className="hover:underline"
                                                     >
-                                                      {detail}
+                                                        {detail}
                                                     </a>
                                                 ) : detail}
                                             </p>

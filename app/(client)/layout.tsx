@@ -41,7 +41,7 @@ const legalServiceJsonLd = {
     addressLocality: "İstanbul",
     addressCountry: "TR"
   },
-  telephone: "+90-5xx-xxx-xx-xx", // Gerçek numarayla değiştir
+  telephone: "+90 530 561 00 34", // Gerçek numarayla değiştir
   priceRange: "$$", // Orta segment
   founder: {
     "@type": "Person",

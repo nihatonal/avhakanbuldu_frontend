@@ -43,7 +43,7 @@ const HomeCta = () => {
                             size="lg"
                             className="bg-accent text-accent-foreground hover:bg-accent-dark"
                         >
-                            <a href="tel:+905551112233" className="flex items-center text-primary">
+                            <a href="tel:+905305610034" className="flex items-center text-primary">
                                 <Phone className="mr-2 h-5 w-5" />
                                 Hemen Arayın
                             </a>

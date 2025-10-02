@@ -22,7 +22,7 @@ const HeroSection = () => {
 
                 <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent-dark">
-                        <a href="tel:+903121234567">
+                        <a href="tel:+905305610034">
                             <Phone className="mr-2 h-5 w-5" />
                             Hemen Arayın
                         </a>

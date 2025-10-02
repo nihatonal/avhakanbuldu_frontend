@@ -25,17 +25,15 @@ const BLOG_QUERY = `*[_type=="blog"] | order(publishedAt desc){
     viewCount,
     blogcategories[]->{ title }
   }`;
-const LATEST_BLOGS_QUERY = `[_type == 'blog' && (!defined($slug) || slug.current != $slug)] 
-| order(publishedAt desc)[0...5] {
-  _id,
-  title,
-  slug,
-  publishedAt,
-  mainImage,
-  readingTime,
-  blogcategories[]->{
-    title
-  }
+const LATEST_BLOGS_QUERY = `*[_type == 'blog'] 
+  | order(publishedAt desc)[0...3] {
+    _id,
+    title,
+    slug,
+    publishedAt,
+    mainImage,
+    readingTime,
+    blogcategories[]->{title}
   }`;
 const MOST_VIEWED_QUERY = `*[_type == "blog" && defined(viewCount)]
 | order(viewCount desc)[0...3] {
