@@ -146,10 +146,10 @@ const BlogPageClient: React.FC<BlogPageProps> = ({
         <div className="bg-background py-10">
             <Container>
                 <Title>Blog</Title>
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-0 md:gap-8 mt-8 text-primary">
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-0 md:gap-8 mt-4 text-primary">
                     {/* Main content */}
 
-                    <div className={`mt-5 md:mt-0 order-2 md:order-1 grid grid-cols-1 md:grid-cols-2 gap-6 
+                    <div className={`mt-6 md:mt-0 order-2 md:order-1 grid grid-cols-1 md:grid-cols-2 gap-6 
                     `}>
                         {filteredBlogs.map((blog) => (
                             <Link
