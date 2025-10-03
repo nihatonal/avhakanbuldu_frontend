@@ -86,24 +86,24 @@ export default function MobileMenu() {
                                         <div className="flex items-center gap-3">
                                             <Phone className="w-4 h-4 text-accent" />
                                             <a
-                                                href="tel:05551234567"
+                                                href="tel:05305610034"
                                                 className="hover:text-accent transition-colors"
                                             >
-                                                0555 123 45 67
+                                              +90 530 561 00 34
                                             </a>
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <Mail className="w-4 h-4 text-accent" />
                                             <a
-                                                href="mailto:ahmet@example.com"
+                                                href="mailto:info@hakanbuldu.com"
                                                 className="hover:text-accent transition-colors"
                                             >
-                                                ahmet@example.com
+                                                info@hakanbuldu.com
                                             </a>
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <MapPin className="w-4 h-4 text-accent" />
-                                            <span>İstanbul, Türkiye</span>
+                                            <span>Ankara, Türkiye</span>
                                         </div>
                                     </div>
                                 </div>
