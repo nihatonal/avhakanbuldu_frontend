@@ -315,14 +315,14 @@ const SingleBlogPage = async ({
                             </div>
                         </div>
                     </div>
-                    <BlogLeft slug={slug} />
+                    <BlogLeft />
                 </Container>
             </div>
         </>
     );
 };
 
-const BlogLeft = async ({ slug }: { slug: string }) => {
+const BlogLeft = async () => {
     const categories = await getBlogCategories();
     const latestBlogs = await getLatestBlogs();
     const mostViewed = await getMostViewedBlogs();

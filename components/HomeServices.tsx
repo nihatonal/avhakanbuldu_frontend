@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { ArrowRight, Gavel, FileText, Heart } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'

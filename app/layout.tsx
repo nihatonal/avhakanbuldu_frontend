@@ -3,7 +3,7 @@ import { AnalyticsTracker } from '@/components/AnalyticsTracker';
 import CookieBanner from '@/components/CookieBanner';
 import { GA_MEASUREMENT_ID } from '@/lib/analytics';
 import Script from 'next/script';
-
+import './globals.css'
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="tr">
