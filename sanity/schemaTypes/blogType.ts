@@ -81,16 +81,17 @@ export const blogType = defineType({
       category0: "blogcategories.0.title",
       category1: "blogcategories.1.title",
       readingTime: "readingTime",
+      viewCount: "viewCount",
       body: "body",
     },
-    prepare({ title, media, isLatest, category0, category1, readingTime }) {
+    prepare({ title, media, category0, category1, readingTime, viewCount }) {
       const categoryNames =
         [category0, category1].filter(Boolean).join(", ") || "No category";
 
       return {
         title,
         media,
-        subtitle: `${isLatest ? "Latest | " : ""}${categoryNames} | ${readingTime} min read`,
+        subtitle: `${categoryNames} | ${readingTime} dk | ${viewCount} okundu`,
       };
     },
   },
