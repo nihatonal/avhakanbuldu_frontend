@@ -3,9 +3,8 @@ import type { Metadata } from 'next';
 import { practicesData } from '@/constants/practiceAreas';
 import ServiceDetails from '@/components/ServiceDetails';
 
-type Props = {
-    params: Promise<{ slug: string; }>;
-};
+type Props = { params: Promise<{ slug: string; }>; };
+
 const siteUrl = 'https://www.hakanbuldu.com';
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
@@ -46,9 +45,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ServicePage({ params }: Props) {
-    const { slug } = await params;
+    const { slug } =await params;
     const area = practicesData.find((item) => item.slug === slug);
-    
+
     if (!area) {
         return notFound();
     }

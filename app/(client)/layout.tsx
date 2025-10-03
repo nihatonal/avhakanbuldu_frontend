@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 
 
 const siteUrl = "https://www.hakanbuldu.com";
@@ -67,6 +68,27 @@ export default function RootLayout({
 }>) {
   return (
     <>
+      {GA_MEASUREMENT_ID && (
+        <>
+          {/* GA4 global site tag */}
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+            strategy="afterInteractive"
+          />
+          <Script
+            id="gtag-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_MEASUREMENT_ID}', { page_path: window.location.pathname });
+                `,
+            }}
+          />
+        </>
+      )}
       <Script type="application/ld+json" id="website-jsonld">
         {JSON.stringify(websiteJsonLd)}
       </Script>
