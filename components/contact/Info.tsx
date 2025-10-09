@@ -16,7 +16,7 @@ const Info = () => {
         {
             icon: Mail,
             title: 'E-posta',
-            details: ['info@avhakanbuldu.com'],
+            details: ['info@hakanbuldu.com'],
             description: 'E-posta ile 24 saat içinde yanıt veririm'
         },
         {

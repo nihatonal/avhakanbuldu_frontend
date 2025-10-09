@@ -98,7 +98,7 @@ export default function MobileMenu() {
                                                 href="mailto:info@hakanbuldu.com"
                                                 className="hover:text-accent transition-colors"
                                             >
-                                                info@hakanbuldu.com
+                                               info@hakanbuldu.com
                                             </a>
                                         </div>
                                         <div className="flex items-center gap-3">

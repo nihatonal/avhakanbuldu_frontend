@@ -16,7 +16,7 @@ export default function Page() {
                     <p>Son güncelleme tarihi: 28.09.2025</p>
 
                     <p>
-                        Bu gizlilik politikası, www.avhakanbuldu.com web sitesi üzerinden toplanan kişisel verilerin,
+                        Bu gizlilik politikası, www.hakanbuldu.com web sitesi üzerinden toplanan kişisel verilerin,
                         6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Birliği Genel Veri Koruma Tüzüğü (GDPR)
                         uyarınca nasıl işlendiğini açıklar.
                     </p>
@@ -65,7 +65,7 @@ export default function Page() {
 
                     <p>
                         Haklarınızı kullanmak veya sorularınızı iletmek için bize{' '}
-                        <a href="mailto:info@avhakanbuldu.com" className="text-blue-600 underline">info@avhakanbuldu.com</a>{' '}
+                        <a href="mailto:info@hakanbuldu.com" className="text-blue-600 underline">info@avhakanbuldu.com</a>{' '}
                         adresinden ulaşabilirsiniz.
                     </p>
                 </article>

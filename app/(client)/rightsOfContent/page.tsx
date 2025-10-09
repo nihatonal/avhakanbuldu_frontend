@@ -16,7 +16,7 @@ export default function Page() {
                     <p>Son güncelleme tarihi: 28.09.2025</p>
 
                     <p>
-                        www.avhakanbuldu.com web sitesinde yer alan tüm içerikler, 5846 sayılı Fikir ve Sanat Eserleri
+                        www.hakanbuldu.com web sitesinde yer alan tüm içerikler, 5846 sayılı Fikir ve Sanat Eserleri
                         Kanunu kapsamında korunmakta olup, Av. Hakan Buldu’nun mülkiyetindedir.
                     </p>
 
@@ -67,7 +67,7 @@ export default function Page() {
 
                     <p>
                         İçerik kullanımı veya izin talepleri için lütfen bizimle iletişime geçin:{" "}
-                        <a href="mailto:info@avhakanbuldu.com" className="text-blue-600 underline">info@avhakanbuldu.com</a>
+                        <a href="mailto:info@hakanbuldu.com" className="text-blue-600 underline">info@hakanbuldu.com</a>
                     </p>
                 </article>
             </Container>

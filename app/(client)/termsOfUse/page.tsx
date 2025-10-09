@@ -16,7 +16,7 @@ export default function Page() {
                     <p>Son güncelleme: 28.09.2025</p>
 
                     <p>
-                        Bu kullanım şartları, www.avhakanbuldu.com web sitesinin kullanımına ilişkin koşulları düzenler.
+                        Bu kullanım şartları, www.hakanbuldu.com web sitesinin kullanımına ilişkin koşulları düzenler.
                         Bu siteye erişerek veya kullanarak, bu şartları kabul etmiş sayılırsınız.
                     </p>
 
