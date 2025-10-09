@@ -6,7 +6,7 @@ import React from 'react'
 import { Button } from '../ui/button';
 import { Phone } from 'lucide-react';
 import { Badge } from '../ui/badge';
-import lawyerPortrait from '@/assets/images/lawyer-portrait.jpg';
+import lawyerPortrait from '@/assets/images/avukat-odasi.webp';
 import Container from '../Container';
 import { motion } from 'framer-motion';
 import { fadeUp, containerStagger } from '@/lib/animations';

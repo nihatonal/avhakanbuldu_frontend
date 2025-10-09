@@ -19,7 +19,7 @@ const Footer = () => {
                             <p className="text-primary-foreground/80 mb-4 max-w-md">
                                 Profesyonel hukuki danışmanlık ve temsil hizmetleri. 15 yılı aşkın deneyimle müvekkillerimize güvenilir çözümler sunuyoruz.
                             </p>
-                            <div className="flex space-x-4">
+                            <div className="flex space-x-4 pointer-events-none">
                                 <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors">
                                     <Facebook className="h-5 w-5" />
                                 </a>
@@ -60,13 +60,18 @@ const Footer = () => {
                                     </span>
                                 </div>
                                 <div className="flex items-center space-x-3">
-                                    <Phone className="h-5 w-5 text-accent flex-shrink-0" />
-                                    <span className="text-primary-foreground/80 text-sm">+90 530 561 00 34</span>
+                                    <a href="tel:+905305610034" className="flex items-center space-x-3">
+                                        <Phone className="h-5 w-5 text-accent flex-shrink-0" />
+                                        <span className="text-primary-foreground/80 text-sm">+90 530 561 00 34</span>
+                                    </a>
                                 </div>
                                 <div className="flex items-center space-x-3">
-                                    <Mail className="h-5 w-5 text-accent flex-shrink-0" />
-                                    <span className="text-primary-foreground/80 text-sm">info@avhakanbuldu.com</span>
+                                    <a href="mailto:info@avhakanbuldu.com" className="flex items-center space-x-3">
+                                        <Mail className="h-5 w-5 text-accent flex-shrink-0" />
+                                        <span className="text-primary-foreground/80 text-sm">info@avhakanbuldu.com</span>
+                                    </a>
                                 </div>
+
                             </div>
                         </div>
                     </div>
