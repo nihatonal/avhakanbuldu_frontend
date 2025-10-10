@@ -6,11 +6,12 @@ import { Card } from '../ui/card'
 import { Input } from '../ui/input'
 import { Label } from '../ui/label'
 import { Textarea } from '../ui/textarea'
-import { Send, Shield } from 'lucide-react'
+import { Send, Shield, Loader2 } from 'lucide-react'
 import { Button } from '../ui/button'
 import { motion } from 'framer-motion'
 import { fadeUp, containerStagger } from '@/lib/animations'
 import CategorySelectWrapper from '../CategorySelectWrapper '
+
 
 interface ContactFormProps {
   legalAreas: string[]
@@ -18,6 +19,7 @@ interface ContactFormProps {
 
 const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
   const { toast } = useToast()
+  const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,35 +28,35 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
     message: '',
     legalArea: ''
   })
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: 'Eksik Bilgi',
         description: 'Lütfen zorunlu alanları doldurun.',
         variant: 'destructive'
-      });
-      return;
+      })
+      return
     }
 
     try {
+      setLoading(true)
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-      });
+      })
 
-      const data = await res.json();
+      const data = await res.json()
 
       if (res.ok && data.success) {
         toast({
-          title: 'Mesajınız Gönderildi',
+          title: 'Mesajınız Gönderildi.',
           description: 'En kısa sürede size dönüş yapacağım. Teşekkür ederim.'
-        });
-
+        })
         setFormData({
           name: '',
           email: '',
@@ -62,25 +64,26 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
           subject: '',
           message: '',
           legalArea: ''
-        });
-        setSelectedCategory("");
+        })
+        setSelectedCategory("")
       } else {
         toast({
           title: 'Hata',
           description: data.error || 'Mesaj gönderilemedi.',
           variant: 'destructive'
-        });
+        })
       }
     } catch (err) {
-      console.error(err);
+      console.error(err)
       toast({
         title: 'Hata',
         description: 'Mesaj gönderilemedi.',
         variant: 'destructive'
-      });
+      })
+    } finally {
+      setLoading(false)
     }
-  };
-
+  }
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -90,14 +93,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
       [e.target.name]: e.target.value
     })
   }
+
   useEffect(() => {
     setFormData(prev => ({
       ...prev,
       legalArea: selectedCategory
     }))
   }, [selectedCategory])
-
-
 
   return (
     <motion.div
@@ -167,21 +169,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
                   defaultOptionLabel="Diğer"
                   defaultOptionPosition="bottom"
                 />
-                {/* <select
-                  id="legalArea"
-                  name="legalArea"
-                  value={formData.legalArea}
-                  onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
-                >
-                  <option value="">Seçiniz</option>
-                  {legalAreas.map((area) => (
-                    <option key={area} value={area}>
-                      {area}
-                    </option>
-                  ))}
-                  <option value="Diğer">Diğer</option>
-                </select> */}
               </div>
             </div>
 
@@ -217,9 +204,23 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
               </p>
             </div>
 
-            <Button type="submit" size="lg" className="btn-primary w-full">
-              <Send className="mr-2 h-5 w-5" />
-              Mesajı Gönder
+            <Button
+              type="submit"
+              size="lg"
+              className="btn-primary w-full"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                  Gönderiliyor...
+                </>
+              ) : (
+                <>
+                  <Send className="mr-2 h-5 w-5" />
+                  Mesajı Gönder
+                </>
+              )}
             </Button>
           </form>
         </Card>
