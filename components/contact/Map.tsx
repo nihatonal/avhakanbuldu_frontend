@@ -6,6 +6,7 @@ import { MapPin } from 'lucide-react';
 import Container from '../Container';
 import { motion } from 'framer-motion';
 import { fadeUp } from '@/lib/animations';
+import ContactMap from './MapFrame';
 
 const Map = () => {
     return (
@@ -23,23 +24,23 @@ const Map = () => {
                             </p>
                         </div>
                     </motion.div>
-
-                    <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
+                    <ContactMap />
+                    {/* <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
                         <Card className="card-elegant overflow-hidden">
-                            <div className="aspect-video bg-secondary/50 flex items-center justify-center">
-                                <div className="text-center">
-                                    <MapPin className="h-16 w-16 text-accent mx-auto mb-4" />
-                                    <h3 className="font-display text-xl font-semibold text-primary mb-2">
-                                    Yildizevler mahallesi Rabindranath Tagore Caddesi 29/10
-                                    </h3>
-                                    <p className="text-muted-foreground">Çankaya/Ankara</p>
-                                    <Button variant="outline" className="mt-4">
-                                        Haritada Görüntüle
-                                    </Button>
-                                </div>
+                            <div className="aspect-video">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3069.285513013939!2d32.8359!3d39.8803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34f0f6c2a9c7f%3A0x8c8e9a19b0eaa9c9!2sY%C4%B1ld%C4%B1zevler%20Mahallesi%2C%20Rabindranath%20Tagore%20Cd.%2029%2F10%2C%20%C3%87ankaya%2FAnkara!5e0!3m2!1str!2str!4v1696700000000!5m2!1str!2str"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                ></iframe>
                             </div>
+                          
                         </Card>
-                    </motion.div>
+                    </motion.div> */}
                 </div>
             </Container>
         </section>
