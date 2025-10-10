@@ -16,7 +16,7 @@ const HeroSection = () => {
                         İletişim
                     </h1>
                     <p className="text-xl mb-8 max-w-3xl mx-auto text-white/90">
-                        Hukuki danışmanlık ihtiyacınız için benimle iletişime geçin. İlk danışmanlık görüşmesi ücretsizdir.
+                        Hukuki konularda güven temelli danışmanlık ve etkili rehberlik almak için benimle iletişime geçin. Karmaşık durumlarda stratejik çözümler sunuyorum.
                     </p>
                 </motion.div>
 

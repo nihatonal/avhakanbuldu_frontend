@@ -25,14 +25,14 @@ const HeroSection = () => {
                     variants={fadeUp}
                     className="font-display text-4xl md:text-6xl font-bold mb-6"
                 >
-                    Faaliyet Alanlarım
+                    Çalışma Alanlarımız
                 </motion.h1>
 
                 <motion.p
                     variants={fadeUp}
                     className="text-xl mb-8 max-w-3xl mx-auto text-white/90"
                 >
-                    Geniş hukuk bilgim ve uzmanlaştığım alanlarla, müvekkillerime kapsamlı hukuki hizmet sunuyorum.
+                    Geniş hukuk bilgim ve uzmanlaştığım alanlarla, sizlere kapsamlı hukuki hizmet sunuyorum.
                     Her alanda deneyimli ve güvenilir çözümler için yanınızdayım.
                 </motion.p>
             </motion.div>

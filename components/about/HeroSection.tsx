@@ -36,14 +36,14 @@ const HeroSection = () => {
                             variants={fadeUp}
                             className="font-display text-4xl md:text-6xl font-bold mb-6"
                         >
-                            Av. Hakan Buldu
+                            Hakan Buldu
                         </motion.h1>
 
                         <motion.p
                             variants={fadeUp}
                             className="text-xl mb-8 text-white/90"
                         >
-                            15 yılı aşkın hukuk tecrübemle ceza ve idare hukuku alanında müvekkillerime güven temelli, sonuç odaklı hukuki destek sunuyorum. Arabuluculuk ve bilirkişilik eğitimleriyle hızlı ve etkili çözümler sağlıyorum.
+                           15 yılı aşkın deneyimimle, hukuki konularda güven temelli ve çözüm odaklı danışmanlık sunuyor, karmaşık süreçlerde etkili rehberlik ve yol gösterici destek sağlıyorum.
                         </motion.p>
 
                         <motion.div
@@ -70,7 +70,7 @@ const HeroSection = () => {
                         <div className="md:sticky md:top-24 self-start w-full max-w-[400px] rounded-2xl shadow-elegant overflow-hidden aspect-[3/4]">
                             <Image
                                 src={lawyerPortrait}
-                                alt="Av. Hakan Buldu"
+                                alt="Hakan Buldu"
                                 fill
                                 className="object-cover rounded-2xl"
                                 priority

@@ -11,9 +11,9 @@ interface BlogPageProps {
 
 const siteUrl = "https://www.hakanbuldu.com";
 export const metadata: Metadata = {
-  title: "Hukuk Blogu - Av. Hakan Buldu | Güncel Hukuki Bilgiler",
+  title: "Hukuk Blogu - Hakan Buldu | Güncel Hukuki Bilgiler",
   description:
-    "Ceza, idare, iş ve aile hukuku konularında güncel makaleler ve müvekkiller için bilgilendirici yazılar. Av. Hakan Buldu'nun hukuk blogunu keşfedin.",
+    "Ceza, idare, iş ve aile hukuku konularında güncel makaleler ve müvekkiller için bilgilendirici yazılar. Hakan Buldu'nun hukuk blogunu keşfedin.",
   alternates: {
     canonical: `${siteUrl}/blog`
   }
@@ -25,14 +25,14 @@ const jsonLd = {
   name: "Hukuk Blogu",
   url: `${siteUrl}/blog`,
   description:
-    "Av. Hakan Buldu tarafından hazırlanan, ceza, idare, iş ve aile hukuku alanlarında güncel bilgiler ve hukuki rehberler içeren blog.",
+    "Hakan Buldu tarafından hazırlanan, ceza, idare, iş ve aile hukuku alanlarında güncel bilgiler ve hukuki rehberler içeren blog.",
   creator: {
     "@type": "Person",
-    name: "Av. Hakan Buldu"
+    name: "Hakan Buldu"
   },
   publisher: {
     "@type": "Organization",
-    name: "Av. Hakan Buldu Hukuk Bürosu",
+    name: "Hakan Buldu Hukuk Bürosu",
     url: siteUrl
   }
 };

@@ -9,9 +9,9 @@ const siteUrl = "https://www.hakanbuldu.com";
 
 
 export const metadata: Metadata = {
-  title: "Av. Hakan Buldu | Ceza, İdare, İş ve Aile Hukukunda Uzman Avukat",
+  title: "Hakan Buldu | Ceza, İdare, İş ve Aile Hukukunda Uzman",
   description:
-    "15+ yıllık deneyim, 500+ dava ve %95 başarı oranıyla Av. Hakan Buldu; ceza, idare, iş ve aile hukuku alanlarında güvenilir ve etkili hukuki destek sunar.",
+    "15+ yıllık deneyim, 500+ dava ve %95 başarı oranıyla Hakan Buldu; ceza, idare, iş ve aile hukuku alanlarında güvenilir ve etkili hukuki destek sunar.",
   alternates: {
     canonical: `${siteUrl}/`
   }
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Av. Hakan Buldu",
+  name: "Hakan Buldu",
   url: siteUrl,
   potentialAction: {
     "@type": "SearchAction",
@@ -31,11 +31,11 @@ const websiteJsonLd = {
 const legalServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "LegalService",
-  name: "Av. Hakan Buldu Hukuk Bürosu",
+  name: "Hakan Buldu Hukuk Bürosu",
   image: `${siteUrl}/images/hakan-buldu.jpg`, // varsa avukatın fotoğrafı
   url: siteUrl,
   description:
-    "Ceza, idare, iş ve aile hukuku alanlarında uzman avukatlık hizmetleri sunan İstanbul merkezli hukuk bürosu.",
+    "Ceza, idare, iş ve aile hukuku alanlarında uzmanlığı",
   areaServed: "TR",
   address: {
     "@type": "PostalAddress",
@@ -46,18 +46,18 @@ const legalServiceJsonLd = {
   priceRange: "$$", // Orta segment
   founder: {
     "@type": "Person",
-    name: "Av. Hakan Buldu"
+    name: "Hakan Buldu"
   },
   employee: {
     "@type": "Person",
-    name: "Av. Hakan Buldu"
+    name: "Hakan Buldu"
   },
   sameAs: [
     "https://www.linkedin.com/in/...",
     "https://www.instagram.com/...",
     "https://www.avukatlar.org/..."
   ],
-  legalName: "Av. Hakan Buldu Hukuk Bürosu"
+  legalName: "Hakan Buldu Hukuk Bürosu"
 };
 
 

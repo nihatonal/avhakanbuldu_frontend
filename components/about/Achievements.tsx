@@ -9,10 +9,10 @@ import { fadeUp, containerStagger } from '@/lib/animations';
 
 const Achievements = () => {
   const achievements = [
-    { icon: Trophy, title: '500+ Başarılı Dava', description: 'Müvekkillerim için kazandığım davalar' },
-    { icon: Users, title: '1000+ Müvekkil', description: 'Hizmet verdiğim memnun müvekkil sayısı' },
-    { icon: Award, title: '%95 Başarı Oranı', description: 'Üstlendiğim davalardaki başarı oranım' },
-    { icon: Scale, title: '15+ Yıl Deneyim', description: 'Hukuk alanındaki profesyonel deneyimim' },
+    { icon: Trophy, title: '500+ Danışmanlık', description: 'Müvekkillerime sağladığım rehberlik ve danışmanlık' },
+    { icon: Users, title: '1000+ Kişiye Destek', description: 'Hukuki konularda bilgi ve danışmanlık sağladığım kişiler' },
+    { icon: Award, title: 'Güvenilir Danışmanlık', description: 'Müvekkillerimin güvenine dayalı hizmet anlayışı' },
+    { icon: Scale, title: '15+ Yıl Deneyim', description: 'Hukuk alanındaki profesyonel ve kapsamlı tecrübem' },
   ];
 
   return (

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Container from '@/components/Container'
 
 export const metadata: Metadata = {
-    title: 'Gizlilik Politikası | Av. Hakan Buldu',
+    title: 'Gizlilik Politikası | Hakan Buldu',
     description: 'Ziyaretçilerimizin gizliliğini korumayı taahhüt ediyoruz. Bu gizlilik politikası, kişisel verilerin nasıl toplandığını, işlendiğini ve korunduğunu açıklar.'
 }
 

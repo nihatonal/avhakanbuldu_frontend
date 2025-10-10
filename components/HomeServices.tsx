@@ -26,7 +26,7 @@ const HomeServices = () => {
                     transition={{ duration: 0.6, ease: 'easeOut' }}
                 >
                     <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-4">
-                        Faaliyet Alanlarım
+                        Çalışma Alanlarım
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         Geniş hukuk bilgim ve deneyimimle, farklı alanlarda profesyonel hizmet sunuyorum.

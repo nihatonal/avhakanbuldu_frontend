@@ -22,10 +22,10 @@ const HomeCta = () => {
                     viewport={{ once: true }}
                 >
                     <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-                        Hukuki Desteğe İhtiyacınız mı Var?
+                        Hukuki Bilgi ve Danışmanlığa İhtiyacınız mı Var?
                     </h2>
                     <p className="text-xl mb-8 max-w-3xl mx-auto text-white/90">
-                        Profesyonel hukuki danışmanlık için bugün bize ulaşın. İlk konsültasyon ücretsizdir.
+                        Hukuki konularda doğru bilgi ve rehberlik almak için bizimle iletişime geçin.
                     </p>
                 </motion.div>
 

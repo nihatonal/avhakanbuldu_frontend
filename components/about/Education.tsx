@@ -63,7 +63,7 @@ const Education = () => {
                   <motion.div key={index} variants={fadeUp}>
                     <Card className="card-elegant">
                       <div className="flex flex-col md:flex-row gap-4 md:gap-0  items-start space-x-4">
-                        <div className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium flex-shrink-0">
+                        <div className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-semibold uppercase flex-shrink-0">
                           {edu.year}
                         </div>
                         <div className='pl-2 md:pl-0'>

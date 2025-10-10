@@ -9,7 +9,7 @@ import Script from "next/script";
 const siteUrl = "https://www.hakanbuldu.com";
 
 export const metadata: Metadata = {
-    title: "Faaliyet Alanlarımız - Av. Hakan Buldu | Uzman Hukuki Hizmetler",
+    title: "Faaliyet Alanlarımız - Hakan Buldu | Uzman Hukuki Hizmetler",
     description:
         "Ceza, idare, iş ve aile hukuku alanlarında 15+ yıllık tecrübeyle müvekkillerimize kapsamlı ve güvenilir hukuki hizmet sunuyorum.",
     alternates: {
@@ -24,7 +24,7 @@ const Services = () => {
         name: "Faaliyet Alanlarımız",
         url: `${siteUrl}/faaliyet-alanlari`,
         description:
-            "Av. Hakan Buldu, ceza, idare, iş ve aile hukuku gibi birçok alanda kapsamlı hukuki hizmet sunmaktadır.",
+            "Hakan Buldu, ceza, idare, iş ve aile hukuku gibi birçok alanda kapsamlı hukuki hizmet sunmaktadır.",
         mainEntity: [
             {
                 "@type": "Service",
@@ -33,7 +33,7 @@ const Services = () => {
                 areaServed: "TR",
                 provider: {
                     "@type": "Person",
-                    name: "Av. Hakan Buldu"
+                    name: "Hakan Buldu"
                 }
             },
             {
@@ -43,7 +43,7 @@ const Services = () => {
                 areaServed: "TR",
                 provider: {
                     "@type": "Person",
-                    name: "Av. Hakan Buldu"
+                    name: "Hakan Buldu"
                 }
             },
             {
@@ -53,7 +53,7 @@ const Services = () => {
                 areaServed: "TR",
                 provider: {
                     "@type": "Person",
-                    name: "Av. Hakan Buldu"
+                    name: "Hakan Buldu"
                 }
             },
             {
@@ -63,7 +63,7 @@ const Services = () => {
                 areaServed: "TR",
                 provider: {
                     "@type": "Person",
-                    name: "Av. Hakan Buldu"
+                    name: "Hakan Buldu"
                 }
             }
         ]

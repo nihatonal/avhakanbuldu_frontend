@@ -30,8 +30,7 @@ const Cta = () => {
                         variants={fadeUp}
                         className="text-xl mb-8 max-w-3xl mx-auto text-white/90"
                     >
-                        15 yılı aşkın deneyimimle, hukuki sorunlarınıza profesyonel çözümler sunuyorum.
-                        İlk danışmanlık görüşmesi ücretsizdir.
+                        15 yılı aşkın deneyimimle, hukuki süreçlerinizi güvenle yönlendirecek ve en doğru çözümleri sunacak profesyonel destek sağlıyorum.
                     </motion.p>
 
                     <motion.div
@@ -46,7 +45,7 @@ const Cta = () => {
                             >
                                 <Link href="/iletisim">
                                     <Phone className="mr-2 h-5 w-5" />
-                                    Ücretsiz Danışmanlık
+                                    İletişime Geçin
                                 </Link>
                             </Button>
                         </motion.div>
@@ -59,7 +58,7 @@ const Cta = () => {
                                 className="bg-transparent border-white text-white hover:bg-white hover:text-primary"
                             >
                                 <Link href="/faaliyet-alanlari">
-                                    Faaliyet Alanları
+                                    Çalışma Alanlarımı Görün
                                 </Link>
                             </Button>
                         </motion.div>

@@ -16,25 +16,26 @@ const WhyChooseMe = () => {
     const whyChooseUs = [
         {
             title: 'Deneyimli Uzmanlık',
-            description: 'Her alanda yıllar içinde kazandığım derinlemesine uzmanlık',
+            description: 'Hukuki konularda yıllara dayanan bilgi ve danışmanlık deneyimi',
             icon: GraduationCap
         },
         {
-            title: 'Kişiselleştirilmiş Hizmet',
-            description: 'Her müvekkilimin özel durumuna uygun çözümler',
+            title: 'Kişiselleştirilmiş Danışmanlık',
+            description: 'Her sorunuza ve durumunuza özel bilgilendirme',
             icon: UserCog
         },
         {
-            title: 'Şeffaf İletişim',
-            description: 'Süreç boyunca açık ve anlaşılır iletişim',
+            title: 'Açık ve Şeffaf İletişim',
+            description: 'Sorularınıza net ve anlaşılır şekilde yanıt veriyorum',
             icon: MessageCircle
         },
         {
-            title: 'Güvenilir Sonuçlar',
-            description: '%95 başarı oranıyla kanıtlanmış güvenilirlik',
+            title: 'Güvenilir Bilgilendirme',
+            description: 'Hukuki süreçler hakkında güvenilir ve tarafsız bilgi sağlanır',
             icon: CheckCheck
         }
     ];
+
 
     return (
         <section className="section-padding bg-secondary/30">
@@ -49,10 +50,10 @@ const WhyChooseMe = () => {
                     {/* Başlık */}
                     <motion.div className="text-center mb-16" variants={fadeUp}>
                         <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-4">
-                            Neden Beni Seçmelisiniz?
+                            Neden Bize Danışmalısınız?
                         </h2>
                         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                            Müvekkillerimin memnuniyeti ve başarılı sonuçlar için çalıştığım temel değerler.
+                            Hukuki konular hakkında doğru ve güvenilir bilgilendirme sağlamak için çalışıyorum.
                         </p>
                     </motion.div>
 

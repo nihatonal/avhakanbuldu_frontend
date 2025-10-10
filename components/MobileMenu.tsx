@@ -80,7 +80,7 @@ export default function MobileMenu() {
                                 {/* Alt İletişim Bilgileri */}
                                 <div className="border-t border-border pt-6 mt-6">
                                     <p className="text-base font-bold text-foreground mb-4 tracking-wide">
-                                        Av. Hakan Buldu
+                                        Hakan Buldu
                                     </p>
                                     <div className="space-y-3 text-sm text-muted-foreground">
                                         <div className="flex items-center gap-3">

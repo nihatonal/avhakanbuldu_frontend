@@ -26,23 +26,22 @@ const HomeAbout = () => {
                         viewport={{ once: true }}
                     >
                         <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">
-                            Deneyimli Avukat
+                            Deneyimli Hukuk Danışmanı
                         </Badge>
                         <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
-                            Av. Hakan Buldu
+                            Hakan Buldu
                         </h2>
                         <p className="text-lg text-muted-foreground mb-6">
-                            15 yılı aşkın hukuk deneyimi ile müvekkillerimin haklarını korumak için çalışıyorum.
-                            Ankara Üniversitesi Hukuk Fakültesi mezunu olarak, ceza hukuku, medeni hukuk ve
-                            tazminat hukuku alanlarında uzmanlaştım.
+                            15 yılı aşkın hukuk deneyimimle, hukuki konularda doğru ve güvenilir bilgilendirme sağlıyorum.
+                            Ankara Üniversitesi Hukuk Fakültesi mezunu olarak, ceza hukuku, medeni hukuk ve tazminat hukuku alanlarında bilgi ve danışmanlık sunuyorum.
                         </p>
 
                         <div className="space-y-3 mb-8 text-primary">
                             {[
                                 'Ankara Üniversitesi Hukuk Fakültesi Mezunu',
                                 'Türkiye Barolar Birliği Üyesi',
-                                '15+ Yıl Profesyonel Deneyim',
-                                '500+ Başarılı Dava'
+                                '15+ Yıl Hukuk Deneyimi',
+                                '500+ Danışma / Bilgilendirme'
                             ].map((item, idx) => (
                                 <div key={idx} className="flex items-center">
                                     <CheckCircle className="h-5 w-5 text-accent mr-3" />
@@ -68,7 +67,7 @@ const HomeAbout = () => {
                             <div className="shine-effect rounded-2xl">
                                 <Image
                                     src={lawyerPortrait}
-                                    alt="Av. Hakan Buldu"
+                                    alt="Hakan Buldu"
 
                                     height={lawyerPortrait.height}
                                     className="w-full object-cover rounded-2xl"

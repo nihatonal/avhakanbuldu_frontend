@@ -11,26 +11,27 @@ const Testimonials = () => {
     const testimonials = [
         {
             name: 'Ayşe Demir',
-            role: 'Müvekkil',
+            role: 'Danışan',
             content:
-                "Mehmet Bey'in profesyonel yaklaşımı ve detaylı çalışması sayesinde davamı kazandık. Çok teşekkür ederim.",
+                "Hakan Bey, hukuki sorularımı açık ve anlaşılır bir şekilde yanıtladı. Çok faydalı oldu.",
             rating: 5
         },
         {
             name: 'Ali Yılmaz',
-            role: 'Şirket Sahibi',
+            role: 'Danışan',
             content:
-                'İş hukuku konusundaki deneyimi ve çözüm odaklı yaklaşımı gerçekten etkileyici. Kesinlikle tavsiye ediyorum.',
+                "İş süreçlerimle ilgili hukuki bilgiler aldım ve süreci daha güvenle yönetebildim.",
             rating: 5
         },
         {
             name: 'Fatma Kaya',
-            role: 'Müvekkil',
+            role: 'Danışan',
             content:
-                'Aile hukuku davamda gösterdiği sabır ve anlayış için çok minnettarım. Sonuç mükemmeldi.',
+                "Hukuki konular hakkında verdiği bilgilendirme çok açıklayıcıydı ve kafam çok rahatladı.",
             rating: 5
         }
-    ]
+    ];
+
 
     return (
         <section className="section-padding bg-secondary/100">
@@ -44,11 +45,9 @@ const Testimonials = () => {
                     transition={{ duration: 0.6, ease: 'easeOut' }}
                 >
                     <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-4">
-                        Müvekkil Yorumları
+                        Danışan Yorumları
                     </h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Müvekkillerimin memnuniyeti ve güveni, işimde en önemli önceliğimdir.
-                    </p>
+
                 </motion.div>
 
                 {/* Yorum Kartları */}

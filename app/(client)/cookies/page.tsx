@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Container from '@/components/Container'
 
 export const metadata: Metadata = {
-    title: 'Çerez Politikası | Av. Hakan Buldu',
+    title: 'Çerez Politikası | Hakan Buldu',
     description: 'Bu site çerezleri, kullanıcı deneyimini geliştirmek ve site trafiğini analiz etmek için kullanır. Çerez kullanımımız hakkında daha fazla bilgi edinin.'
 }
 

@@ -38,19 +38,20 @@ const HomeHero = () => {
             >
                 <motion.div variants={fadeUp}>
                     <Badge className="mb-4 p-2 px-4 bg-accent text-accent-foreground hover:bg-accent">
-                        Profesyonel &amp; Güvenilir Hukuki Çözüm
+                        Profesyonel &amp; Güvenilir Hukuki Danışmanlık
                     </Badge>
                 </motion.div>
 
                 <motion.div variants={fadeUp}>
                     <h1 className="font-display text-4xl md:text-7xl font-bold mb-6">
-                        Güvenilir Hukuki <span className="text-gradient">Danışmanlık</span>
+                        Güvenilir <span className="text-gradient">Hukuki Danışmanlık</span>
                     </h1>
                 </motion.div>
 
                 <motion.div variants={fadeUp}>
                     <p className="text-lg md:text-2xl mb-8 max-w-3xl mx-auto text-white/90">
-                        15 yılı aşkın deneyimle, müvekkillerimin haklarını korumak ve adaletin tecellisi için çalışıyorum.
+                        15 yılı aşkın deneyimle, hukuki konular hakkında doğru ve güvenilir bilgilendirme sağlıyorum.
+                        Sorularınız için bizimle iletişime geçebilirsiniz.
                     </p>
                 </motion.div>
 
@@ -61,15 +62,9 @@ const HomeHero = () => {
                     <motion.div variants={fadeUp}>
                         <Button asChild size="lg" className="btn-hero">
                             <Link href="/iletisim">
-                                Ücretsiz Danışmanlık Alın
+                                Sorunuzu Sorun
                                 <ArrowRight className="ml-2 h-5 w-5" />
                             </Link>
-                        </Button>
-                    </motion.div>
-
-                    <motion.div variants={fadeUp}>
-                        <Button asChild variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
-                            <Link href="/about">Hakkımda Bilgi Al</Link>
                         </Button>
                     </motion.div>
                 </motion.div>

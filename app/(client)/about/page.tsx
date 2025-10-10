@@ -9,8 +9,8 @@ import Script from "next/script";
 const siteUrl = "https://www.hakanbuldu.com";
 
 export const metadata: Metadata = {
-    title: "Hakkımızda - Av. Hakan Buldu | 15+ Yıllık Deneyimle Hukuki Destek",
-    description: "Hukuki sorunlarınızda güçlü bir temsilciye mi ihtiyacınız var? Av. Hakan Buldu ile hemen iletişime geçin, adalet için ilk adımı atın!",
+    title: "Hakkımızda - Hakan Buldu | 15+ Yıllık Deneyimle Hukuki Destek",
+    description: "Hukuki sorunlarınızda güçlü bir temsilciye mi ihtiyacınız var? Hakan Buldu ile hemen iletişime geçin, adalet için ilk adımı atın!",
     alternates: { canonical: `${siteUrl}/hakkinda` },
 };
 
@@ -18,8 +18,8 @@ const AboutPage = () => {
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Person",
-        name: "Av. Hakan Buldu",
-        jobTitle: "Avukat",
+        name: "Hakan Buldu",
+        jobTitle: "Danışman",
         url: siteUrl,
         description: "15+ yıllık tecrübesiyle ceza hukuku ve idare hukuku alanlarında güvenilir, sonuç odaklı avukat. Arabuluculuk ve bilirkişilik eğitimleri ile etkin çözümler sunar.",
         alumniOf: {
@@ -29,7 +29,7 @@ const AboutPage = () => {
         },
         worksFor: {
             "@type": "Organization",
-            name: "Hakan Buldu Hukuk Bürosu",
+            name: "Hakan Buldu",
             url: siteUrl
         },
         memberOf: {
@@ -38,8 +38,8 @@ const AboutPage = () => {
             url: "https://www.ankarabarosu.org.tr/"
         },
         sameAs: [
-            "https://www.linkedin.com/in/hakan-buldu", // LinkedIn linkini gerçek URL ile değiştir
-            "https://www.avukatlar.org/hakan-buldu"      // Avukatlar.org linkini gerçek URL ile değiştir
+            "https://www.linkedin.com/in/hakan-buldu" // LinkedIn linkini gerçek URL ile değiştir
+               
         ]
     };
 

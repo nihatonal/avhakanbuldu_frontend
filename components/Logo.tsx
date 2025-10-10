@@ -7,7 +7,7 @@ const Logo = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 text-primary font-display font-semibold text-xl">
                 {/* <Scale className="h-6 w-6 text-accent" /> */}
-                <span>Av. Hakan Buldu</span>
+                <span>Hakan Buldu</span>
             </Link>
         </div>
     )

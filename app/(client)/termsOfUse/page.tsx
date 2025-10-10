@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Container from '@/components/Container'
 
 export const metadata: Metadata = {
-    title: 'Kullanım Şartları | Av. Hakan Buldu',
+    title: 'Kullanım Şartları | Hakan Buldu',
     description: 'Bu web sitesini kullanmadan önce lütfen bu kullanım şartlarını dikkatlice okuyunuz. Siteyi kullanmanız, bu şartları kabul ettiğiniz anlamına gelir.'
 }
 
@@ -29,7 +29,7 @@ export default function Page() {
 
                     <h2 className="text-2xl font-semibold mt-8 mb-4">2. Fikri Mülkiyet</h2>
                     <p>
-                        Web sitesindeki tüm içerikler (yazılar, görseller, logolar, videolar) Av. Hakan Buldu’ya aittir veya lisanslıdır.
+                        Web sitesindeki tüm içerikler (yazılar, görseller, logolar, videolar) Hakan Buldu’ya aittir veya lisanslıdır.
                         Aşağıdakiler izinsiz yapılamaz:
                     </p>
                     <ul>

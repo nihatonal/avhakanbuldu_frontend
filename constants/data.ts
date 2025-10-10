@@ -30,8 +30,8 @@ export const productType = [
 ];
 
 export const staticsData = [
-  { label: "Yıl Deneyim", value: "15", type: "number" },
-  { label: "Başarılı Dava", value: "500", type: "number" },
-  { label: "Mutlu Müvekkil", value: "1000", type: "number" },
-  { label: "Başarı Oranı", value: "95", type: "percentage" },
+  { label: "Yıl Deneyim", value: 15, type: "number" },
+  { label: "Danışılan Kişi", value: 500, type: "number" },
+  { label: "Hukuki Makale", value: 50, type: "number" },
+  { label: "Bilgilendirme Oturumu", value: 300, type: "number" }, 
 ];

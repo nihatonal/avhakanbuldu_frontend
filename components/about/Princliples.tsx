@@ -10,22 +10,23 @@ import { fadeUp, containerStagger } from '@/lib/animations';
 const Princliples = () => {
     const principles = [
         {
-            title: 'Dürüstlük ve Şeffaflık',
-            description: 'Müvekkillerimle her zaman dürüst ve şeffaf bir iletişim kurarım.'
+            title: 'Güven ve Şeffaflık',
+            description: 'Her danışanımla açık ve güvene dayalı iletişim kurarım, süreç boyunca şeffaf davranırım.'
         },
         {
-            title: 'Profesyonellik',
-            description: 'Her davaya aynı titizlik ve profesyonellikle yaklaşırım.'
+            title: 'Profesyonel Yaklaşım',
+            description: 'Tüm danışmanlık süreçlerinde titizlik ve profesyonellikle hareket ederim.'
         },
         {
-            title: 'Müvekkil Odaklılık',
-            description: 'Müvekkillerimin çıkarlarını her zaman ön planda tutarım.'
+            title: 'Danışan Odaklılık',
+            description: 'Danışanların ihtiyaç ve hedeflerini her zaman ön planda tutarım.'
         },
         {
-            title: 'Sürekli Gelişim',
-            description: 'Hukuki gelişmeleri takip ederek kendimi sürekli geliştiririm.'
+            title: 'Sürekli Gelişim ve Güncel Bilgi',
+            description: 'Sektördeki gelişmeleri takip ederek danışmanlık hizmetimi sürekli iyileştiririm.'
         }
     ];
+
 
     return (
         <section className="section-padding bg-secondary/50">
@@ -57,9 +58,9 @@ const Princliples = () => {
                     >
                         {principles.map((principle, index) => (
                             <motion.div key={index} variants={fadeUp}>
-                                <Card className="card-elegant">
+                                <Card className="card-elegant hover:shadow-lg hover:shadow-gray-200 transition-shadow">
                                     <div className="flex items-start space-x-4">
-                                        <CheckCircle className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
+                                        <CheckCircle className="h-8 w-8 text-accent mt-1 flex-shrink-0" />
                                         <div>
                                             <h3 className="font-display text-xl font-semibold text-primary mb-2">
                                                 {principle.title}

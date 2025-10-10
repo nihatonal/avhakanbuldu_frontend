@@ -30,7 +30,7 @@ export async function GET() {
     <channel>
       <title>Hakan Buldu Blog</title>
       <link>${siteUrl}/blog</link>
-      <description>Av. Hakan Buldu'nun blog yazıları</description>
+      <description>Hakan Buldu'nun blog yazıları</description>
       <language>tr-TR</language>
       ${rssItems}
     </channel>

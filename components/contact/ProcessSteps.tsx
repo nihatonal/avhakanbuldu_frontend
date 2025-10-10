@@ -15,17 +15,17 @@ const ProcessSteps = () => {
         {
             step: '2',
             title: 'Değerlendirme',
-            description: 'Durumunuzu değerlendirip size dönüş yaparım'
+            description: 'Durumunuzu inceleyip size geri dönüş sağlıyorum'
         },
         {
             step: '3',
-            title: 'Randevu',
-            description: 'Ücretsiz ilk görüşme randevusu alın'
+            title: 'Danışmanlık Görüşmesi',
+            description: 'İlk danışmanlık görüşmesini planlayın'
         },
         {
             step: '4',
-            title: 'Çözüm',
-            description: 'Hukuki çözüm sürecini başlatırız'
+            title: 'Çözüm ve Rehberlik',
+            description: 'Hukuki süreçle ilgili net ve güvenilir rehberlik sunuyorum'
         }
     ];
 
@@ -41,8 +41,7 @@ const ProcessSteps = () => {
                     Nasıl Çalışıyoruz?
                 </h2>
                 <p className="text-muted-foreground">
-                    Hukuki danışmanlık sürecimiz şeffaf ve müvekkil odaklıdır.
-                    İşte sizinle nasıl çalıştığımız:
+                    Hukuki danışmanlık sürecimiz şeffaf ve danışan odaklıdır.
                 </p>
             </motion.div>
 
@@ -72,11 +71,10 @@ const ProcessSteps = () => {
                         <CheckCircle className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
                         <div>
                             <h3 className="font-display text-lg font-semibold text-primary mb-2">
-                                Ücretsiz İlk Danışmanlık
+                                Danışmanlık ve Rehberlik
                             </h3>
                             <p className="text-muted-foreground text-sm">
-                                İlk görüşmemiz tamamen ücretsizdir. Durumunuzu değerlendirip,
-                                size en uygun hukuki çözüm önerilerini sunuyorum.
+                                Sizinle birlikte durumunuzu ele alıp, güven temelli bir danışmanlık süreci yürütüyoruz.
                             </p>
                         </div>
                     </div>

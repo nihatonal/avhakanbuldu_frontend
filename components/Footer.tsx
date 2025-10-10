@@ -14,10 +14,10 @@ const Footer = () => {
                         <div className="lg:col-span-2">
                             <div className="flex space-x-2 mb-4">
                                 <Scale className="h-6 w-6 text-accent" />
-                                <span className="font-display font-semibold text-xl">Av. Hakan Buldu</span>
+                                <span className="font-display font-semibold text-xl">Hakan Buldu</span>
                             </div>
                             <p className="text-primary-foreground/80 mb-4 max-w-md">
-                                Profesyonel hukuki danışmanlık ve temsil hizmetleri. 15 yılı aşkın deneyimle müvekkillerimize güvenilir çözümler sunuyoruz.
+                                Profesyonel hukuki danışmanlık hizmetleri sunuyoruz. 15 yılı aşkın deneyimle güvenilir ve etkili çözümler sağlıyoruz.
                             </p>
                             <div className="flex space-x-4 pointer-events-none">
                                 <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors">
@@ -78,7 +78,7 @@ const Footer = () => {
 
                     <div className="border-t border-primary-light mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
                         <p className="text-primary-foreground/60 text-sm">
-                            © 2025 Av. Hakan Buldu. Tüm hakları saklıdır.
+                            © 2025 Hakan Buldu. Tüm hakları saklıdır.
                         </p>
                         <div className="grid grid-cols-2 lg:grid-cols-4 items-center space-y-2 lg:space-y-0 space-x-6 mt-4 md:mt-0">
                             <a href="/gizlilik-politikasi" className="text-primary-foreground/60 hover:text-accent text-sm transition-colors">

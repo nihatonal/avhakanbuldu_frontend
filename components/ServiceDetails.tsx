@@ -154,18 +154,23 @@ const ServiceDetails = ({ area }: { area: Service }) => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.3 }}
-                        className="gradient-primary rounded-xl p-10 text-center text-white shadow-elegant">
-                        <motion.h2 variants={fadeUp} className="text-3xl font-bold mb-4">Hukuki Destek Almak İçin Hemen İletişime Geçin</motion.h2>
-                        <motion.p variants={fadeUp} className="mb-6 max-w-2xl mx-auto">
-                            Ceza hukuku alanında 10+ yıllık deneyim ve 200+ dava tecrübesiyle yanınızdayım.
+                        className="gradient-primary rounded-xl p-10 text-center text-white shadow-elegant"
+                    >
+                        <motion.h2 variants={fadeUp} className="text-3xl font-bold mb-4">
+                            Hukuki Danışmanlık İçin Hemen İletişime Geçin
+                        </motion.h2>
+                        <motion.p variants={fadeUp} className="mb-6 max-w-2xl mx-auto text-white/90">
+                            15 yılı aşkın deneyimle güven temelli hukuki danışmanlık ve etkili rehberlik sağlıyorum. Size süreçler hakkında doğru ve anlaşılır bilgi sunmak için buradayım.
                         </motion.p>
                         <motion.a
-                            variants={fadeUp} href="/iletisim"
+                            variants={fadeUp}
+                            href="/iletisim"
                             className="btn-hero inline-block text-lg font-semibold shadow-accent hover:shadow-elegant"
                         >
-                            Hemen Başvur
+                            Danışmanlık Alın
                         </motion.a>
                     </motion.section>
+
                 </div>
             </Container>
         </div>

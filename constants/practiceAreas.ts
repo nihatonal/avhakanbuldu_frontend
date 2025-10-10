@@ -1,275 +1,241 @@
 import { Gavel, Landmark, Home, Building2 } from "lucide-react";
+
 export const practicesData = [
   {
     icon: Gavel,
-    title: "Ceza Hukuku",
+    title: "Ceza Hukuku Danışmanlığı",
     slug: "ceza-hukuku",
     description:
-      "Ceza yargılamasında sanık ve mağdur haklarını korumak için kapsamlı hukuki destek sunuyorum. Her aşamada etkin savunma hizmeti veriyorum.",
+      "Ceza hukuku konularında bilgi ve danışmanlık hizmeti sunuyorum. Haklarınız ve süreçler hakkında kapsamlı rehberlik sağlıyorum.",
     services: [
-      "Ağır ceza mahkemesi davaları",
-      "Sulh ve asliye ceza davaları",
-      "Soruşturma aşamasında müdafilik",
-      "Tutuklamaya itiraz ve tahliye",
-      "İstinaf ve temyiz başvuruları",
-      "Mağdur vekilliği ve şikayet süreçleri",
+      "Ceza hukuku süreçleri hakkında bilgilendirme",
+      "Hak ve yükümlülüklerin açıklanması",
+      "Olası hukuki adımların rehberliği",
+      "Hukuki sorulara yanıt ve yönlendirme",
     ],
-    experience: "10+ yıl deneyim, 200+ dava tecrübesi",
-    detailTitle: "Ceza Hukukunda Profesyonel Destek",
+    experience: "10+ yıl hukuk bilgisi ve danışmanlık deneyimi",
+    detailTitle: "Ceza Hukuku Hakkında Detaylı Bilgilendirme",
     detailDescription:
-      "Ceza hukuku, bireylerin özgürlüğünü doğrudan etkileyen, ciddi sonuçlar doğurabilecek bir alandır. Bu nedenle her aşamada uzman avukat desteği gereklidir. Müvekkillerime soruşturma, kovuşturma ve temyiz aşamalarında etkin savunma ve danışmanlık hizmeti sunuyorum.",
+      "Ceza hukuku konularında kapsamlı bilgi sağlıyorum. Tutuklama, gözaltı, suç tipleri ve olası hukuki süreçler hakkında danışmanlık veriyorum. Davalar için aktif temsil hizmeti sunulmamaktadır.",
     detailedServices: [
       {
-        title: "Ağır Ceza Mahkemesi Davaları",
+        title: "Ceza Hukuku Süreçleri",
         description:
-          "Cinayet, cinsel saldırı, yağma gibi suçlarda etkili savunma hizmeti sunuyorum.",
+          "Tutuklama, gözaltı, soruşturma ve kovuşturma süreçlerinin nasıl işlediğini detaylı şekilde açıklıyorum.",
       },
       {
-        title: "Soruşturma Aşaması Müdafiliği",
+        title: "Haklar ve Yükümlülükler",
         description:
-          "İfade alma, gözaltı ve tutuklama süreçlerinde sanık haklarını koruyorum.",
+          "Şüpheli ve mağdur hakları, savunma hakları ve yasal prosedürler hakkında bilgilendirme yapıyorum.",
       },
       {
-        title: "Tutuklamaya İtiraz ve Tahliye",
+        title: "Danışmanlık ve Sorular",
         description:
-          "Haksız tutuklamalara karşı hızlı ve etkili başvurularla tahliye sağlıyorum.",
-      },
-      {
-        title: "İstinaf ve Temyiz Başvuruları",
-        description:
-          "Yerel mahkeme kararlarına karşı üst mahkemelere etkili itiraz süreçleri yürütüyorum.",
-      },
-      {
-        title: "Mağdur Temsili ve Şikayet Süreçleri",
-        description:
-          "Mağdur haklarını koruyarak adaletin sağlanmasına katkıda bulunuyorum.",
-      },
-      {
-        title: "Uzlaşma ve Alternatif Çözümler",
-        description:
-          "Ceza yargılamasında tarafların menfaatine uygun uzlaştırma süreçlerini yönetiyorum.",
+          "Her türlü hukuki sorunuz için rehberlik sağlıyor, alternatif çözüm yollarını açıklıyorum.",
       },
     ],
     faq: [
       {
-        question: "Avukat olmadan ifade verebilir miyim?",
+        question: "Gözaltına alındığımda neler yapmalıyım?",
         answer:
-          "Evet verebilirsiniz, ancak ifade süreci sanık veya şüpheli açısından hayati öneme sahiptir. Avukat eşliğinde ifade vermek, ileride doğabilecek olumsuzlukların önüne geçer.",
+          "Hukuki haklarınızı bilmek çok önemlidir. Kimlik bilgilerinizi doğrulamak, avukat talep etmek ve ifadelerinizi kayda geçirmek kritik adımlardır.",
       },
       {
-        question: "Tutuklandıktan sonra ne yapılmalı?",
+        question: "Tutuklama süreci ne kadar sürer?",
         answer:
-          "Tutuklama kararına itiraz hakkı vardır. Delil durumu, kaçma şüphesi vb. unsurlar değerlendirildikten sonra tahliye başvurusu yapılabilir.",
+          "Tutuklama süresi olayın niteliğine göre değişir. Süreç ve haklar hakkında detaylı bilgi almak için danışmanlık sağlayabilirim.",
+      },
+      {
+        question: "Ceza hukuku ile ilgili sorularımı nasıl iletebilirim?",
+        answer:
+          "Telefon veya e-posta aracılığıyla sorularınızı iletebilir, hızlı ve doğru bilgiler alabilirsiniz.",
       },
     ],
     examples: [
       {
-        case: "Sanık olarak yargılanan bir müvekkil, dosyadaki çelişkili tanık ifadeleri sayesinde beraat etti.",
+        case: "Bir kişi gözaltına alındığında haklarını bilmiyordu. Danışmanlık ile hakları anlatıldı, süreç adım adım açıklanarak kişi bilinçlendirildi.",
+      },
+      {
+        case: "Suç isnadı ile ilgili bilgi almak isteyen bir müvekkil, süreçlerin nasıl ilerlediğini ve olası sonuçları danışmanlık ile öğrendi.",
       },
     ],
   },
   {
     icon: Landmark,
-    title: "İdare Hukuku",
+    title: "İdare Hukuku Danışmanlığı",
     slug: "idare-hukuku",
     description:
-      "İdarenin işlem ve eylemlerine karşı birey haklarını savunuyorum. İdari yargı süreçlerinde ve anayasal başvurularda tecrübeye sahibim.",
+      "İdare hukuku ile ilgili bilgi ve danışmanlık sağlıyorum. İdari işlemler, kararlar ve haklarınız hakkında rehberlik sunuyorum.",
     services: [
-      "İptal ve tam yargı davaları",
-      "Memur disiplin işlemleri",
-      "İdari para cezalarına itiraz",
-      "Kamulaştırma ve imar uyuşmazlıkları",
-      "Vergi ceza ve uzlaşma süreçleri",
-      "Anayasa Mahkemesi başvuruları",
+      "İdari işlemler ve süreçler hakkında bilgilendirme",
+      "Haklarınız ve yükümlülükler hakkında açıklama",
+      "Dilekçe, itiraz ve başvuru süreçlerinin rehberliği",
+      "Hukuki sorulara yanıt ve yönlendirme",
     ],
-    experience: "9+ yıl deneyim, 100+ dava ve başvuru",
-    detailTitle: "İdare Hukukunda Güçlü Temsil",
+    experience: "9+ yıl hukuk bilgisi ve danışmanlık deneyimi",
+    detailTitle: "İdare Hukuku Hakkında Detaylı Bilgilendirme",
     detailDescription:
-      "İdare hukuku, kamu otoritelerinin vatandaşlar üzerindeki işlemleriyle ilgilidir. Hatalı idari işlemler bireylerin haklarını zedeleyebilir. Bu noktada iptal davaları, tam yargı davaları ve anayasal başvurular yoluyla etkin hukuki koruma sağlıyorum.",
+      "İdare hukuku alanında kararlar, idari işlemler ve itiraz mekanizmaları hakkında detaylı bilgi sağlıyorum. Henüz dava veya temsil hizmeti sunulmamaktadır.",
     detailedServices: [
       {
-        title: "İptal ve Tam Yargı Davaları",
+        title: "İdari İşlemler ve Kararlar",
         description:
-          "İdari işlemlerin iptali ve maddi-manevi zararların tazmini için dava süreçlerini yürütüyorum.",
+          "İdarenin aldığı kararlar ve yaptıkları işlemler hakkında kapsamlı bilgilendirme yapıyorum.",
       },
       {
-        title: "Disiplin Cezalarına İtiraz",
+        title: "Haklar ve Yükümlülükler",
         description:
-          "Memurlara verilen haksız disiplin cezalarına karşı idare mahkemelerinde itiraz ediyorum.",
+          "İdari haklarınız, başvuru ve itiraz yolları hakkında rehberlik sağlıyorum.",
       },
       {
-        title: "İdari Para Cezalarına Karşı Dava",
+        title: "Danışmanlık ve Soru-Cevap",
         description:
-          "Belediye, vergi veya kamu kurumlarının verdiği para cezalarına karşı dava açıyorum.",
-      },
-      {
-        title: "Kamulaştırma ve İmar Uyuşmazlıkları",
-        description:
-          "Taşınmazın değerinin düşük belirlenmesi veya imar mağduriyetlerine karşı yasal mücadele sunuyorum.",
-      },
-      {
-        title: "Vergi Uyuşmazlıkları",
-        description:
-          "Vergi cezaları, tarhiyatlar ve uzlaşma süreçlerinde temsil sağlıyorum.",
-      },
-      {
-        title: "Anayasa Mahkemesi Başvuruları",
-        description:
-          "Bireysel başvuru hakkı kapsamında anayasa ihlallerine karşı hak arıyorum.",
+          "Sorularınızı alıyor ve size en doğru bilgilendirmeyi sunuyorum.",
       },
     ],
     faq: [
       {
-        question: "İdari işlem nedir?",
+        question: "İdari itiraz nasıl yapılır?",
         answer:
-          "İdarenin tek taraflı olarak yaptığı, bireylerin hak ve menfaatlerini etkileyen işlemlerdir. Örnek: ruhsat iptali, ceza kararı.",
+          "İtirazın süresi, formatı ve içeriği kanunda belirtilmiştir. Danışmanlık ile adım adım yönlendirme sağlayabilirim.",
       },
       {
-        question: "Ne zaman Anayasa Mahkemesi'ne başvurabilirim?",
+        question: "Ruhsat iptali durumunda haklarım nelerdir?",
         answer:
-          "Tüm idari ve yargısal yollar tükendiğinde ve temel hak ihlali varsa bireysel başvuru yapılabilir.",
+          "Ruhsat iptali ve benzeri kararlar karşısında haklarınızı anlamak kritik önemdedir. Detaylı bilgi için danışmanlık talep edebilirsiniz.",
+      },
+      {
+        question: "İdari süreçler ne kadar sürer?",
+        answer:
+          "Süreçler olayın niteliğine göre değişiklik gösterir. Süreç takibi ve rehberlik sağlayabilirim.",
       },
     ],
     examples: [
       {
-        case: "Ruhsatı iptal edilen bir müvekkil için açtığımız dava sonucunda ruhsat iade edildi ve maddi tazminat kazanıldı.",
+        case: "Bir müvekkil ruhsat iptali işlemi ile karşılaştı. Danışmanlık ile sürecin adımları ve hakları detaylı şekilde açıklandı.",
+      },
+      {
+        case: "İdari başvuru yapmak isteyen kişi, hangi belgelerin gerekli olduğunu ve sürecin nasıl işlediğini danışmanlık ile öğrendi.",
       },
     ],
   },
   {
     icon: Building2,
-    title: "İş Hukuku",
+    title: "İş Hukuku Danışmanlığı",
     slug: "is-hukuku",
     description:
-      "İşçi ve işveren haklarının korunması için dava takibi ve danışmanlık hizmeti sunuyorum. İş uyuşmazlıklarında güçlü temsil sağlıyorum.",
+      "İş hukuku alanında bilgilendirme ve danışmanlık sağlıyorum. İş sözleşmeleri, işten çıkarılma ve iş uyuşmazlıkları hakkında rehberlik sunuyorum.",
     services: [
-      "İşe iade ve fesih davaları",
-      "Kıdem ve ihbar tazminatları",
-      "Fazla mesai ve ücret alacakları",
-      "Mobbing ve psikolojik taciz davaları",
-      "İş kazası kaynaklı tazminatlar",
-      "İş sözleşmesi ve SGK uyuşmazlıkları",
+      "İş hukuku süreçleri ve haklar hakkında bilgilendirme",
+      "İş sözleşmeleri ve işten çıkarılma prosedürleri hakkında rehberlik",
+      "İş uyuşmazlıkları ve hak talepleri hakkında danışmanlık",
+      "Hukuki sorulara yanıt ve çözüm önerileri",
     ],
-    experience: "7+ yıl deneyim, 80+ başarılı çözüm",
-    detailTitle: "İş Hukukunda Etkin Çözümler",
+    experience: "7+ yıl hukuk bilgisi ve danışmanlık deneyimi",
+    detailTitle: "İş Hukuku Hakkında Detaylı Bilgilendirme",
     detailDescription:
-      "İş hukuku, çalışanların ve işverenlerin haklarını düzenleyen önemli bir alandır. Haksız fesih, tazminat talepleri ve SGK uyuşmazlıklarında profesyonel destek sağlıyorum.",
+      "İş hukuku konularında bilgilendirme sağlıyorum. İş sözleşmeleri, işten çıkarılma, fazla mesai, tazminat hakları gibi konularda rehberlik sunuyorum. Henüz dava veya temsil hizmeti sunulmamaktadır.",
     detailedServices: [
       {
-        title: "İşe İade Davaları",
+        title: "İş Sözleşmeleri ve Haklar",
         description:
-          "Haksız yere işten çıkarılan çalışanlar için işe dönüş davaları açıyorum.",
+          "Çalışan ve işveren hakları, sözleşme türleri ve iş yerinde uyulması gereken yasal prosedürler hakkında bilgilendirme yapıyorum.",
       },
       {
-        title: "Kıdem ve İhbar Tazminatı",
+        title: "İşten Çıkarılma ve Tazminat",
         description:
-          "İş ilişkisinin sona ermesi durumunda hak edilen tazminatların tahsilini sağlıyorum.",
+          "Haksız işten çıkarılma, kıdem ve ihbar tazminatı gibi konularda danışmanlık ve süreç rehberliği sağlıyorum.",
       },
       {
-        title: "Ücret ve Fazla Mesai Alacakları",
+        title: "Danışmanlık ve Sorular",
         description:
-          "Çalışanların ödenmeyen maaş, prim ve fazla mesai ücretlerini yasal yollarla tahsil ediyorum.",
-      },
-      {
-        title: "Mobbing Davaları",
-        description:
-          "İş yerinde psikolojik tacize uğrayan çalışanlar için tazminat ve koruma davaları açıyorum.",
-      },
-      {
-        title: "İş Kazası Tazminatları",
-        description:
-          "İş kazası geçiren çalışanların hak ettiği maddi/manevi tazminatları kazanmasına yardımcı oluyorum.",
-      },
-      {
-        title: "SGK ve İş Sözleşmesi Uyuşmazlıkları",
-        description:
-          "Hizmet tespiti, işe giriş bildirgesi eksiklikleri gibi SGK kaynaklı sorunları çözüme kavuşturuyorum.",
+          "Her türlü iş hukuku sorusunu alıyor, adım adım çözüm önerileri sunuyorum.",
       },
     ],
     faq: [
       {
-        question: "İşten çıkarıldım, dava açabilir miyim?",
+        question: "İşten çıkarıldım, haklarım nelerdir?",
         answer:
-          "Evet, fesih haksızsa işe iade veya tazminat davası açabilirsiniz. 30 gün içinde arabulucuya başvurmanız gerekir.",
+          "Kıdem ve ihbar tazminatı başta olmak üzere haklarınızı bilmek çok önemlidir. Süreç ve haklar hakkında detaylı bilgi için danışmanlık talep edebilirsiniz.",
       },
       {
-        question: "Maaşım zamanında ödenmiyor, ne yapabilirim?",
+        question: "Fazla mesai ücretim ödenmedi, ne yapmalıyım?",
         answer:
-          "Bu durumda noterden ihtar çekebilir, ardından alacak davası açabilirsiniz.",
+          "Fazla mesai hesaplamaları ve yasal haklarınızı açıklıyor, çözüm yollarını sunuyorum.",
+      },
+      {
+        question: "İş sözleşmemi anlamıyorum, ne yapabilirim?",
+        answer:
+          "Sözleşmenizi adım adım inceleyerek haklarınızı ve yükümlülüklerinizi açıklayabilirim.",
       },
     ],
     examples: [
       {
-        case: "Haksız yere işten çıkarılan bir müvekkil için işe dönüş kararı aldırıldı ve 6 maaşlık tazminat kazandırıldı.",
+        case: "Bir çalışan işten çıkarıldı ve tazminat haklarını bilmiyordu. Danışmanlık ile hakları açıklandı ve süreç planlandı.",
+      },
+      {
+        case: "Fazla mesai ücreti konusunda anlaşmazlık yaşayan kişi, haklarını öğrenip işverenle doğru adımları atmak için danışmanlık aldı.",
       },
     ],
   },
   {
     icon: Home,
-    title: "Medeni Hukuk",
+    title: "Medeni Hukuk Danışmanlığı",
     slug: "medeni-hukuk",
     description:
-      "Miras, sözleşmeler, taşınmaz ve aile dışı medeni hukuki meselelerde müvekkillerime çözüm odaklı danışmanlık sunuyorum.",
+      "Medeni hukuk konularında bilgilendirme ve danışmanlık sağlıyorum. Miras, sözleşme ve taşınmaz işlemleri hakkında rehberlik sunuyorum.",
     services: [
-      "Miras ve veraset davaları",
-      "Sözleşmelerin hazırlanması ve ihtilafların çözümü",
-      "Taşınmaz mülkiyeti ve tapu işlemleri",
-      "Mirasçılar arası uyuşmazlıklar",
-      "Vasiyet ve vasiyetin uygulanması",
-      "Kişisel haklar ve tazminat davaları",
+      "Medeni hukuk süreçleri hakkında bilgilendirme",
+      "Sözleşmeler, taşınmaz ve miras konularında rehberlik",
+      "Hak ve yükümlülükler hakkında danışmanlık",
+      "Hukuki sorulara yanıt ve çözüm önerileri",
     ],
-    experience: "10+ yıl deneyim, 150+ dava tecrübesi",
-    detailTitle: "Medeni Hukukta Güçlü ve Etkin Temsil",
+    experience: "10+ yıl hukuk bilgisi ve danışmanlık deneyimi",
+    detailTitle: "Medeni Hukuk Hakkında Detaylı Bilgilendirme",
     detailDescription:
-      "Medeni hukuk alanında müvekkillerimi hukuki haklarını koruma ve ihtilafları çözme konusunda destekliyorum. Miras, taşınmaz, sözleşme ve tazminat davalarında uzmanlaşmış bulunmaktayım.",
+      "Medeni hukuk alanında, miras, sözleşme, taşınmaz alım-satım ve aile hukuku konularında bilgilendirme yapıyorum. Henüz dava veya temsil hizmeti sunulmamaktadır.",
     detailedServices: [
       {
-        title: "Miras ve Veraset Davaları",
+        title: "Sözleşmeler ve Taşınmaz İşlemleri",
         description:
-          "Miras paylaşımı ve veraset uyuşmazlıklarında tarafları adil şekilde temsil ediyorum.",
+          "Alım-satım, kiralama ve diğer taşınmaz işlemlerinde yasal süreçleri açıklıyorum.",
       },
       {
-        title: "Sözleşme ve Hukuki İşlemler",
+        title: "Miras ve Aile Hukuku",
         description:
-          "Taraflar arasında yapılan sözleşmelerin hazırlanması, denetlenmesi ve ihtilafların çözümünü sağlıyorum.",
+          "Miras paylaşımı, vasiyet ve aile hukuku konularında bilgilendirme ve yönlendirme sağlıyorum.",
       },
       {
-        title: "Taşınmaz Mülkiyeti",
+        title: "Danışmanlık ve Sorular",
         description:
-          "Tapu ve taşınmaz davalarında müvekkillerin haklarını koruyarak çözüm üretiyorum.",
-      },
-      {
-        title: "Mirasçılar Arası Uyuşmazlıklar",
-        description:
-          "Mirasçılar arasında ortaya çıkan anlaşmazlıkların mahkeme ve müzakere yoluyla çözümünü sağlıyorum.",
-      },
-      {
-        title: "Vasiyet ve Uygulama",
-        description:
-          "Vasiyetlerin hazırlanması, geçerliliği ve uygulanması süreçlerinde hukuki destek sunuyorum.",
-      },
-      {
-        title: "Kişisel Haklar ve Tazminat",
-        description:
-          "Haksız fiil, maddi ve manevi tazminat davalarında müvekkillerimi temsil ediyorum.",
+          "Sorularınızı alıyor, her aşamada rehberlik sağlıyor ve hukuki çözüm yollarını anlatıyorum.",
       },
     ],
     faq: [
       {
-        question: "Miras paylaşımı süreci ne kadar sürer?",
+        question: "Miras paylaşımı nasıl yapılır?",
         answer:
-          "Miras davaları mirasın büyüklüğüne ve tarafların anlaşma durumuna göre değişir; genellikle birkaç aydan bir yıla kadar sürebilir.",
+          "Miras paylaşımı ve yasal prosedürler hakkında detaylı bilgi veriyor, haklarınızı açıklıyorum.",
       },
       {
-        question: "Taşınmaz davaları her zaman mahkemeye mi taşınır?",
+        question: "Taşınmaz alım-satımında nelere dikkat etmeliyim?",
         answer:
-          "Bazı taşınmaz ihtilafları uzlaşma veya arabuluculuk ile çözülebilir; aksi takdirde mahkeme süreci başlatılır.",
+          "Tapu işlemleri, sözleşmeler ve olası riskler hakkında bilgilendirme sağlıyorum.",
+      },
+      {
+        question: "Sözleşme hazırlarken nelere dikkat etmeliyim?",
+        answer:
+          "Sözleşmelerde hak ve yükümlülükleri adım adım açıklıyor, dikkat edilmesi gereken hususları belirtiyorum.",
       },
     ],
     examples: [
       {
-        case: "Mirasçılar arası anlaşmazlıkta müvekkil lehine adil paylaşım sağlandı ve dava kısa sürede sonuçlandı.",
+        case: "Bir miras paylaşımı sürecinde danışan, haklarını ve yasal prosedürü öğrenerek bilinçli adımlar attı.",
+      },
+      {
+        case: "Taşınmaz alım-satımında sözleşme hazırlamak isteyen kişi, riskler ve haklar konusunda danışmanlık aldı.",
       },
     ],
   },
+  // Diğer alanlar (İş Hukuku, Medeni Hukuk) için de aynı mantıkla detaylandırabilirsiniz
 ];

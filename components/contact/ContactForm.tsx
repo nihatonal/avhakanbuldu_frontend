@@ -114,8 +114,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
           Hukuki Danışmanlık Formu
         </h2>
         <p className="text-muted-foreground">
-          Durumunuzu detaylı olarak açıklayın, size en kısa sürede dönüş yapacağım.
-          Tüm bilgileriniz gizli tutulur.
+          Hukuki durumunuzu detaylı bir şekilde paylaşın; size en uygun danışmanlık ve rehberlik sağlanacaktır. Tüm bilgileriniz gizli tutulur.
         </p>
       </motion.div>
 
