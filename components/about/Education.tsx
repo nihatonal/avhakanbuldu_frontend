@@ -18,7 +18,7 @@ const Education = () => {
     {
       year: '2022',
       title: 'Avukatlık Kariyeri Başlangıcı',
-      institution: 'Ankara Barosu',
+      institution: '',
       description: 'Hukuk işleri şube müdürlüğü görevine başlayarak dava takibi, mevzuat geliştirme, disiplin hukuku ve işçi-işveren uyuşmazlıkları alanlarında çalıştım.'
     }
   ];

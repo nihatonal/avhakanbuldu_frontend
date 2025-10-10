@@ -33,13 +33,12 @@ const HomeAbout = () => {
                         </h2>
                         <p className="text-lg text-muted-foreground mb-6">
                             15 yılı aşkın hukuk deneyimimle, hukuki konularda doğru ve güvenilir bilgilendirme sağlıyorum.
-                            Ankara Üniversitesi Hukuk Fakültesi mezunu olarak, ceza hukuku, medeni hukuk ve tazminat hukuku alanlarında bilgi ve danışmanlık sunuyorum.
+                            Dokuz Eylül Üniversitesi Hukuk Fakültesi mezunu olarak, ceza hukuku, medeni hukuk ve tazminat hukuku alanlarında bilgi ve danışmanlık sunuyorum.
                         </p>
 
                         <div className="space-y-3 mb-8 text-primary">
                             {[
-                                'Ankara Üniversitesi Hukuk Fakültesi Mezunu',
-                                'Türkiye Barolar Birliği Üyesi',
+                                'Dokuz Eylül Üniversitesi Hukuk Fakültesi',
                                 '15+ Yıl Hukuk Deneyimi',
                                 '500+ Danışma / Bilgilendirme'
                             ].map((item, idx) => (

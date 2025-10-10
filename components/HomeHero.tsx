@@ -38,20 +38,20 @@ const HomeHero = () => {
             >
                 <motion.div variants={fadeUp}>
                     <Badge className="mb-4 p-2 px-4 bg-accent text-accent-foreground hover:bg-accent">
-                        Profesyonel &amp; Güvenilir Hukuki Danışmanlık
+                        Profesyonel Yaklaşım, Net Sonuçlar
                     </Badge>
                 </motion.div>
 
                 <motion.div variants={fadeUp}>
                     <h1 className="font-display text-4xl md:text-7xl font-bold mb-6">
-                        Güvenilir <span className="text-gradient">Hukuki Danışmanlık</span>
+                        Doğru Stratejiyle Haklarınızı Koruyun
                     </h1>
                 </motion.div>
 
                 <motion.div variants={fadeUp}>
                     <p className="text-lg md:text-2xl mb-8 max-w-3xl mx-auto text-white/90">
                         15 yılı aşkın deneyimle, hukuki konular hakkında doğru ve güvenilir bilgilendirme sağlıyorum.
-                        Sorularınız için bizimle iletişime geçebilirsiniz.
+
                     </p>
                 </motion.div>
 
