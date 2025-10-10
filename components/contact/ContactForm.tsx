@@ -28,31 +28,59 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
   })
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: 'Eksik Bilgi',
         description: 'Lütfen zorunlu alanları doldurun.',
         variant: 'destructive'
-      })
-      return
+      });
+      return;
     }
 
-    toast({
-      title: 'Mesajınız Gönderildi',
-      description: 'En kısa sürede size dönüş yapacağım. Teşekkür ederim.'
-    })
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-      legalArea: ''
-    })
-  }
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        toast({
+          title: 'Mesajınız Gönderildi',
+          description: 'En kısa sürede size dönüş yapacağım. Teşekkür ederim.'
+        });
+
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+          legalArea: ''
+        });
+        setSelectedCategory("");
+      } else {
+        toast({
+          title: 'Hata',
+          description: data.error || 'Mesaj gönderilemedi.',
+          variant: 'destructive'
+        });
+      }
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: 'Hata',
+        description: 'Mesaj gönderilemedi.',
+        variant: 'destructive'
+      });
+    }
+  };
+
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
