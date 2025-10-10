@@ -37,19 +37,22 @@ ${message}
 
     // E-posta gönderimi
     await transporter.sendMail({
-      from: `"${name}" <info@hakanbuldu.com>`, // Zoho mail adresi
+      from: `"Web Form" <info@hakanbuldu.com>`, // Zoho mail adresi
       replyTo: email, // Kullanıcı e-posta adresi
       to: "info@hakanbuldu.com", // Alıcı
       subject: subject ? `Web Form: ${subject}` : "Web Form Mesajı",
       text: emailContent,
+      html: `<p><strong>Ad Soyad:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Telefon:</strong> ${phone || "-"}</p>
+      <p><strong>Konu:</strong> ${subject || "-"}</p>
+      <p><strong>Hukuki Alan:</strong> ${legalArea || "-"}</p>
+      <p><strong>Mesaj:</strong><br/>${message}</p>`,
     });
 
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error(err);
-    return NextResponse.json(
-      { error: "Email gönderilemedi" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Email gönderilemedi" }, { status: 500 });
   }
 }
