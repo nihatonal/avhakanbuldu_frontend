@@ -7,11 +7,12 @@ import { fadeUp, containerStagger } from '@/lib/animations';
 
 const Process = () => {
   const steps = [
-    { step: '01', title: 'İlk Görüşme', description: 'Durum analizi ve hukuki değerlendirme' },
-    { step: '02', title: 'Strateji Belirleme', description: 'En uygun hukuki yol haritası' },
-    { step: '03', title: 'Süreç Yönetimi', description: 'Düzenli bilgilendirme ve takip' },
-    { step: '04', title: 'Sonuç', description: 'Başarılı sonuç ve müvekkil memnuniyeti' }
+    { step: '01', title: 'İlk Görüşme', description: 'Durum analizi ve hukuki değerlendirme yapılır.' },
+    { step: '02', title: 'Strateji Belirleme', description: 'En uygun çözüm planı ve yol haritası oluşturulur.' },
+    { step: '03', title: 'Süreç Yönetimi', description: 'Tüm aşamalar düzenli olarak takip edilir ve bilgilendirme sağlanır.' },
+    { step: '04', title: 'Sonuç', description: 'Belirlenen hedef doğrultusunda sürecin tamamlanması sağlanır.' }
   ];
+
 
   return (
     <section className="section-padding">
@@ -29,7 +30,7 @@ const Process = () => {
               Çalışma Sürecim
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Müvekkillerimle şeffaf ve düzenli bir süreç izleyerek en iyi sonuçları elde ederim.
+              Danışanlarımla şeffaf, planlı ve sonuç odaklı bir süreç izleyerek en iyi çözümleri üretirim.
             </p>
           </motion.div>
 

@@ -20,7 +20,7 @@ const Map = () => {
                             </h2>
                             <p className="text-muted-foreground max-w-2xl mx-auto">
                                 Ankara&apos;nın merkezinde, kolay ulaşılabilir konumda bulunan ofisimde
-                                müvekkillerimi ağırlıyorum.
+                                sizleri bekliyorum.
                             </p>
                         </div>
                     </motion.div>

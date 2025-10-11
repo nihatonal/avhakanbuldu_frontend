@@ -9,11 +9,28 @@ import { fadeUp, containerStagger } from '@/lib/animations';
 
 const Achievements = () => {
   const achievements = [
-    { icon: Trophy, title: '500+ Danışmanlık', description: 'Müvekkillerime sağladığım rehberlik ve danışmanlık' },
-    { icon: Users, title: '1000+ Kişiye Destek', description: 'Hukuki konularda bilgi ve danışmanlık sağladığım kişiler' },
-    { icon: Award, title: 'Güvenilir Danışmanlık', description: 'Müvekkillerimin güvenine dayalı hizmet anlayışı' },
-    { icon: Scale, title: '15+ Yıl Deneyim', description: 'Hukuk alanındaki profesyonel ve kapsamlı tecrübem' },
+    {
+      icon: Trophy,
+      title: '500+ Hukuki Danışmanlık',
+      description: 'Çeşitli hukuk alanlarında sağlanan profesyonel rehberlik ve danışmanlık hizmetleri.'
+    },
+    {
+      icon: Users,
+      title: '1000+ Kişiye Destek',
+      description: 'Bireysel ve kurumsal düzeyde hukuki süreçlerde yönlendirme ve destek.'
+    },
+    {
+      icon: Award,
+      title: 'Güven Odaklı Hizmet',
+      description: 'Şeffaflık, etik ve güven temelli çalışma anlayışıyla sürdürülen hizmetler.'
+    },
+    {
+      icon: Scale,
+      title: '7+ Yıl Deneyim',
+      description: 'Hukuk alanında edinilmiş kapsamlı bilgi birikimi ve uygulama deneyimi.'
+    }
   ];
+
 
   return (
     <section className="section-padding bg-secondary/30">

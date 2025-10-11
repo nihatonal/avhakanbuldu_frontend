@@ -53,10 +53,10 @@ export const practicesData = [
     ],
     examples: [
       {
-        case: "Bir kişi gözaltına alındığında haklarını bilmiyordu. Danışmanlık ile hakları anlatıldı, süreç adım adım açıklanarak kişi bilinçlendirildi.",
+        case: "Bir kişi gözaltına alındığında haklarını bilmiyordu. Hakları ve sürecin işleyişi kendisine adım adım açıklanarak bilgilendirme yapıldı.",
       },
       {
-        case: "Suç isnadı ile ilgili bilgi almak isteyen bir müvekkil, süreçlerin nasıl ilerlediğini ve olası sonuçları danışmanlık ile öğrendi.",
+        case: "Suç isnadıyla ilgili bilgi almak isteyen bir kişi, sürecin aşamaları ve olası sonuçlar hakkında bilgilendirildi.",
       },
     ],
   },
@@ -112,10 +112,10 @@ export const practicesData = [
     ],
     examples: [
       {
-        case: "Bir müvekkil ruhsat iptali işlemi ile karşılaştı. Danışmanlık ile sürecin adımları ve hakları detaylı şekilde açıklandı.",
+        case: "Bir kişi, ruhsat iptali işlemiyle karşılaştığında süreç adımları ve yasal hakları hakkında bilgilendirildi.",
       },
       {
-        case: "İdari başvuru yapmak isteyen kişi, hangi belgelerin gerekli olduğunu ve sürecin nasıl işlediğini danışmanlık ile öğrendi.",
+        case: "İdari başvuru hazırlığında olan bir kişi, gerekli belgeler ve sürecin işleyişi konusunda rehberlik aldı.",
       },
     ],
   },

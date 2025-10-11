@@ -198,7 +198,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
             <div className="flex items-start space-x-3 text-sm text-muted-foreground">
               <Shield className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
               <p>
-                Gönderdiğiniz tüm bilgiler avukat-müvekkil gizliliği kapsamında korunur.
+                Gönderdiğiniz tüm bilgiler gizlilik kapsamında korunur.
                 Kişisel verileriniz güvenle saklanır.
               </p>
             </div>

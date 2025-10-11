@@ -11,7 +11,7 @@ const siteUrl = "https://www.hakanbuldu.com";
 export const metadata: Metadata = {
     title: "Faaliyet Alanlarımız - Hakan Buldu | Uzman Hukuki Hizmetler",
     description:
-        "Ceza, idare, iş ve aile hukuku alanlarında 15+ yıllık tecrübeyle müvekkillerimize kapsamlı ve güvenilir hukuki hizmet sunuyorum.",
+        "Ceza, idare, iş ve aile hukuku alanlarında 15+ yıllık tecrübeyle kapsamlı ve güvenilir hukuki destek sunuyorum.",
     alternates: {
         canonical: `${siteUrl}/faaliyet-alanlari`
     }

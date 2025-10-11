@@ -13,7 +13,7 @@ const siteUrl = "https://www.hakanbuldu.com";
 export const metadata: Metadata = {
   title: "Hukuk Blogu - Hakan Buldu | Güncel Hukuki Bilgiler",
   description:
-    "Ceza, idare, iş ve aile hukuku konularında güncel makaleler ve müvekkiller için bilgilendirici yazılar. Hakan Buldu'nun hukuk blogunu keşfedin.",
+    "Ceza, idare, iş ve aile hukuku konularında güncel makaleler ve bilgilendirici yazılar. Hakan Buldu'nun hukuk blogunu keşfedin.",
   alternates: {
     canonical: `${siteUrl}/blog`
   }

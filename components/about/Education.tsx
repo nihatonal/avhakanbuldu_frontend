@@ -17,9 +17,9 @@ const Education = () => {
     },
     {
       year: '2022',
-      title: 'Avukatlık Kariyeri Başlangıcı',
+      title: 'Kariyeri Başlangıcı',
       institution: '',
-      description: 'Hukuk işleri şube müdürlüğü görevine başlayarak dava takibi, mevzuat geliştirme, disiplin hukuku ve işçi-işveren uyuşmazlıkları alanlarında çalıştım.'
+      description: 'Hukuk işleri şube müdürlüğü görevine başlayarak dava süreçleri, mevzuat geliştirme, disiplin hukuku ve işçi-işveren ilişkileri alanlarında görev aldım.'
     }
   ];
 
