@@ -7,11 +7,28 @@ import { fadeUp, containerStagger } from '@/lib/animations';
 
 const Process = () => {
   const steps = [
-    { step: '01', title: 'İlk Görüşme', description: 'Durum analizi ve hukuki değerlendirme yapılır.' },
-    { step: '02', title: 'Strateji Belirleme', description: 'En uygun çözüm planı ve yol haritası oluşturulur.' },
-    { step: '03', title: 'Süreç Yönetimi', description: 'Tüm aşamalar düzenli olarak takip edilir ve bilgilendirme sağlanır.' },
-    { step: '04', title: 'Sonuç', description: 'Belirlenen hedef doğrultusunda sürecin tamamlanması sağlanır.' }
+    {
+      step: '01',
+      title: 'İlk İletişim',
+      description: 'Sorunuzu veya konunuzu paylaşın, durumu anlamak için bilgi alın.'
+    },
+    {
+      step: '02',
+      title: 'Bilgi Paylaşımı',
+      description: 'Sorularınıza veya durumunuza yönelik doğru ve güncel bilgiler sunulur.'
+    },
+    {
+      step: '03',
+      title: 'Yönlendirme',
+      description: 'İlgili süreçlerde hangi adımları takip edebileceğinize dair rehberlik sağlanır.'
+    },
+    {
+      step: '04',
+      title: 'Sonraki Adımlar',
+      description: 'İhtiyaç duyarsanız ek sorular için tekrar iletişim kurabilirsiniz.'
+    }
   ];
+
 
 
   return (

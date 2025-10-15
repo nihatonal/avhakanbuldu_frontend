@@ -13,13 +13,13 @@ const Education = () => {
       year: '2017',
       title: 'Hukuk Lisans Eğitimi',
       institution: 'Dokuz Eylül Üniversitesi Hukuk Fakültesi',
-      description: 'Hukuk fakültesinden mezun oldum.'
+      description: 'Hukuk fakültesinden mezun olarak hukuk bilgisi temelini edindim.'
     },
     {
       year: '2022',
-      title: 'Kariyeri Başlangıcı',
+      title: 'Kariyere Başlangıç',
       institution: '',
-      description: 'Hukuk işleri şube müdürlüğü görevine başlayarak dava süreçleri, mevzuat geliştirme, disiplin hukuku ve işçi-işveren ilişkileri alanlarında görev aldım.'
+      description: 'Hukuk işleri şube müdürlüğü görevine başlayarak, mevzuat, disiplin hukuku ve işçi-işveren ilişkileri konularında deneyim kazandım; bu bilgileri paylaşıp rehberlik sağlıyorum.'
     }
   ];
 
@@ -27,7 +27,7 @@ const Education = () => {
     {
       period: '2022 - Günümüz',
       title: 'Hukuk İşleri Şube Müdürlüğü',
-      description: 'Dava takibi, mevzuat geliştirme, disiplin hukuku ve işçi-işveren uyuşmazlıkları alanlarında çalışıyorum.'
+      description: 'Mevzuat geliştirme, disiplin hukuku ve işçi-işveren ilişkileri konularında bilgi ve rehberlik sağlıyorum; süreçleri anlamanıza yardımcı oluyorum.'
     },
     {
       period: 'Sertifikalar ve Eğitimler',
@@ -40,6 +40,7 @@ const Education = () => {
       ]
     }
   ];
+
 
   return (
     <section className="section-padding">

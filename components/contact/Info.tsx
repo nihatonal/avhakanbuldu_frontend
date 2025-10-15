@@ -11,26 +11,30 @@ const Info = () => {
             icon: Phone,
             title: 'Telefon',
             details: ['+90 530 561 00 34'],
-            description: 'Acil durumlar için 7/24 ulaşabilirsiniz'
+            description: 'Acil veya genel sorularınız için doğrudan ulaşabilirsiniz.'
         },
         {
             icon: Mail,
             title: 'E-posta',
             details: ['info@hakanbuldu.com'],
-            description: 'E-posta ile 24 saat içinde yanıt veririm'
+            description: 'Sorularınıza 24 saat içinde bilgilendirme odaklı yanıt veririm.'
         },
         {
             icon: MapPin,
             title: 'Adres',
             details: ['Yıldızevler mah. Rabindranath Tagore Cad. 29/10', 'Çankaya/Ankara'],
-            description: ''
+            description: 'Ofise gelmeden önce randevu almanız tavsiye edilir.'
         },
         {
             icon: Clock,
-            title: 'Çalışma Saatleri',
-            details: ['Pazartesi - Cuma: 09:00-18:00', 'Cumartesi: 09:00-14:00'],
-            description: 'Randevu ile hafta sonu görüşme mümkün'
+            title: 'Ulaşılabilirlik',
+            details: [
+                'Pazartesi - Cuma: 09:00-18:00',
+                'Cumartesi: 09:00-14:00'
+            ],
+            description: 'Sorularınızı iletmek için uygun zamanlar. Randevu ile esnek görüşme de sağlanabilir.'
         }
+
     ];
 
     const cardVariants = {

@@ -23,25 +23,25 @@ const Cta = () => {
                         Hukuki Konularda Sorularınız mı Var?
                     </h2>
                     <p className="text-xl mb-8 max-w-3xl mx-auto text-white/90">
-                        Herhangi bir hukuki konuda merak ettiklerinizi bize sorabilirsiniz.
-                        Bilgilendirme ve danışmanlık için iletişime geçin.
+                        Hukuki konular hakkında merak ettiklerinizi paylaşın,
+                        size doğru ve güncel bilgilerle yol gösterecek rehberlik sunalım.
                     </p>
-
                 </motion.div>
 
-                {/* Butonlar */}
+                {/* Buton */}
                 <motion.div
                     className="flex flex-col sm:flex-row gap-4 justify-center"
                     variants={fadeUp}
                 >
                     <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent-dark">
-                        <Link href="/iletisim">
-                            <Phone className="mr-2 h-5 w-5" />
-                            Sorunuzu Sorun / Ücretsiz Danışmanlık
+                        <Link href="/iletisim" className="flex items-center justify-center gap-2">
+                            <Phone className="h-5 w-5" />
+                            Yanıt Al / Bilgi Edinin
                         </Link>
                     </Button>
                 </motion.div>
             </motion.div>
+
         </section>
     );
 };

@@ -16,25 +16,26 @@ const HeroSection = () => {
                         İletişim
                     </h1>
                     <p className="text-xl mb-8 max-w-3xl mx-auto text-white/90">
-                        Hukuki konularda güven temelli danışmanlık ve etkili rehberlik almak için benimle iletişime geçin. Karmaşık durumlarda stratejik çözümler sunuyorum.
+                        Hukuki konular hakkında merak ettiklerinizi paylaşın. Size doğru ve güncel bilgilerle rehberlik ederek yönlendirme yapabilirim.
                     </p>
                 </motion.div>
 
                 <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent-dark">
-                        <a href="tel:+905305610034">
-                            <Phone className="mr-2 h-5 w-5" />
-                            Hemen Arayın
+                        <a href="tel:+905305610034" className="flex items-center gap-2">
+                            <Phone className="h-5 w-5" />
+                            Hemen Yanıt Alın
                         </a>
                     </Button>
                     <Button asChild variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
-                        <a href="mailto:info@hakanbuldu.com">
-                            <Mail className="mr-2 h-5 w-5" />
-                            E-posta Gönderin
+                        <a href="mailto:info@hakanbuldu.com" className="flex items-center gap-2">
+                            <Mail className="h-5 w-5" />
+                            Bilgi İsteyin
                         </a>
                     </Button>
                 </motion.div>
             </div>
+
         </section>
     )
 }

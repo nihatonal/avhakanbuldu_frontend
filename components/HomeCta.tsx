@@ -22,10 +22,11 @@ const HomeCta = () => {
                     viewport={{ once: true }}
                 >
                     <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-                        Hukuki Bilgi ve Danışmanlığa İhtiyacınız mı Var?
+                        Hukuki Konularda Bilgiye mi İhtiyacınız Var?
                     </h2>
                     <p className="text-xl mb-8 max-w-3xl mx-auto text-white/90">
-                        Hukuki konularda doğru bilgi ve rehberlik almak için bizimle iletişime geçin.
+                        Farklı hukuk alanlarına dair merak ettiklerinizi öğrenmek ve süreci daha net
+                        anlamak için bizimle iletişime geçin. Size güvenilir ve anlaşılır bilgi sunuyoruz.
                     </p>
                 </motion.div>
 
@@ -57,7 +58,7 @@ const HomeCta = () => {
                             size="lg"
                             className="border-white text-white bg-transparent hover:bg-white hover:text-primary"
                         >
-                            <Link href="/iletisim">Online Randevu Al</Link>
+                            <Link href="/iletisim">Sorunuzu Gönderin</Link>
                         </Button>
                     </motion.div>
                 </motion.div>

@@ -11,21 +11,22 @@ const Princliples = () => {
     const principles = [
         {
             title: 'Güven ve Şeffaflık',
-            description: 'Her danışanımla açık ve güvene dayalı iletişim kurarım, süreç boyunca şeffaf davranırım.'
+            description: 'Danışanlara bilgi ve rehberlik sunarken, açık ve güvene dayalı iletişim kurarım; süreç boyunca şeffaf davranırım.'
         },
         {
             title: 'Profesyonel Yaklaşım',
-            description: 'Tüm danışmanlık süreçlerinde titizlik ve profesyonellikle hareket ederim.'
+            description: 'Tüm bilgilendirme ve rehberlik süreçlerinde titizlik ve özenle hareket ederim.'
         },
         {
             title: 'Danışan Odaklılık',
-            description: 'Danışanların ihtiyaç ve hedeflerini her zaman ön planda tutarım.'
+            description: 'Danışanların bilgi ihtiyaçlarını ve yönlendirme beklentilerini her zaman ön planda tutarım.'
         },
         {
             title: 'Sürekli Gelişim ve Güncel Bilgi',
-            description: 'Sektördeki gelişmeleri takip ederek danışmanlık hizmetimi sürekli iyileştiririm.'
+            description: 'Hukuk alanındaki güncel bilgileri takip ederek, paylaştığım rehberliği sürekli geliştirmeye çalışırım.'
         }
     ];
+
 
 
     return (

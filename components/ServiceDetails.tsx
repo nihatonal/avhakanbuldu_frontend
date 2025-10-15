@@ -157,17 +157,17 @@ const ServiceDetails = ({ area }: { area: Service }) => {
                         className="gradient-primary rounded-xl p-10 text-center text-white shadow-elegant"
                     >
                         <motion.h2 variants={fadeUp} className="text-3xl font-bold mb-4">
-                            Hukuki Danışmanlık İçin Hemen İletişime Geçin
+                            Hukuki Konularda Bilgi ve Rehberlik İçin İletişime Geçin
                         </motion.h2>
                         <motion.p variants={fadeUp} className="mb-6 max-w-2xl mx-auto text-white/90">
-                            15 yılı aşkın deneyimle güven temelli hukuki danışmanlık ve etkili rehberlik sağlıyorum. Size süreçler hakkında doğru ve anlaşılır bilgi sunmak için buradayım.
+                            15 yılı aşkın deneyimle, farklı hukuki konularda doğru bilgiye ulaşmanız ve süreci daha net anlamanız için yardımcı oluyorum. Amacım, sorularınıza güvenilir ve anlaşılır yanıtlar sunmak.
                         </motion.p>
                         <motion.a
                             variants={fadeUp}
                             href="/iletisim"
                             className="btn-hero inline-block text-lg font-semibold shadow-accent hover:shadow-elegant"
                         >
-                            Danışmanlık Alın
+                            Sorularınızın Cevabı Burada
                         </motion.a>
                     </motion.section>
 

@@ -11,25 +11,26 @@ const Achievements = () => {
   const achievements = [
     {
       icon: Trophy,
-      title: '500+ Hukuki Danışmanlık',
-      description: 'Çeşitli hukuk alanlarında sağlanan profesyonel rehberlik ve danışmanlık hizmetleri.'
+      title: '500+ Bilgilendirme ve Yönlendirme',
+      description: 'Farklı hukuk alanlarında paylaşılan doğru bilgiler ve süreçlere dair rehberlik.'
     },
     {
       icon: Users,
       title: '1000+ Kişiye Destek',
-      description: 'Bireysel ve kurumsal düzeyde hukuki süreçlerde yönlendirme ve destek.'
+      description: 'Bireysel ve kurumsal düzeyde hukuki süreçleri anlamaya yardımcı bilgilendirmeler.'
     },
     {
       icon: Award,
-      title: 'Güven Odaklı Hizmet',
-      description: 'Şeffaflık, etik ve güven temelli çalışma anlayışıyla sürdürülen hizmetler.'
+      title: 'Güven ve Etik Odaklı Yaklaşım',
+      description: 'Tarafsız, şeffaf ve güven temelli bir bilgilendirme anlayışıyla sürdürülen çalışmalar.'
     },
     {
       icon: Scale,
-      title: '7+ Yıl Deneyim',
-      description: 'Hukuk alanında edinilmiş kapsamlı bilgi birikimi ve uygulama deneyimi.'
+      title: '7+ Yıllık Deneyim',
+      description: 'Hukuk alanında edinilmiş bilgi birikimiyle destekleyici ve rehberlik odaklı yaklaşım.'
     }
   ];
+
 
 
   return (

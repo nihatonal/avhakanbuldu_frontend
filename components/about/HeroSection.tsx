@@ -28,7 +28,7 @@ const HeroSection = () => {
                     >
                         <motion.div variants={fadeUp}>
                             <Badge className="mb-4 bg-accent text-accent-foreground">
-                                Güvenilir & Sonuç Odaklı
+                                Tarafsız & Bilgilendirici
                             </Badge>
                         </motion.div>
 
@@ -43,7 +43,7 @@ const HeroSection = () => {
                             variants={fadeUp}
                             className="text-xl mb-8 text-white/90"
                         >
-                           15 yılı aşkın deneyimimle, hukuki konularda güven temelli ve çözüm odaklı danışmanlık sunuyor, karmaşık süreçlerde etkili rehberlik ve yol gösterici destek sağlıyorum.
+                            15 yılı aşkın hukuk tecrübemle, hukuki süreçlere ilişkin doğru bilgi paylaşımı ve yönlendirme sağlıyorum. Her bireyin haklarını bilinçli biçimde koruyabilmesi için tarafsız ve güven temelli rehberlik sunuyorum.
                         </motion.p>
 
                         <motion.div
@@ -57,7 +57,7 @@ const HeroSection = () => {
                                 </Link>
                             </Button>
                             <Button asChild variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
-                                <Link href="/faaliyet-alanlari">Faaliyet Alanları</Link>
+                                <Link href="/faaliyet-alanlari">Çalışma Alanları</Link>
                             </Button>
                         </motion.div>
                     </motion.div>

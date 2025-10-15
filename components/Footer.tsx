@@ -17,7 +17,7 @@ const Footer = () => {
                                 <span className="font-display font-semibold text-xl">Hakan Buldu</span>
                             </div>
                             <p className="text-primary-foreground/80 mb-4 max-w-md">
-                                Profesyonel hukuki danışmanlık hizmetleri sunuyoruz. 15 yılı aşkın deneyimle güvenilir ve etkili çözümler sağlıyoruz.
+                                Hukuki konularda doğru bilgiye ulaşmanız için buradayız. Her adımda sizi bilgilendirmek ve süreci birlikte anlamak önceliğimizdir.
                             </p>
                             <div className="flex space-x-4 pointer-events-none">
                                 <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors">
@@ -97,7 +97,7 @@ const Footer = () => {
                     </div>
                 </div>
             </Container>
-        </footer>
+        </footer >
     );
 };
 

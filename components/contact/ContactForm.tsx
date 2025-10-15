@@ -111,12 +111,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
     >
       <motion.div variants={fadeUp} className="mb-8">
         <h2 className="font-display text-3xl font-bold text-primary mb-4">
-          Hukuki Danışmanlık Formu
+          Bilgi ve Danışmanlık Formu
         </h2>
         <p className="text-muted-foreground">
-          Hukuki durumunuzu detaylı bir şekilde paylaşın; size en uygun danışmanlık ve rehberlik sağlanacaktır. Tüm bilgileriniz gizli tutulur.
+          Hukuki durumunuzu detaylı bir şekilde paylaşabilirsiniz. Sorularınıza doğru ve güvenilir bilgilerle yanıt verilecek, süreçler hakkında rehberlik sağlanacaktır. Tüm bilgileriniz gizli tutulur.
         </p>
       </motion.div>
+
 
       <motion.div variants={fadeUp}>
         <Card className="card-elegant">
@@ -189,7 +190,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ legalAreas }) => {
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
-                placeholder="Hukuki sorununuzu detaylı olarak açıklayın..."
+                placeholder="Hukuki durumunuzla ilgili merak ettiğiniz soruları veya bilgi taleplerinizi buraya yazabilirsiniz..."
                 rows={6}
                 required
               />

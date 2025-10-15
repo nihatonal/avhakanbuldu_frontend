@@ -41,7 +41,7 @@ const ProcessSteps = () => {
                     Nasıl Çalışıyoruz?
                 </h2>
                 <p className="text-muted-foreground">
-                    Hukuki danışmanlık sürecimiz şeffaf ve danışan odaklıdır.
+                    Her adımda şeffaf ve anlaşılır bilgi paylaşımı ile yönlendirme sağlıyoruz. Sürecin her aşamasında neler olacağını bilirsiniz.
                 </p>
             </motion.div>
 
@@ -71,16 +71,17 @@ const ProcessSteps = () => {
                         <CheckCircle className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
                         <div>
                             <h3 className="font-display text-lg font-semibold text-primary mb-2">
-                                Danışmanlık ve Rehberlik
+                                Bilgi ve Yönlendirme
                             </h3>
                             <p className="text-muted-foreground text-sm">
-                                Sizinle birlikte durumunuzu ele alıp, güven temelli bir danışmanlık süreci yürütüyoruz.
+                                Durumunuzu detaylı şekilde değerlendiriyor, anlaşılır ve güvene dayalı bir rehberlik sunuyoruz. Her adımda ne yapmanız gerektiğini bilirsiniz.
                             </p>
                         </div>
                     </div>
                 </Card>
             </motion.div>
         </motion.div>
+
     )
 }
 

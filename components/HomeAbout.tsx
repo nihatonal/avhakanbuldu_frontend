@@ -26,21 +26,23 @@ const HomeAbout = () => {
                         viewport={{ once: true }}
                     >
                         <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">
-                            Deneyimli Hukuk Danışmanı
+                            Hukuki Bilgilendirme ve Rehberlik
                         </Badge>
                         <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
                             Hakan Buldu
                         </h2>
                         <p className="text-lg text-muted-foreground mb-6">
-                            15 yılı aşkın hukuk deneyimimle, hukuki konularda doğru ve güvenilir bilgilendirme sağlıyorum.
-                            Dokuz Eylül Üniversitesi Hukuk Fakültesi mezunu olarak, ceza hukuku, medeni hukuk ve tazminat hukuku alanlarında bilgi ve danışmanlık sunuyorum.
+                            15 yılı aşkın tecrübemle, hukuki süreçler ve haklar konusunda doğru,
+                            anlaşılır ve güvenilir bilgilendirme sunuyorum. Dokuz Eylül Üniversitesi
+                            Hukuk Fakültesi mezunu olarak, ceza, medeni ve tazminat alanlarında
+                            yönlendirici danışmanlık sağlıyorum.
                         </p>
 
                         <div className="space-y-3 mb-8 text-primary">
                             {[
                                 'Dokuz Eylül Üniversitesi Hukuk Fakültesi',
-                                '15+ Yıl Hukuk Deneyimi',
-                                '500+ Danışma / Bilgilendirme'
+                                '15+ Yıl Hukuk Alanında Deneyim',
+                                '500+ Bilgilendirme ve Rehberlik Görüşmesi'
                             ].map((item, idx) => (
                                 <div key={idx} className="flex items-center">
                                     <CheckCircle className="h-5 w-5 text-accent mr-3" />

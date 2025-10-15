@@ -4,10 +4,10 @@ import React from 'react';
 import { Card } from '../ui/card';
 import Container from '../Container';
 import {
-    GraduationCap,
-    UserCog,
-    MessageCircle,
-    CheckCheck
+    Trophy,
+    Users,
+    Award,
+    Scale
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fadeUp, containerStagger } from '@/lib/animations';
@@ -15,24 +15,24 @@ import { fadeUp, containerStagger } from '@/lib/animations';
 const WhyChooseMe = () => {
     const whyChooseUs = [
         {
-            title: 'Deneyimli Uzmanlık',
-            description: 'Hukuki konularda yıllara dayanan bilgi ve danışmanlık deneyimi',
-            icon: GraduationCap
+            icon: Trophy,
+            title: 'Güvenilir Bilgi Kaynağı',
+            description: 'Danışanlara doğru ve anlaşılır bilgi sunarak süreçlerde rehberlik sağlarım.'
         },
         {
-            title: 'Kişiselleştirilmiş Danışmanlık',
-            description: 'Her sorunuza ve durumunuza özel bilgilendirme',
-            icon: UserCog
+            icon: Users,
+            title: 'Deneyim ve Uzmanlık',
+            description: 'Yılların bilgi birikimi ile farklı hukuk konularında yönlendirme yaparım.'
         },
         {
-            title: 'Açık ve Şeffaf İletişim',
-            description: 'Sorularınıza net ve anlaşılır şekilde yanıt veriyorum',
-            icon: MessageCircle
+            icon: Award,
+            title: 'Şeffaf ve Açık Yaklaşım',
+            description: 'Tüm bilgi paylaşımında şeffaflık ve güven odaklı iletişim sağlanır.'
         },
         {
-            title: 'Güvenilir Bilgilendirme',
-            description: 'Hukuki süreçler hakkında güvenilir ve tarafsız bilgi sağlanır',
-            icon: CheckCheck
+            icon: Scale,
+            title: 'Bilgi Güncelliği',
+            description: 'Sürekli güncellenen bilgilerle karmaşık konuları anlaşılır hâle getiririm.'
         }
     ];
 

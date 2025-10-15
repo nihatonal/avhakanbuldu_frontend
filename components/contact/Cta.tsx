@@ -18,32 +18,33 @@ const Cta = () => {
                 <motion.div variants={fadeUp}>
                     <MessageSquare className="h-16 w-16 text-accent mx-auto mb-6" />
                     <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-                        Acil Durum mu?
+                        Hızlı Bilgilendirme Gerekli mi?
                     </h2>
                     <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-                        Gözaltı, tutuklama veya hızlı çözüm gerektiren hukuki durumlar için her zaman ulaşabilirsiniz. Size anında rehberlik ve destek sağlıyorum.
+                        Gözaltı, tutuklama veya acil durumlarda bilgi almak için doğrudan ulaşabilirsiniz. Sürecin her aşamasında doğru ve anlaşılır rehberlik sağlıyorum.
                     </p>
-
                 </motion.div>
 
                 <motion.div
                     variants={fadeUp}
-                    className="flex flex-col sm:flex-row gap-4 justify-center">
+                    className="flex flex-col sm:flex-row gap-4 justify-center"
+                >
                     <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent-dark">
-                        <a href="tel:+905305610034">
-                            <Phone className="mr-1 h-5 w-5" />
-                            Hemen Arayın!
+                        <a href="tel:+905305610034" className="flex items-center justify-center gap-2">
+                            <Phone className="h-5 w-5" />
+                            Hemen Arayın
                         </a>
                     </Button>
                     <Button asChild variant="outline" size="lg" className="bg-[#075E54] border-none text-white hover:bg-white hover:text-primary">
-                        <a href="https://wa.me/905305610034" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/905305610034" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                             <SiWhatsapp className="h-5 w-5" />
-                            WhatsApp İletişim
+                            WhatsApp Bilgi Al
                         </a>
                     </Button>
                 </motion.div>
             </motion.div>
         </section>
+
     )
 }
 
