@@ -14,19 +14,19 @@ import HeroSection from '@/components/contact/HeroSection';
 const siteUrl = "https://www.hakanbuldu.com";
 
 export const metadata: Metadata = {
-    title: "İletişim - Hakan Buldu | Ücretsiz İlk Danışmanlık",
-    description: "Hukuki danışmanlık için Hakan Buldu ile iletişime geçin. İlk danışmanlık görüşmesi ücretsizdir. Ankara'da güvenilir ve deneyimli avukat hizmeti.",
+    title: "İletişim - Hakan Buldu | Hukuki Bilgi ve Rehberlik",
+    description: "Hukuki konular hakkında bilgi ve rehberlik almak için Hakan Buldu ile iletişime geçin. Ankara merkezli güvenilir ve deneyimli danışmanlık.",
     alternates: {
         canonical: `${siteUrl}/iletisim`,
     },
     openGraph: {
         title: "İletişim - Hakan Buldu",
-        description: "Hukuki danışmanlık için Hakan Buldu ile iletişime geçin. Ücretsiz ilk danışmanlık fırsatını kaçırmayın.",
+        description: "Hukuki konularda doğru bilgi ve rehberlik almak için Hakan Buldu ile iletişime geçin.",
         url: `${siteUrl}/iletisim`,
         type: "website",
         images: [
             {
-                url: `${siteUrl}/assets/images/contact-og-image.webp`, // opsiyonel: özel OG görseli
+                url: `${siteUrl}/assets/images/contact-og-image.webp`,
                 width: 1200,
                 height: 630,
                 alt: "Hakan Buldu İletişim",
@@ -35,11 +35,12 @@ export const metadata: Metadata = {
     },
 };
 
+
 const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: "İletişim - Hakan Buldu",
-    description: "Hukuki danışmanlık için iletişim sayfası. İlk görüşme ücretsiz.",
+    description: "Hukuki danışmanlık için iletişim sayfası.",
     url: `${siteUrl}/iletisim`,
     contactType: "Hukuki Danışmanlık",
     areaServed: "Ankara, Türkiye",
@@ -87,7 +88,7 @@ const ContactPage = async () => {
                 <Cta />
 
             </div>
-        </> 
+        </>
     );
 };
 

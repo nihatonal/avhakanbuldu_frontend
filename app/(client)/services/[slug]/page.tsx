@@ -15,11 +15,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title: 'Hukuk Hizmeti',
             description: 'Uzmanlık alanları hakkında bilgi alın.',
             alternates: {
-                canonical: `${siteUrl}/faaliyet-alanlari`,
+                canonical: `${siteUrl}/calisma-alanlari`,
             },
         };
     }
-    const canonical = `${siteUrl}/faaliyet-alanlari/${area.slug}`;
+    const canonical = `${siteUrl}/calisma-alanlari/${area.slug}`;
 
     return {
         title: `${area.title} | Avukat Hakan Buldu`,

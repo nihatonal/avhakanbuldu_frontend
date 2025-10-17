@@ -57,7 +57,7 @@ const HeroSection = () => {
                                 </Link>
                             </Button>
                             <Button asChild variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
-                                <Link href="/faaliyet-alanlari">Çalışma Alanları</Link>
+                                <Link href="/calisma-alanlari">Çalışma Alanları</Link>
                             </Button>
                         </motion.div>
                     </motion.div>

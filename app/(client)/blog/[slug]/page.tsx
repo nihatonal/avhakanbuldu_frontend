@@ -94,7 +94,7 @@ const SingleBlogPage = async ({
 }: {
     params: { slug: string };
 }) => {
-    const { slug } = params;
+    const { slug } = await params;
     const blog: SINGLE_BLOG_QUERYResult = await getSingleBlog(slug);
     if (!blog) return notFound();
 
@@ -143,6 +143,7 @@ const SingleBlogPage = async ({
                                         height={600}
                                         className="w-full max-h-[350px] object-cover rounded-lg"
                                     />
+                                  
                                 </div>
 
                             )}
@@ -168,7 +169,7 @@ const SingleBlogPage = async ({
                         )}
 
                         <div>
-                            <div className="text-xs flex items-center gap-5 my-7">
+                            <div className="text-xs flex items-center gap-5 mt-4">
                                 <div className="hidden md:flex items-center gap-2 group cursor-pointer">
                                     {blog?.blogcategories?.map(
                                         (item: { title: string }, index: number) => (

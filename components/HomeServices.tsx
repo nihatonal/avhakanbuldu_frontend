@@ -44,7 +44,7 @@ const HomeServices = () => {
                     {practicesData.slice(0,3).map((area, index) => (
                         <motion.div key={index} variants={fadeUp}>
                             <Card className="card-elegant group hover:shadow-accent/20 cursor-pointer">
-                                <Link href={`/faaliyet-alanlari/${area.slug}`} className="block">
+                                <Link href={`/calisma-alanlari/${area.slug}`} className="block">
                                     <div className="flex items-center mb-4">
                                         <div className="p-3 bg-accent/10 rounded-lg mr-4 group-hover:bg-accent/20 transition-colors">
                                             <area.icon className="h-6 w-6 text-accent" />
@@ -72,7 +72,7 @@ const HomeServices = () => {
                     viewport={{ once: true }}
                 >
                     <Button asChild size="lg" className="btn-primary">
-                        <Link href="/faaliyet-alanlari">Tüm Faaliyet Alanları</Link>
+                        <Link href="/calisma-alanlari">Tüm Faaliyet Alanları</Link>
                     </Button>
                 </motion.div>
             </Container>

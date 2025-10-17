@@ -18,11 +18,11 @@ const nextConfig: NextConfig = {
         destination: "/contact",
       },
       {
-        source: "/faaliyet-alanlari",
+        source: "/calisma-alanlari",
         destination: "/services",
       },
       {
-        source: "/faaliyet-alanlari/:slug",
+        source: "/calisma-alanlari/:slug",
         destination: "/services/:slug",
       },
       {

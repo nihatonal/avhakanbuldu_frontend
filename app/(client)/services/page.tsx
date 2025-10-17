@@ -9,20 +9,21 @@ import Script from "next/script";
 const siteUrl = "https://www.hakanbuldu.com";
 
 export const metadata: Metadata = {
-    title: "Faaliyet Alanlarımız - Hakan Buldu | Uzman Hukuki Hizmetler",
+    title: "Çalışma Alanlarımız - Hakan Buldu | Hukuki Bilgi ve Rehberlik",
     description:
-        "Ceza, idare, iş ve aile hukuku alanlarında 15+ yıllık tecrübeyle kapsamlı ve güvenilir hukuki destek sunuyorum.",
+        "Ceza, idare, iş ve medeni hukuk konularında doğru bilgi ve rehberlik sağlamak için kapsamlı içerikler sunuyorum.",
     alternates: {
-        canonical: `${siteUrl}/faaliyet-alanlari`
+        canonical: `${siteUrl}/çalışma-alanlari`
     }
 };
+
 
 const Services = () => {
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "WebPage",
         name: "Faaliyet Alanlarımız",
-        url: `${siteUrl}/faaliyet-alanlari`,
+        url: `${siteUrl}/calisma-alanlari`,
         description:
             "Hakan Buldu, ceza, idare, iş ve aile hukuku gibi birçok alanda kapsamlı hukuki hizmet sunmaktadır.",
         mainEntity: [

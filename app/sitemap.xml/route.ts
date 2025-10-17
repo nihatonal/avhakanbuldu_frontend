@@ -45,7 +45,7 @@ export async function GET() {
       priority: 0.8,
     },
     {
-      loc: "/faaliyet-alanlari",
+      loc: "/calisma-alanlari",
       lastmod: new Date().toISOString(),
       changefreq: "monthly",
       priority: 0.8,
@@ -94,7 +94,7 @@ export async function GET() {
 
   // Service URL'leri
   const serviceUrls: SitemapEntry[] = services.map((slug) => ({
-    loc: `/faaliyet-alanlari/${slug}`,
+    loc: `/calisma-alanlari/${slug}`,
     lastmod: new Date().toISOString(),
     changefreq: "monthly",
     priority: 0.7,

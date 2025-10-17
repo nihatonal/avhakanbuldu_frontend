@@ -16,7 +16,11 @@ export const metadata: Metadata = {
     "Ceza, idare, iş ve aile hukuku konularında güncel makaleler ve bilgilendirici yazılar. Hakan Buldu'nun hukuk blogunu keşfedin.",
   alternates: {
     canonical: `${siteUrl}/blog`
-  }
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 const jsonLd = {

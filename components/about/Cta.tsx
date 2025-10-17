@@ -57,7 +57,7 @@ const Cta = () => {
                                 size="lg"
                                 className="bg-transparent border-white text-white hover:bg-white hover:text-primary"
                             >
-                                <Link href="/faaliyet-alanlari">
+                                <Link href="/calisma-alanlari">
                                     Çalışma Alanlarımı Görün
                                 </Link>
                             </Button>

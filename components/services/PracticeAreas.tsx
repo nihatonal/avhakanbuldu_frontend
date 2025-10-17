@@ -67,7 +67,7 @@ const PracticeAreas = () => {
                                                 {area.experience}
                                             </Badge>
                                         </div>
-                                        <Link href={`/faaliyet-alanlari/${area.slug}`} className=" flex items-center py-2 px-4 rounded-full mt-8 md:mt-0 ml-auto bg-accent/80 cursor-pointer text-accent text-white hover:bg-accent/100">
+                                        <Link href={`/calisma-alanlari/${area.slug}`} className=" flex items-center py-2 px-4 rounded-full mt-8 md:mt-0 ml-auto bg-accent/80 cursor-pointer text-accent text-white hover:bg-accent/100">
                                             Detaylar <ArrowRight className="ml-2 h-4 w-4" />
                                         </Link>
                                     </div>
