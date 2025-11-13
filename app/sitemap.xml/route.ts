@@ -26,68 +26,21 @@ export async function GET() {
 
   // Statik sayfalar
   const staticPages: SitemapEntry[] = [
-    {
-      loc: "/",
-      lastmod: new Date().toISOString(),
-      changefreq: "daily",
-      priority: 1.0,
-    },
-    {
-      loc: "/hakkinda",
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.8,
-    },
-    {
-      loc: "/iletisim",
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.8,
-    },
-    {
-      loc: "/calisma-alanlari",
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.8,
-    },
-    {
-      loc: "/blog",
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.8,
-    },
-    {
-      loc: "/gizlilik-politikasi",
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.8,
-    },
-    {
-      loc: "/kullanim-sartlari",
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.8,
-    },
-    {
-      loc: "/cerez-politikasi",
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.8,
-    },
-    {
-      loc: "/telif-ve-marka-haklari",
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.8,
-    },
+    { loc: "/", lastmod: new Date().toISOString(), changefreq: "daily", priority: 1.0 },
+    { loc: "/hakkinda", lastmod: new Date().toISOString(), changefreq: "monthly", priority: 0.8 },
+    { loc: "/iletisim", lastmod: new Date().toISOString(), changefreq: "monthly", priority: 0.8 },
+    { loc: "/calisma-alanlari", lastmod: new Date().toISOString(), changefreq: "monthly", priority: 0.8 },
+    { loc: "/blog", lastmod: new Date().toISOString(), changefreq: "monthly", priority: 0.8 },
+    { loc: "/gizlilik-politikasi", lastmod: new Date().toISOString(), changefreq: "monthly", priority: 0.8 },
+    { loc: "/kullanim-sartlari", lastmod: new Date().toISOString(), changefreq: "monthly", priority: 0.8 },
+    { loc: "/cerez-politikasi", lastmod: new Date().toISOString(), changefreq: "monthly", priority: 0.8 },
+    { loc: "/telif-ve-marka-haklari", lastmod: new Date().toISOString(), changefreq: "monthly", priority: 0.8 },
   ];
 
   // Blog URL'leri
   const blogUrls: SitemapEntry[] = blogs.map((blog) => ({
     loc: `/blog/${blog.slug.current}`,
-    lastmod: blog.publishedAt
-      ? new Date(blog.publishedAt).toISOString()
-      : new Date().toISOString(),
+    lastmod: blog.publishedAt ? new Date(blog.publishedAt).toISOString() : new Date().toISOString(),
     changefreq: "monthly",
     priority: 0.7,
   }));
@@ -122,6 +75,7 @@ ${urlset}
   return new NextResponse(sitemap, {
     headers: {
       "Content-Type": "application/xml",
+      "Cache-Control": "no-cache, no-store, must-revalidate", // <-- Önemli: her istekte güncel sitemap
     },
   });
 }
