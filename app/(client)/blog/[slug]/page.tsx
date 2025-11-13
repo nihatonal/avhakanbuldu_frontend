@@ -47,6 +47,38 @@ interface Blog {
     blogcategories: { title: string }[];
 }
 const siteUrl = 'https://www.hakanbuldu.com';
+
+const Breadcrumb = ({ categories, title }: { categories: string[], title: string }) => {
+    return (
+        <nav aria-label="breadcrumb" className="text-sm mb-4">
+            <ol className="flex gap-1 flex-wrap text-gray-600">
+                <li>
+                    <Link href="/" className="hover:underline text-blue-700">Ana Sayfa</Link>
+                </li>
+                <li>/</li>
+                <li>
+                    <Link href="/blog" className="hover:underline text-blue-700">Blog</Link>
+                </li>
+                {categories.map((cat, index) => (
+                    <React.Fragment key={index}>
+                        <li>/</li>
+                        <li>
+                            <Link
+                                href={`/blog?category=${encodeURIComponent(cat.toLowerCase().replace(/\s+/g, '-'))}`}
+                                className="hover:underline text-blue-700"
+                            >
+                                {cat}
+                            </Link>
+                        </li>
+                    </React.Fragment>
+                ))}
+                <li>/</li>
+                <li className="text-gray-500">{title}</li>
+            </ol>
+        </nav>
+    );
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const blog: SINGLE_BLOG_QUERYResult = await getSingleBlog(slug);
@@ -107,7 +139,7 @@ const SingleBlogPage = async ({
         datePublished: blog.publishedAt,
         author: {
             "@type": "Person",
-            name: "Yazar Adı",
+            name: "Hakan Buldu",
         },
         mainEntityOfPage: {
             "@type": "WebPage",
@@ -119,6 +151,23 @@ const SingleBlogPage = async ({
         <>
             <Script type="application/ld+json" id="blog-jsonld">
                 {JSON.stringify(jsonLd)}
+            </Script>
+            <Script type="application/ld+json" id="breadcrumb-jsonld">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": `${siteUrl}/` },
+                        { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${siteUrl}/blog` },
+                        ...blog.blogcategories.map((cat, index) => ({
+                            "@type": "ListItem",
+                            "position": 3 + index,
+                            "name": cat.title,
+                            "item": `${siteUrl}/blog?category=${encodeURIComponent(cat.title.toLowerCase().replace(/\s+/g, '-'))}`
+                        })),
+                        { "@type": "ListItem", "position": 3 + blog.blogcategories.length, "name": blog.title, "item": `${siteUrl}/blog/${blog.slug.current}` }
+                    ]
+                })}
             </Script>
 
             <div className="py-4 md:py-10 bg-gray-100">
@@ -198,7 +247,10 @@ const SingleBlogPage = async ({
                                     <span className="absolute left-0 -bottom-1.5 bg-muted-foreground/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
                                 </p>
                             </div>
-                            <h2 className="text-2xl font-bold my-5 text-primary">{blog?.title}</h2>
+                            <div className="my-5">
+                                <Breadcrumb categories={blog.blogcategories.map(c => c.title)} title={blog.title} />
+                                <h1 className="text-3xl font-bold text-primary">{blog?.title}</h1>
+                            </div>
                             <div className="flex flex-col">
                                 <div className="text-primary">
                                     <div>
@@ -213,12 +265,12 @@ const SingleBlogPage = async ({
                                                             </p>
                                                         ),
                                                         h2: ({ children }) => (
-                                                            <h2 className="my-8 text-3xl font-bold text-[hsl(var(--primary))] tracking-tight">
+                                                            <h2 className="my-8 text-2xl font-bold text-[hsl(var(--primary))] tracking-tight">
                                                                 {children}
                                                             </h2>
                                                         ),
                                                         h3: ({ children }) => (
-                                                            <h3 className="my-6 text-2xl font-semibold text-[hsl(var(--primary-light))] tracking-tight">
+                                                            <h3 className="my-6 text-xl font-semibold text-[hsl(var(--primary-light))] tracking-tight">
                                                                 {children}
                                                             </h3>
                                                         ),
@@ -324,7 +376,7 @@ const BlogLeft = async () => {
     const latestBlogs = await getLatestBlogs();
     const mostViewed = await getMostViewedBlogs();
 
-    
+
     return (
         <div>
             <div className="bg-background border border-primary-light/30 p-5 rounded-md">
