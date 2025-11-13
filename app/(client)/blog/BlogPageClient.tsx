@@ -85,7 +85,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({
     mostViewed: initialMostViewed,
     initialCategory = ""
 }) => {
-    const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+    const [selectedCategory, setSelectedCategory] = useState(initialCategory.toLowerCase().trim().replace(/\s+/g, '-'));
     const [searchQuery, setSearchQuery] = useState("");
 
     // 🔁 Ana blog listesi
@@ -128,7 +128,7 @@ const BlogPageClient: React.FC<BlogPageProps> = ({
     const filteredBlogs = useMemo(() => {
         return blogs.filter((blog) => {
             const matchesCategory =
-                !selectedCategory || blog.blogcategories?.some((cat) => cat.title === selectedCategory);
+                !selectedCategory || blog.blogcategories?.some((cat) => cat.title.toLowerCase().trim().replace(/\s+/g, '-') === selectedCategory);
 
             const contentText = blockContentToText(blog.body || "");
             const matchesSearch =

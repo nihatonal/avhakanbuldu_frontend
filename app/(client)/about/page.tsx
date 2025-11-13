@@ -32,11 +32,6 @@ const AboutPage = () => {
             name: "Hakan Buldu",
             url: siteUrl
         },
-        memberOf: {
-            "@type": "Organization",
-            name: "Ankara Barosu",
-            url: "https://www.ankarabarosu.org.tr/"
-        },
         sameAs: [
             "https://www.linkedin.com/in/hakan-buldu" // LinkedIn linkini gerçek URL ile değiştir
                

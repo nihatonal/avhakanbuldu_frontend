@@ -143,7 +143,7 @@ const SingleBlogPage = async ({
                                         height={600}
                                         className="w-full max-h-[350px] object-cover rounded-lg"
                                     />
-                                  
+
                                 </div>
 
                             )}
@@ -197,10 +197,6 @@ const SingleBlogPage = async ({
                                     <Eye size={14} /> <SingleBlogContent count={blog.viewCount} slug={slug} /> okundu
                                     <span className="absolute left-0 -bottom-1.5 bg-muted-foreground/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
                                 </p>
-
-
-
-
                             </div>
                             <h2 className="text-2xl font-bold my-5 text-primary">{blog?.title}</h2>
                             <div className="flex flex-col">
@@ -327,6 +323,8 @@ const BlogLeft = async () => {
     const categories = await getBlogCategories();
     const latestBlogs = await getLatestBlogs();
     const mostViewed = await getMostViewedBlogs();
+
+    
     return (
         <div>
             <div className="bg-background border border-primary-light/30 p-5 rounded-md">
@@ -335,7 +333,7 @@ const BlogLeft = async () => {
                     {categories?.map((cat: BlogCategory, index: number) => (
                         <Link
                             key={index}
-                            href={`/blog?category=${encodeURIComponent(cat.title)}`}
+                            href={`/blog?category=${encodeURIComponent(cat.title.toLowerCase().replace(/\s+/g, '-'))}`}
                             className="text-primary flex items-center justify-between text-sm font-medium hover:text-accent"
                         >
                             <p>{cat.title}</p>
