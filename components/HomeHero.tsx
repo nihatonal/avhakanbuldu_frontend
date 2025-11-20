@@ -50,9 +50,7 @@ const HomeHero = () => {
 
                 <motion.div variants={fadeUp}>
                     <p className="text-lg md:text-2xl mb-8 max-w-3xl mx-auto text-white/90">
-                        15 yılı aşkın deneyimle, hukuki konular hakkında doğru ve güvenilir bilgilendirme sağlıyorum.
-
-                    </p>
+                        Hukuki süreçlerde doğru bilgiye ulaşmanızı ve bilinçli kararlar verebilmenizi sağlamak için tarafsız, güvenilir ve yol gösterici bir yaklaşım sunuyorum.                    </p>
                 </motion.div>
 
                 <motion.div
