@@ -29,7 +29,7 @@ const HomeServices = () => {
                         Çalışma Alanlarım
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Geniş hukuk bilgim ve deneyimimle, farklı alanlarda profesyonel hizmet sunuyorum.
+                        Deneyimle şekillenen analiz ve akademik derinlikle birleşen profesyonel uygulama; hukukla güclenen, sürdürülebilir ve güvenilir sonuçlar.
                     </p>
                 </motion.div>
 
@@ -41,7 +41,7 @@ const HomeServices = () => {
                     whileInView="show"
                     viewport={{ once: true }}
                 >
-                    {practicesData.slice(0,3).map((area, index) => (
+                    {practicesData.slice(0, 3).map((area, index) => (
                         <motion.div key={index} variants={fadeUp}>
                             <Card className="card-elegant group hover:shadow-accent/20 cursor-pointer">
                                 <Link href={`/calisma-alanlari/${area.slug}`} className="block">
